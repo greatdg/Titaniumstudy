@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="winModal" title="test">
+	<View class="container">
+		<Button onClick="backWin">Back</Button>
+	</View>
+	</Window>
+</Alloy>
