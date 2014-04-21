@@ -1,0 +1,6 @@
+<Alloy>
+	<Window title="Detail" backgroundColor="yellow">
+	<View class="container">
+	</View>
+	</Window>
+</Alloy>

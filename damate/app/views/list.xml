@@ -1,0 +1,7 @@
+<Alloy>
+	<Window backgroundColor="red" title='List'>
+	<View class="container">
+		<TableView id='listTable'></TableView>
+	</View>
+	</Window>
+</Alloy>

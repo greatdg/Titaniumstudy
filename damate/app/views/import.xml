@@ -1,0 +1,7 @@
+<Alloy>
+	<Window title="Import" backgroundColor="blue">
+		<View class="container">
+			<TableView id='importTable'></TableView>
+		</View>
+	</Window>
+</Alloy>
