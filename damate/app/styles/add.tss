@@ -1,0 +1,19 @@
+".container": {
+	layout:"vertical",
+	// backgroundImage:"WattCalBackGround.png"
+},
+
+".upperView":{
+	layout:"horizontal",
+	height:80,
+},
+
+".personalView":{
+	layout:"vertical",
+	height:80,
+},
+
+".rowPersonal":{
+	layout:"horizontal",
+
+}
