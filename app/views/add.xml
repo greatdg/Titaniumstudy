@@ -1,4 +1,5 @@
 <Alloy>
+	<Window>
 	<View class="container">
 		<View class="upperView">
 			<View class="emoticonView">
@@ -6,48 +7,42 @@
 				
 				
 			</View>
-				<View class="personalView">
-					<!-- name, birthday, phone numberand gender -->
-				
-					<View class="rowPersonal">
-					<Label class="namePeresonal" text="Name"></Label>
-					<TextField id="nameAdd" value="John Dow"/>
-					</View>
-	
-					<View class="rowPersonal">
-					<Label class="bdayPeresonal" text="Date of Birth"></Label>
-					<TextField id="bdayAdd" value="04/07/1969"/>
-					</View>
-	
-					<View class="rowPersonal">
-					<Label class="genderPeresonal" text="Gendar"></Label>
-					<TextField id="genderAdd" value="Male"/>
-					</View>
-	
-					<View class="rowPersonal">
-					<Label class="phonePeresonal" text="Phone Number"></Label>
-					<TextField id="phoneAdd" value="+64 21 85 7700"/>
-					</View>
-													
-				</View>			
-
-			</View>
-		</View>
-		
-		<View class="lowerView">
+			<View class="personalView">
+				<!-- name, birthday, phone numberand gender -->
 			
-			<View class="additionalView">
-					<!-- can make additional records??? -->
-				
-					<View class="rowAdditional">
-					<Label class="titleAdditional" text="Title"></Label>
-					<TextField id="addtionalValue" value="Wine"/>
-					</View>
+				<View class="rowPersonal">
+				<Label class="namePeresonal" text="Name"></Label>
+				<TextField id="nameAdd" value="John Dow"/>
+				</View>
 
-													
-				</View>	
-		
-		
-		</View>	
+				<View class="rowPersonal">
+				<Label class="bdayPeresonal" text="Date of Birth"></Label>
+				<TextField id="bdayAdd" value="04/07/1969"/>
+				</View>
+
+				<View class="rowPersonal">
+				<Label class="genderPeresonal" text="Gendar"></Label>
+				<TextField id="genderAdd" value="Male"/>
+				</View>
+
+				<View class="rowPersonal">
+				<Label class="phonePeresonal" text="Phone Number"></Label>
+				<TextField id="phoneAdd" value="+64 21 85 7700"/>
+				</View>
+												
+			</View>			
+
+		</View>
 	</View>
+		
+	<View class="lowerView">			
+		<View class="additionalView">
+			<!-- can make additional records??? -->
+			<View class="rowAdditional">
+				<Label class="titleAdditional" text="Title"></Label>
+				<TextField id="addtionalValue" value="Wine"/>
+			</View>						
+		</View>			
+	</View>	
+	</Window>
 </Alloy>

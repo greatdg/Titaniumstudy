@@ -1,3 +1,6 @@
+"Window": {
+	backgroundColor: "#FFF",
+}
 
 ".container" : {
   

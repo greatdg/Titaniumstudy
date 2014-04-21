@@ -1,126 +1,73 @@
+function __processArg(obj, key) {
+    var arg = null;
+    if (obj) {
+        arg = obj[key] || null;
+        delete obj[key];
+    }
+    return arg;
+}
+
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
-    arguments[0] ? arguments[0]["__parentSymbol"] : null;
-    arguments[0] ? arguments[0]["$model"] : null;
-    arguments[0] ? arguments[0]["__itemTemplate"] : null;
+    if (arguments[0]) {
+        __processArg(arguments[0], "__parentSymbol");
+        __processArg(arguments[0], "$model");
+        __processArg(arguments[0], "__itemTemplate");
+    }
     var $ = this;
     var exports = {};
-    var __alloyId0 = [];
-    $.__views.__alloyId2 = Alloy.createController("list", {
-        id: "__alloyId2"
+    var __alloyId18 = [];
+    $.__views.__alloyId20 = Alloy.createController("list", {
+        id: "__alloyId20"
     });
-    $.__views.__alloyId1 = Ti.UI.createTab({
-        window: $.__views.__alloyId2.getViewEx({
+    $.__views.__alloyId19 = Ti.UI.createTab({
+        window: $.__views.__alloyId20.getViewEx({
             recurse: true
         }),
         title: "List",
         icon: "KS_nav_ui.png",
-        id: "__alloyId1"
+        id: "__alloyId19"
     });
-    __alloyId0.push($.__views.__alloyId1);
-    $.__views.__alloyId5 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Tab 2",
-        id: "__alloyId5"
+    __alloyId18.push($.__views.__alloyId19);
+    $.__views.__alloyId23 = Alloy.createController("search", {
+        id: "__alloyId23"
     });
-    $.__views.__alloyId6 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "I am Window 2",
-        id: "__alloyId6"
-    });
-    $.__views.__alloyId5.add($.__views.__alloyId6);
-    $.__views.__alloyId4 = Ti.UI.createTab({
-        window: $.__views.__alloyId5,
+    $.__views.__alloyId22 = Ti.UI.createTab({
+        window: $.__views.__alloyId23.getViewEx({
+            recurse: true
+        }),
         title: "Search",
         icon: "KS_nav_views.png",
-        id: "__alloyId4"
+        id: "__alloyId22"
     });
-    __alloyId0.push($.__views.__alloyId4);
-    $.__views.__alloyId8 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Tab 3",
-        id: "__alloyId8"
+    __alloyId18.push($.__views.__alloyId22);
+    $.__views.__alloyId26 = Alloy.createController("add", {
+        id: "__alloyId26"
     });
-    $.__views.__alloyId9 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "I am Window 3",
-        id: "__alloyId9"
-    });
-    $.__views.__alloyId8.add($.__views.__alloyId9);
-    $.__views.__alloyId7 = Ti.UI.createTab({
-        window: $.__views.__alloyId8,
+    $.__views.__alloyId25 = Ti.UI.createTab({
+        window: $.__views.__alloyId26.getViewEx({
+            recurse: true
+        }),
         title: "Add",
         icon: "KS_nav_ui.png",
-        id: "__alloyId7"
+        id: "__alloyId25"
     });
-    __alloyId0.push($.__views.__alloyId7);
-    $.__views.__alloyId11 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Tab 4",
-        id: "__alloyId11"
+    __alloyId18.push($.__views.__alloyId25);
+    $.__views.__alloyId29 = Alloy.createController("contactImport", {
+        id: "__alloyId29"
     });
-    $.__views.__alloyId12 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "I am Window 4",
-        id: "__alloyId12"
-    });
-    $.__views.__alloyId11.add($.__views.__alloyId12);
-    $.__views.__alloyId10 = Ti.UI.createTab({
-        window: $.__views.__alloyId11,
+    $.__views.__alloyId28 = Ti.UI.createTab({
+        window: $.__views.__alloyId29.getViewEx({
+            recurse: true
+        }),
         title: "Import",
         icon: "KS_nav_views.png",
-        id: "__alloyId10"
+        id: "__alloyId28"
     });
-    __alloyId0.push($.__views.__alloyId10);
-    $.__views.__alloyId14 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Tab 5",
-        id: "__alloyId14"
-    });
-    $.__views.__alloyId15 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "I am Window 5",
-        id: "__alloyId15"
-    });
-    $.__views.__alloyId14.add($.__views.__alloyId15);
-    $.__views.__alloyId13 = Ti.UI.createTab({
-        window: $.__views.__alloyId14,
-        title: "Settings",
-        icon: "KS_nav_views.png",
-        id: "__alloyId13"
-    });
-    __alloyId0.push($.__views.__alloyId13);
+    __alloyId18.push($.__views.__alloyId28);
     $.__views.index = Ti.UI.createTabGroup({
-        tabs: __alloyId0,
+        tabs: __alloyId18,
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);

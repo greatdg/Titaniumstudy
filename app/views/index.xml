@@ -1,26 +1,22 @@
 <Alloy>
 	<TabGroup>
 		<Tab title="List" icon="KS_nav_ui.png">
-				<Require src="import"></Require>
+			<Require src="list" />
 		</Tab>
 		<Tab title="Search" icon="KS_nav_views.png">
-			<Window title="Tab 2">
-				<Label>I am Window 2</Label>
-			</Window>
+			<Require src="search" />
 		</Tab>
-				<Tab title="Add" icon="KS_nav_ui.png">
-			<Window title="Tab 3">
-				<Label>I am Window 3</Label>
-			</Window>
+		<Tab title="Add" icon="KS_nav_ui.png">
+			<Require src="add" />
 		</Tab>
 		<Tab title="Import" icon="KS_nav_views.png">
-			<Require src="import"></Require>
+			<Require src="contactImport" />
 		</Tab>
-			<Tab title="Settings" icon="KS_nav_views.png">
-			<Window title="Tab 5">
-				<Label>I am Window 5</Label>
+		<!-- <Tab title="Settings" icon="KS_nav_views.png">
+			<Window>
+				<View></View>
 			</Window>
-		</Tab>
+		</Tab> -->
 	</TabGroup>
 	
 </Alloy>
