@@ -12,12 +12,6 @@ function Controller() {
         id: "detail"
     });
     $.__views.detail && $.addTopLevelView($.__views.detail);
-<<<<<<< HEAD
-    $.__views.__alloyId19 = Ti.UI.createView({
-        id: "__alloyId19"
-    });
-    $.__views.detail.add($.__views.__alloyId19);
-=======
     $.__views.imageBody = Ti.UI.createImageView({
         id: "imageBody",
         image: "body.png",
@@ -45,11 +39,11 @@ function Controller() {
         top: "15"
     });
     $.__views.detail.add($.__views.imageHair);
-    $.__views.__alloyId17 = Ti.UI.createScrollView({
+    $.__views.__alloyId19 = Ti.UI.createScrollView({
         layout: "vertical",
-        id: "__alloyId17"
+        id: "__alloyId19"
     });
-    $.__views.detail.add($.__views.__alloyId17);
+    $.__views.detail.add($.__views.__alloyId19);
     $.__views.titleTop = Ti.UI.createLabel({
         left: "180",
         top: "10",
@@ -57,13 +51,13 @@ function Controller() {
         text: "name",
         id: "titleTop"
     });
-    $.__views.__alloyId17.add($.__views.titleTop);
+    $.__views.__alloyId19.add($.__views.titleTop);
     $.__views.name = Ti.UI.createLabel({
         text: "James Shin",
         id: "name",
         left: "180"
     });
-    $.__views.__alloyId17.add($.__views.name);
+    $.__views.__alloyId19.add($.__views.name);
     $.__views.titleTop = Ti.UI.createLabel({
         left: "180",
         top: "10",
@@ -71,13 +65,13 @@ function Controller() {
         text: "age",
         id: "titleTop"
     });
-    $.__views.__alloyId17.add($.__views.titleTop);
+    $.__views.__alloyId19.add($.__views.titleTop);
     $.__views.age = Ti.UI.createLabel({
         text: "25",
         id: "age",
         left: "180"
     });
-    $.__views.__alloyId17.add($.__views.age);
+    $.__views.__alloyId19.add($.__views.age);
     $.__views.titleTop = Ti.UI.createLabel({
         left: "180",
         top: "10",
@@ -85,13 +79,13 @@ function Controller() {
         text: "gender",
         id: "titleTop"
     });
-    $.__views.__alloyId17.add($.__views.titleTop);
+    $.__views.__alloyId19.add($.__views.titleTop);
     $.__views.gender = Ti.UI.createLabel({
         text: "Male",
         id: "gender",
         left: "180"
     });
-    $.__views.__alloyId17.add($.__views.gender);
+    $.__views.__alloyId19.add($.__views.gender);
     $.__views.titleTop = Ti.UI.createLabel({
         left: "180",
         top: "10",
@@ -99,13 +93,13 @@ function Controller() {
         text: "phone number",
         id: "titleTop"
     });
-    $.__views.__alloyId17.add($.__views.titleTop);
+    $.__views.__alloyId19.add($.__views.titleTop);
     $.__views.phone = Ti.UI.createLabel({
         text: "+64 21 123 4567",
         id: "phone",
         left: "180"
     });
-    $.__views.__alloyId17.add($.__views.phone);
+    $.__views.__alloyId19.add($.__views.phone);
     $.__views.titleBottom = Ti.UI.createLabel({
         left: "5",
         top: "10",
@@ -113,13 +107,13 @@ function Controller() {
         text: "address",
         id: "titleBottom"
     });
-    $.__views.__alloyId17.add($.__views.titleBottom);
+    $.__views.__alloyId19.add($.__views.titleBottom);
     $.__views.address = Ti.UI.createLabel({
         text: "123 James Street, Riccarton, Christchurch",
         id: "address",
         left: "5"
     });
-    $.__views.__alloyId17.add($.__views.address);
+    $.__views.__alloyId19.add($.__views.address);
     $.__views.titleBottom = Ti.UI.createLabel({
         left: "5",
         top: "10",
@@ -127,13 +121,13 @@ function Controller() {
         text: "relationship",
         id: "titleBottom"
     });
-    $.__views.__alloyId17.add($.__views.titleBottom);
+    $.__views.__alloyId19.add($.__views.titleBottom);
     $.__views.relationship = Ti.UI.createLabel({
         text: "relationship",
         id: "relationship",
         left: "5"
     });
-    $.__views.__alloyId17.add($.__views.relationship);
+    $.__views.__alloyId19.add($.__views.relationship);
     $.__views.titleBottom = Ti.UI.createLabel({
         left: "5",
         top: "10",
@@ -141,14 +135,13 @@ function Controller() {
         text: "email",
         id: "titleBottom"
     });
-    $.__views.__alloyId17.add($.__views.titleBottom);
+    $.__views.__alloyId19.add($.__views.titleBottom);
     $.__views.email = Ti.UI.createLabel({
         text: "james@jamesshine.com",
         id: "email",
         left: "5"
     });
-    $.__views.__alloyId17.add($.__views.email);
->>>>>>> 1c8b4c774d930b55da82625131ec1ec3c7489025
+    $.__views.__alloyId19.add($.__views.email);
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};
