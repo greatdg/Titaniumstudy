@@ -8,15 +8,49 @@
 
 ".upperView":{
 	layout:"horizontal",
-	height:80,
+	width:"100%",
+	height:200,
 },
 
+
+".person":{
+	backgroundColor:"red",
+	top:0,
+	left:0,	
+	width:140,
+	height:200,
+	zIndex:1,
+}
+
+
 ".personalView":{
+	// backgroundColor:"green",
 	layout:"vertical",
-	height:80,
+	height:200,
 },
 
 ".rowPersonal":{
+	top:3,
+	left:10,
 	layout:"horizontal",
+	width:170,
+	height:22,
 
+},
+
+".lowerView":{
+	top:200,
+	// backgroundColor:"blue",
+	// top:3,
+	left:10,
+	layout:"vertical",
+	width:"100%",
+	height:25,
+},
+
+
+".rowAdditional":{
+	layout:"horizontal",
+	width:"100%",
 }
+
