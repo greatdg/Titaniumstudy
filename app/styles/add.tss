@@ -25,6 +25,7 @@
 
 ".personalView":{
 	// backgroundColor:"green",
+	fontSize:9,
 	layout:"vertical",
 	height:200,
 },
@@ -32,6 +33,7 @@
 ".rowPersonal":{
 	top:3,
 	left:10,
+	fontSize:9,
 	layout:"horizontal",
 	width:170,
 	height:22,
@@ -40,6 +42,7 @@
 
 ".lowerView":{
 	top:200,
+	fontSize:7,
 	// backgroundColor:"blue",
 	// top:3,
 	left:10,
