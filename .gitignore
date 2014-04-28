@@ -1,3 +1,5 @@
+build/*
+build/*.*
 Resources/*
 build/alloy/build.json
 build/alloy/global_style_cache.json
