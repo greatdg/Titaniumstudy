@@ -2,22 +2,29 @@
 	<Window>
 	<View class="container">
 		<View class="upperView">
-			<View class="emoticonView">
+			<!-- <View class="emoticonView"> -->
 				<!-- emoticon area -->
-				
-				
-			</View>
+				<ImageView class="person" image="person.png">
+				</ImageView>
+			<!-- </View> -->
 			<View class="personalView">
 				<!-- name, birthday, phone numberand gender -->
-			
+
+
 				<View class="rowPersonal">
 				<Label class="namePeresonal" text="Name"></Label>
 				<TextField id="nameAdd" value="John Dow"/>
 				</View>
+				
+				
+				<View class="rowPersonal">
+				<Label class="bdayPeresonal" text="Birthday"></Label>
+				<TextField id="bdayAdd" value="04/07/1969"/>
+				</View>			
 
 				<View class="rowPersonal">
-				<Label class="bdayPeresonal" text="Date of Birth"></Label>
-				<TextField id="bdayAdd" value="04/07/1969"/>
+				<Label class="namePeresonal" text="Name"></Label>
+				<TextField id="nameAdd" value="John Dow"/>
 				</View>
 
 				<View class="rowPersonal">
