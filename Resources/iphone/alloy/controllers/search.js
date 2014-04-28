@@ -1,20 +1,9 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "search";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     $.__views.search = Ti.UI.createWindow({
@@ -22,10 +11,10 @@ function Controller() {
         id: "search"
     });
     $.__views.search && $.addTopLevelView($.__views.search);
-    $.__views.__alloyId32 = Ti.UI.createView({
-        id: "__alloyId32"
+    $.__views.__alloyId35 = Ti.UI.createView({
+        id: "__alloyId35"
     });
-    $.__views.search.add($.__views.__alloyId32);
+    $.__views.search.add($.__views.__alloyId35);
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};

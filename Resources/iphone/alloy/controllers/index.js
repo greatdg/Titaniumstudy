@@ -1,20 +1,9 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __alloyId18 = [];
@@ -66,6 +55,22 @@ function Controller() {
         id: "__alloyId28"
     });
     __alloyId18.push($.__views.__alloyId28);
+    $.__views.__alloyId32 = Ti.UI.createWindow({
+        backgroundColor: "yellow",
+        id: "__alloyId32"
+    });
+    $.__views.__alloyId33 = Ti.UI.createLabel({
+        text: "asdf",
+        id: "__alloyId33"
+    });
+    $.__views.__alloyId32.add($.__views.__alloyId33);
+    $.__views.__alloyId31 = Ti.UI.createTab({
+        window: $.__views.__alloyId32,
+        title: "Settings",
+        icon: "KS_nav_views.png",
+        id: "__alloyId31"
+    });
+    __alloyId18.push($.__views.__alloyId31);
     $.__views.index = Ti.UI.createTabGroup({
         tabs: __alloyId18,
         id: "index"

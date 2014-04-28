@@ -1,6 +1,30 @@
 <Alloy>
-	<Window title="Detail" backgroundColor="yellow">
-	<View class="container">
-	</View>
+	<Window title="Detail" backgroundColor="gray" >
+
+				<ImageView id='imageBody' image="body.png" width="150" height="50" left='15' top='150'/>
+				<ImageView id='imageFace' image="face.png" width="120" height="150" left='25' top='15'/>
+				<ImageView id='imageHair' image="hair.png" width="130" height="30" left='20' top='15'/>
+
+
+		<ScrollView class='detailLabels' layout="vertical">
+
+
+				<Label id="titleTop">name</Label>
+				<Label id="name" left='180'>James Shin</Label>
+				<Label id="titleTop">age</Label>
+				<Label id="age" left='180'>25</Label>
+				<Label id="titleTop">gender</Label>
+				<Label id="gender" left='180'>Male</Label>
+				<Label id="titleTop">phone number</Label>
+				<Label id="phone" left='180'>+64 21 123 4567</Label>
+				<Label id="titleBottom">address</Label>
+				<Label id="address" left='5'> 123 James Street, Riccarton, Christchurch</Label>
+				<Label id="titleBottom">relationship</Label>
+				<Label id="relationship" left='5'>relationship</Label>
+				<Label id="titleBottom">email</Label>
+				<Label id="email" left='5'>james@jamesshine.com</Label>
+
+		</ScrollView>
+	
 	</Window>
 </Alloy>

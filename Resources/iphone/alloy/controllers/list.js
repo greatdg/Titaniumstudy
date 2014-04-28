@@ -1,20 +1,9 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "list";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     $.__views.list = Ti.UI.createWindow({
@@ -23,14 +12,24 @@ function Controller() {
         id: "list"
     });
     $.__views.list && $.addTopLevelView($.__views.list);
-    $.__views.__alloyId31 = Ti.UI.createView({
-        id: "__alloyId31"
+    $.__views.__alloyId34 = Ti.UI.createView({
+        id: "__alloyId34"
     });
-    $.__views.list.add($.__views.__alloyId31);
+    $.__views.list.add($.__views.__alloyId34);
+    $.__views.listSearch = Ti.UI.createSearchBar({
+        hintText: "Search",
+        id: "listSearch",
+        showCancel: "false",
+        height: "43",
+        top: "0",
+        color: "red",
+        barColor: "#ABC"
+    });
     $.__views.listTable = Ti.UI.createTableView({
+        search: $.__views.listSearch,
         id: "listTable"
     });
-    $.__views.__alloyId31.add($.__views.listTable);
+    $.__views.__alloyId34.add($.__views.listTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};
@@ -40,9 +39,10 @@ function Controller() {
         title: "Amy"
     } ];
     $.listTable.setData(listTableData);
-    $.listTable.addEventListener("click", function() {
+    $.listTable.addEventListener("click", function(e) {
         var win = Alloy.createController("detail").getView();
-        Alloy.Globals.openNav.openWindow(win);
+        alert("detail" + e.index);
+        index.openWindow(win);
     });
     _.extend($, exports);
 }

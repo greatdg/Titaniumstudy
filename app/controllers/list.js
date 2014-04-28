@@ -8,7 +8,8 @@ $.listTable.setData(listTableData);
 	
 $.listTable.addEventListener('click',function(e){
 	var win = Alloy.createController('detail').getView();
-	Alloy.Globals.openNav.openWindow(win);
+	alert('detail'+e.index)
+	index.openWindow(win);
  });
  
 

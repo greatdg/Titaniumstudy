@@ -1,4 +1,5 @@
 <Alloy>
+	
 	<TabGroup>
 		<Tab title="List" icon="KS_nav_ui.png">
 			<Require src="list" />
@@ -12,10 +13,14 @@
 		<Tab title="Import" icon="KS_nav_views.png">
 			<Require src="contactImport" />
 		</Tab>
-		<!-- <Tab title="Settings" icon="KS_nav_views.png">
-			<Window>
-				<View></View>
+		<Tab title="Settings" icon="KS_nav_views.png">
+			<Window backgroundColor="yellow">
+				<Label>asdf</Label>
 			</Window>
+		</Tab>
+		
+		<!-- <Tab title='Detail' icon="KS_nav_views.png">
+			<Require src="detail">
 		</Tab> -->
 	</TabGroup>
 	
