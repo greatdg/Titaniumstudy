@@ -12,11 +12,11 @@
 		<Tab title="Import" icon="KS_nav_views.png">
 			<Require src="contactImport" />
 		</Tab>
-		<!-- <Tab title="Settings" icon="KS_nav_views.png">
+		<Tab title="Settings" icon="KS_nav_views.png">
 			<Window>
 				<View></View>
 			</Window>
-		</Tab> -->
+		</Tab>
 	</TabGroup>
 	
 </Alloy>

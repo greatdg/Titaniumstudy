@@ -228,13 +228,7 @@ exports.createWidget = function(id, name, args) {
 };
 
 exports.createController = function(name, args) {
-    var newController = new (require("alloy/controllers/" + name))(args);
-    args && args.autoView && _.isObject(args.autoView) && _.each(args.autoView, function(props, id) {
-        newController[id] && _.each(props, function(val, key) {
-            newController[id][key] = val;
-        });
-    });
-    return newController;
+    return new (require("alloy/controllers/" + name))(args);
 };
 
 exports.createModel = function(name, args) {

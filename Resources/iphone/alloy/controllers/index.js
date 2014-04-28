@@ -1,73 +1,76 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __alloyId18 = [];
-    $.__views.__alloyId20 = Alloy.createController("list", {
-        id: "__alloyId20"
+    var __alloyId20 = [];
+    $.__views.__alloyId22 = Alloy.createController("list", {
+        id: "__alloyId22"
     });
-    $.__views.__alloyId19 = Ti.UI.createTab({
-        window: $.__views.__alloyId20.getViewEx({
+    $.__views.__alloyId21 = Ti.UI.createTab({
+        window: $.__views.__alloyId22.getViewEx({
             recurse: true
         }),
         title: "List",
         icon: "KS_nav_ui.png",
-        id: "__alloyId19"
+        id: "__alloyId21"
     });
-    __alloyId18.push($.__views.__alloyId19);
-    $.__views.__alloyId23 = Alloy.createController("search", {
-        id: "__alloyId23"
+    __alloyId20.push($.__views.__alloyId21);
+    $.__views.__alloyId25 = Alloy.createController("search", {
+        id: "__alloyId25"
     });
-    $.__views.__alloyId22 = Ti.UI.createTab({
-        window: $.__views.__alloyId23.getViewEx({
+    $.__views.__alloyId24 = Ti.UI.createTab({
+        window: $.__views.__alloyId25.getViewEx({
             recurse: true
         }),
         title: "Search",
         icon: "KS_nav_views.png",
-        id: "__alloyId22"
+        id: "__alloyId24"
     });
-    __alloyId18.push($.__views.__alloyId22);
-    $.__views.__alloyId26 = Alloy.createController("add", {
-        id: "__alloyId26"
+    __alloyId20.push($.__views.__alloyId24);
+    $.__views.__alloyId28 = Alloy.createController("add", {
+        id: "__alloyId28"
     });
-    $.__views.__alloyId25 = Ti.UI.createTab({
-        window: $.__views.__alloyId26.getViewEx({
+    $.__views.__alloyId27 = Ti.UI.createTab({
+        window: $.__views.__alloyId28.getViewEx({
             recurse: true
         }),
         title: "Add",
         icon: "KS_nav_ui.png",
-        id: "__alloyId25"
+        id: "__alloyId27"
     });
-    __alloyId18.push($.__views.__alloyId25);
-    $.__views.__alloyId29 = Alloy.createController("contactImport", {
-        id: "__alloyId29"
+    __alloyId20.push($.__views.__alloyId27);
+    $.__views.__alloyId31 = Alloy.createController("contactImport", {
+        id: "__alloyId31"
     });
-    $.__views.__alloyId28 = Ti.UI.createTab({
-        window: $.__views.__alloyId29.getViewEx({
+    $.__views.__alloyId30 = Ti.UI.createTab({
+        window: $.__views.__alloyId31.getViewEx({
             recurse: true
         }),
         title: "Import",
         icon: "KS_nav_views.png",
-        id: "__alloyId28"
+        id: "__alloyId30"
     });
-    __alloyId18.push($.__views.__alloyId28);
+    __alloyId20.push($.__views.__alloyId30);
+    $.__views.__alloyId34 = Ti.UI.createWindow({
+        id: "__alloyId34"
+    });
+    $.__views.__alloyId35 = Ti.UI.createView({
+        id: "__alloyId35"
+    });
+    $.__views.__alloyId34.add($.__views.__alloyId35);
+    $.__views.__alloyId33 = Ti.UI.createTab({
+        window: $.__views.__alloyId34,
+        title: "Settings",
+        icon: "KS_nav_views.png",
+        id: "__alloyId33"
+    });
+    __alloyId20.push($.__views.__alloyId33);
     $.__views.index = Ti.UI.createTabGroup({
-        tabs: __alloyId18,
+        tabs: __alloyId20,
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);

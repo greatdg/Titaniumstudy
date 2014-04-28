@@ -1,20 +1,9 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "contactImport";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     $.__views.contactImport = Ti.UI.createWindow({
@@ -23,18 +12,17 @@ function Controller() {
         id: "contactImport"
     });
     $.__views.contactImport && $.addTopLevelView($.__views.contactImport);
-    $.__views.__alloyId16 = Ti.UI.createView({
-        id: "__alloyId16"
+    $.__views.__alloyId18 = Ti.UI.createView({
+        id: "__alloyId18"
     });
-    $.__views.contactImport.add($.__views.__alloyId16);
+    $.__views.contactImport.add($.__views.__alloyId18);
     $.__views.importTable = Ti.UI.createTableView({
         id: "importTable"
     });
-    $.__views.__alloyId16.add($.__views.importTable);
+    $.__views.__alloyId18.add($.__views.importTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};
-    alert("import window");
     var importTableData = [ {
         title: "John"
     }, {
