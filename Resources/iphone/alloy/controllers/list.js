@@ -13,6 +13,7 @@ function Controller() {
         id: "list"
     });
     $.__views.list && $.addTopLevelView($.__views.list);
+<<<<<<< HEAD
     $.__views.__alloyId36 = Ti.UI.createView({
         id: "__alloyId36"
     });
@@ -55,6 +56,40 @@ function Controller() {
         $.yellowHead.width = "10%";
     };
     __defers["$.__views.redCloth!click!click"] && $.__views.redCloth.addEventListener("click", click);
+=======
+    $.__views.__alloyId34 = Ti.UI.createView({
+        id: "__alloyId34"
+    });
+    $.__views.list.add($.__views.__alloyId34);
+    $.__views.listSearch = Ti.UI.createSearchBar({
+        hintText: "Search",
+        id: "listSearch",
+        showCancel: "false",
+        height: "43",
+        top: "0",
+        color: "red",
+        barColor: "#ABC"
+    });
+    $.__views.listTable = Ti.UI.createTableView({
+        search: $.__views.listSearch,
+        id: "listTable"
+    });
+    $.__views.__alloyId34.add($.__views.listTable);
+    exports.destroy = function() {};
+    _.extend($, $.__views);
+    arguments[0] || {};
+    var listTableData = [ {
+        title: "James"
+    }, {
+        title: "Amy"
+    } ];
+    $.listTable.setData(listTableData);
+    $.listTable.addEventListener("click", function(e) {
+        var win = Alloy.createController("detail").getView();
+        alert("detail" + e.index);
+        index.openWindow(win);
+    });
+>>>>>>> 1c8b4c774d930b55da82625131ec1ec3c7489025
     _.extend($, exports);
 }
 

@@ -1,7 +1,9 @@
 <Alloy>
 	<Window title="Import" backgroundColor="blue">
 		<View class="container">
-			<TableView id='importTable'></TableView>
+			<TableView id='importTable'>
+				<SearchBar hintText="Search" id="importSearch" showCancel="false" height="43" top="0" color='red' barColor='#ABC'/>
+			</TableView>
 		</View>
 	</Window>
 </Alloy>

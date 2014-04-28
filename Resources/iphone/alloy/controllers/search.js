@@ -11,10 +11,17 @@ function Controller() {
         id: "search"
     });
     $.__views.search && $.addTopLevelView($.__views.search);
+<<<<<<< HEAD
     $.__views.__alloyId38 = Ti.UI.createView({
         id: "__alloyId38"
     });
     $.__views.search.add($.__views.__alloyId38);
+=======
+    $.__views.__alloyId35 = Ti.UI.createView({
+        id: "__alloyId35"
+    });
+    $.__views.search.add($.__views.__alloyId35);
+>>>>>>> 1c8b4c774d930b55da82625131ec1ec3c7489025
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};

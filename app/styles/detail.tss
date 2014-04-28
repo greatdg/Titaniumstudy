@@ -2,3 +2,18 @@
 ".container" : {
   
 }
+
+"#titleTop" : {
+	left: '180',
+	top: '10',
+	color: '#FFF'
+}
+
+"#titleBottom" : {
+	left: '5',
+	top: '10',
+	color: '#FFF'
+}
+
+
+

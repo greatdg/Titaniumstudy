@@ -68,7 +68,27 @@ function Controller() {
         icon: "KS_nav_views.png",
         id: "__alloyId33"
     });
+<<<<<<< HEAD
     __alloyId20.push($.__views.__alloyId33);
+=======
+    __alloyId18.push($.__views.__alloyId28);
+    $.__views.__alloyId32 = Ti.UI.createWindow({
+        backgroundColor: "yellow",
+        id: "__alloyId32"
+    });
+    $.__views.__alloyId33 = Ti.UI.createLabel({
+        text: "asdf",
+        id: "__alloyId33"
+    });
+    $.__views.__alloyId32.add($.__views.__alloyId33);
+    $.__views.__alloyId31 = Ti.UI.createTab({
+        window: $.__views.__alloyId32,
+        title: "Settings",
+        icon: "KS_nav_views.png",
+        id: "__alloyId31"
+    });
+    __alloyId18.push($.__views.__alloyId31);
+>>>>>>> 1c8b4c774d930b55da82625131ec1ec3c7489025
     $.__views.index = Ti.UI.createTabGroup({
         tabs: __alloyId20,
         id: "index"

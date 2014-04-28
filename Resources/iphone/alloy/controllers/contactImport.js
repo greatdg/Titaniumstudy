@@ -15,8 +15,22 @@ function Controller() {
     $.__views.__alloyId18 = Ti.UI.createView({
         id: "__alloyId18"
     });
+<<<<<<< HEAD
     $.__views.contactImport.add($.__views.__alloyId18);
+=======
+    $.__views.contactImport.add($.__views.__alloyId16);
+    $.__views.importSearch = Ti.UI.createSearchBar({
+        hintText: "Search",
+        id: "importSearch",
+        showCancel: "false",
+        height: "43",
+        top: "0",
+        color: "red",
+        barColor: "#ABC"
+    });
+>>>>>>> 1c8b4c774d930b55da82625131ec1ec3c7489025
     $.__views.importTable = Ti.UI.createTableView({
+        search: $.__views.importSearch,
         id: "importTable"
     });
     $.__views.__alloyId18.add($.__views.importTable);

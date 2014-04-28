@@ -1,18 +1,10 @@
 <Alloy>
 	<Window backgroundColor="red" title='List'>
 	<View class="container">
-		<!-- <TableView id='listTable'></TableView> -->
-
-		<ImageView class="head" id="yellowHead" image="yellow.png">
-		</ImageView>		
-	
-	
-		<ImageView class="person" image="person.png">
-		</ImageView>
 		
-		<ImageView class="cloth" id="redCloth" onClick="click"  image="red.png">
-		</ImageView>
-		
+		<TableView id='listTable'>
+			<SearchBar hintText="Search" id="listSearch" showCancel="false" height="43" top="0" color='red' barColor='#ABC'/>
+			</TableView>
 	</View>
 	</Window>
 </Alloy>
