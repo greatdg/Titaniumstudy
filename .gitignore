@@ -1,6 +1,7 @@
 build/*
 build/*.*
 Resources/*
+Resources/*.*
 build/alloy/build.json
 build/alloy/global_style_cache.json
 build/appify/.npmignore
