@@ -14,21 +14,13 @@
 			<Require src="contactImport" />
 		</Tab>
 		<Tab title="Settings" icon="KS_nav_views.png">
-<<<<<<< HEAD
 			<Window>
 				<View></View>
 			</Window>
 		</Tab>
-=======
-			<Window backgroundColor="yellow">
-				<Label>asdf</Label>
-			</Window>
-		</Tab>
-		
 		<!-- <Tab title='Detail' icon="KS_nav_views.png">
 			<Require src="detail">
 		</Tab> -->
->>>>>>> 1c8b4c774d930b55da82625131ec1ec3c7489025
 	</TabGroup>
 	
 </Alloy>
