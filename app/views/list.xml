@@ -2,8 +2,9 @@
 	<Window backgroundColor="red" title='List'>
 	<View class="container">
 		
-		<TableView id='listTable'>
+		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction'>
 			<SearchBar hintText="Search" id="listSearch" showCancel="false" height="43" top="0" color='red' barColor='#ABC'/>
+			<TableViewRow title='{title}'>
 			</TableView>
 	</View>
 	</Window>
