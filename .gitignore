@@ -1,2 +1,5 @@
 build/
 Resources/
+app/controllers/index.js
+app/style/index.tss
+app/views/index.xml

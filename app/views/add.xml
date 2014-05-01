@@ -1,6 +1,11 @@
 <Alloy>
 	<Window>
-	<View class="container">
+	<View class="container" modal="true">
+
+		<View class="menuAddView">
+			<Button class="Button" onClick="closeWindow">Cancel</Button>	
+			<Button class="rightButton" onClick="addItem">ADD</Button>		
+		</View>
 		<View class="upperView">
 			<!-- <View class="emoticonView"> -->
 				<!-- emoticon area -->
@@ -12,30 +17,46 @@
 
 
 				<View class="rowPersonal">
-				<Label class="namePeresonal" text="Name"></Label>
-				<TextField id="nameAdd" value="John Dow"/>
+				<Label class="namePeresonal" text="Name "></Label>
+				<TextField id="nameAdd" hintText="John Dow"/>
 				</View>
 				
+
+				<View class="rowPersonal">
+				<Label class="genderPeresonal" text="Gendar "></Label>
+				<TextField id="genderAdd" hintText="Male"/>
+				</View>	
+	
 				
 				<View class="rowPersonal">
-				<Label class="bdayPeresonal" text="Birthday"></Label>
-				<TextField id="bdayAdd" value="04/07/1969"/>
+				<Label class="bdayPeresonal" text="Birthday "></Label>
+				<TextField id="bdayAdd" hintText="04/07/1969"/>
 				</View>			
 
+
 				<View class="rowPersonal">
-				<Label class="namePeresonal" text="Name"></Label>
-				<TextField id="nameAdd" value="John Dow"/>
+				<Label class="phonePeresonal" text="Phone "></Label>
+				<TextField id="phoneAdd" hintText="+6421 857700"/>
+				</View>
+
+
+				<View class="rowPersonal">
+				<Label class="addressPeresonal" text="Address "></Label>
+				<TextField id="addressAdd" hintText="4 March Place"/>
+				</View>
+
+
+				<View class="rowPersonal">
+				<Label class="address2Peresonal" text=""></Label>
+				<TextField id="address2Add" hintText="Belfast"/>
 				</View>
 
 				<View class="rowPersonal">
-				<Label class="genderPeresonal" text="Gendar"></Label>
-				<TextField id="genderAdd" value="Male"/>
+				<Label class="address3Peresonal" text=""></Label>
+				<TextField id="address3Add" hintText="Christchurch New Zealand"/>
 				</View>
 
-				<View class="rowPersonal">
-				<Label class="phonePeresonal" text="Phone Number"></Label>
-				<TextField id="phoneAdd" value="+64 21 85 7700"/>
-				</View>
+
 												
 			</View>			
 

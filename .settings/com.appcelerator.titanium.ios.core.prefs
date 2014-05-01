@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+iosLaunchConfigurationAttributes/ATTR_MINIFY=true
+iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=Titaniumstudy
+iosLaunchConfigurationAttributes/appid=damate.com
+iosLaunchConfigurationAttributes/certificate=James Shin (62922728ZV)
+iosLaunchConfigurationAttributes/keychain=
+iosLaunchConfigurationAttributes/sdk_version=7.1
+iosLaunchConfigurationAttributes/uuid=99EA55EB-1F11-4EA5-B82D-DA8DE2733358
+provisioning_profiles/development/99EA55EB-1F11-4EA5-B82D-DA8DE2733358/appid=*
+provisioning_profiles/development/99EA55EB-1F11-4EA5-B82D-DA8DE2733358/name=iOS Team Provisioning Profile\: *
+provisioning_profiles/development/99EA55EB-1F11-4EA5-B82D-DA8DE2733358/uuid=99EA55EB-1F11-4EA5-B82D-DA8DE2733358
