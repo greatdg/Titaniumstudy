@@ -2,9 +2,9 @@
 	<Window backgroundColor="red" title='List'>
 	<View class="container">
 		
-		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction'>
+		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable=true>
 			<SearchBar hintText="Search" id="listSearch" showCancel="false" height="43" top="0" color='red' barColor='#ABC'/>
-			<TableViewRow title='{title}'>
+			<TableViewRow title='{title}' alloy_id='{alloy_id}'>
 			</TableView>
 	</View>
 	</Window>

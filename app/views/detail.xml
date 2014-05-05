@@ -10,17 +10,17 @@
 
 
 				<Label id="titleTop">name</Label>
-				<Label id="name" left='180'>James Shin</Label>
-				<Label id="titleTop">age</Label>
-				<Label id="age" left='180'>25</Label>
+				<Label id="name" left='180' text='James'></Label>
+				<Label id="titleTop">birthday</Label>
+				<Label id="birthday" left='180' text='25'></Label>
 				<Label id="titleTop">gender</Label>
 				<Label id="gender" left='180'>Male</Label>
 				<Label id="titleTop">phone number</Label>
-				<Label id="phone" left='180'>+64 21 123 4567</Label>
+				<Label id="phoneNumber" left='180'>+64 21 123 4567</Label>
 				<Label id="titleBottom">address</Label>
-				<Label id="address" left='5'> 123 James Street, Riccarton, Christchurch</Label>
-				<Label id="titleBottom">relationship</Label>
-				<Label id="relationship" left='5'>relationship</Label>
+				<Label id="address" left='5'></Label>
+				<Label id="titleBottom">job</Label>
+				<Label id="job" left='5'></Label>
 				<Label id="titleBottom">email</Label>
 				<Label id="email" left='5'>james@jamesshine.com</Label>
 
