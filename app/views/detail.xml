@@ -1,11 +1,17 @@
 <Alloy>
-	<Window title="Detail" backgroundColor="gray" >
+	
+	<Window title="Detail" backgroundColor="gray">
+		<RightNavButton>
+			<Button title="Edit" id="buttonEdit" onClick="clickEdit">
+		</RightNavButton>
 
 				<ImageView id='imageBody' image="body.png" width="150" height="50" left='15' top='150'/>
 				<ImageView id='imageFace' image="face.png" width="120" height="150" left='25' top='15'/>
 				<ImageView id='imageHair' image="hair.png" width="130" height="30" left='20' top='15'/>
-
-
+				<ImageView id='imageCloth' image='cloth.png' />
+				<ImageView id='imageGlasses' image='glasses.png' />
+				<ImageView id='imageEye' image='eye.png' />
+				
 		<ScrollView class='detailLabels' layout="vertical">
 
 

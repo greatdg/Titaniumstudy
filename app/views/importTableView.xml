@@ -1,0 +1,6 @@
+<Alloy>
+	<TableViewRow class="container">
+		<Button id='checkbox' class="checkbox" title="\u2713" onClick='checkClick'></Button>
+		<Label id='importTableRow' ></Label>
+	</TableViewRow>
+</Alloy>

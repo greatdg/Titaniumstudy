@@ -6,11 +6,13 @@ var alloyId = args.alloyId;
 
 var personalData = people.get(alloyId).toJSON();
 
-//alert(personalData.name);
-Ti.API.debug(personalData);
+//Ti.API.debug(personalData);
 
-$.imageFace.hide();
+$.imageGlasses.hide();
 
+
+
+//--------set text data on the detail page--------//
 $.name.setText(personalData.name);
 $.birthday.setText(personalData.birthday);
 $.gender.setText(personalData.gender);
@@ -18,11 +20,27 @@ $.phoneNumber.setText(personalData.phoneNumber);
 $.address.setText(personalData.address);
 $.job.setText(personalData.job);
 
-if(personalData.gender==='male'){
-	
-	$.imageFace.show();//set face
-}else if(personalData.gender==='female'){
-	
-}else{
-	
-}
+
+
+//--------set image data on the detail page--------//
+$.imageHair.image = personalData.hairstyle + "_" + personalData.hairColor + ".png";
+$.imageEye.image = personalData.eyeColor;
+$.imageFace.image = personalData.bodyShape + "_" + personalData.skinColor;
+$.imageCloth.image = personalData.cloth;
+
+if(personalData.glasses===1){
+	$.imageGlasses.show();
+};
+
+
+
+
+
+var clickEdit = function(e){
+		var win = Alloy.createController('add',{
+		personalData: personalData
+		
+		
+	}).getView();
+	Alloy.Globals.activeTab.openWindow(win);
+};

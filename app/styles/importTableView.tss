@@ -1,0 +1,8 @@
+
+".container" : {
+  layout:'horizontal'
+}
+".checkbox" : {
+	sytle: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+	color: 'red'	
+}
