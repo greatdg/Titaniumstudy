@@ -4,5 +4,5 @@
 }
 ".checkbox" : {
 	sytle: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
-	color: 'red'	
+	color: 'gray'	
 }

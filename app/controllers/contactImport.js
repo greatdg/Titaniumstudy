@@ -4,9 +4,11 @@ var importTableData = [{title: 'John'}, {title: 'Mary'}];
 
 // $.importTable.setData(importTableData);
 
+var data = [];
+
 var performAddressBookFunction = function(){
 	var contacts = Ti.Contacts.getAllPeople();
-    var data = [];
+    
     for (var i = 0; i < contacts.length; i++) {
         var title = contacts[i].fullName;
         if (!title || title.length === 0) {
@@ -20,8 +22,9 @@ var performAddressBookFunction = function(){
     $.importTable.data = data;
 };
 var addressBookDisallowed = function(){
-	alert('test12222asdfdaf')
+	alert('test12222asdfdaf');
 };
+
 if (Ti.Contacts.contactsAuthorization == Ti.Contacts.AUTHORIZATION_AUTHORIZED){
     performAddressBookFunction();
 } else if (Ti.Contacts.contactsAuthorization == Ti.Contacts.AUTHORIZATION_UNKNOWN){
@@ -35,3 +38,62 @@ if (Ti.Contacts.contactsAuthorization == Ti.Contacts.AUTHORIZATION_AUTHORIZED){
 } else {
     addressBookDisallowed();
 }
+
+
+var clickImportDone = function(e){
+	
+		var importData = $.importTable.getData();
+		for(var i=0;i<importData.length;i++) {
+			var section = importData[i];
+			for(var j=0;j<section.rowCount;j++) {
+				var row = section.rows[j];
+				if(row.importCheck===true){
+					Ti.API.debug(row);
+					var people = Alloy.Collections.people;
+					var detailInfo = Alloy.createModel("people",{
+					name: row.firstName 
+					// gender:$.genderAdd.value,
+					// birthday:$.bdayAdd.value,
+					// address:$.addressAdd.value,
+					// job:$.nameAdd.value,	
+					// custom:	$.nameAdd.value,
+// 
+					// hairStyle:$.hairStyle.value,	
+					// hairColor:$.hairColor.value,
+// 					
+					// skinColor:$.skinColor.value,	
+					// faceShape:$.faceShape.value,							
+					// eyeShape:$.eyeShape.value,		
+// 					
+					// extraGlassess:$.extraGlasses.value,	
+					// extraMustache:$.extraMustache.value,
+					// extraExtra:$.extraExtra.value,		
+					});
+// 			 		
+				  detailInfo.save();
+				  people.add(detailInfo);
+			
+					}
+
+				}
+
+				
+			}
+				
+
+
+};
+
+var clickImportCancel = function(e){
+	//alert('pushed Cancel');
+	var importData = $.importTable.getData();
+	for(var i=0;i<importData.length;i++) {
+		var section = importData[i];
+		for(var j=0;j<section.rowCount;j++) {
+			var row = section.rows[j];
+			if(row.importCheck===true){
+				row.importCheck=false;
+			};			
+		};
+	};
+};

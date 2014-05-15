@@ -1,5 +1,7 @@
 <Alloy>
-	<TableViewRow class="container">
+
+
+	<TableViewRow class="container" importCheck='false' height='45'>
 		<Button id='checkbox' class="checkbox" title="\u2713" onClick='checkClick'></Button>
 		<Label id='importTableRow' ></Label>
 	</TableViewRow>

@@ -182,5 +182,5 @@ function closeWindow(){
 	$.address2Add.blur();
 	$.address3Add.blur();
 
-	Alloy.Globals.tabGroup.setActiveTab(0);
+	Alloy.Globals.TabGroup.setActiveTab(0);
 }
