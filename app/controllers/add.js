@@ -7,8 +7,8 @@ $.addWin.addEventListener("focus",function(e){
 
 
 	$.addressAdd.value="";
-	// $.job.value="";	
-	// $custom.value="";
+	$.jobAdd.value="";	
+	$.customAdd.value="";
 
 	$.hairStyle.value="default";	
 	$.hairColor.value="default";	
@@ -26,30 +26,33 @@ $.addWin.addEventListener("focus",function(e){
 });
 
 function addItem(){
-	var people = Alloy.Collections.people;
-	var detailInfo = Alloy.createModel("people",{
-		name:$.nameAdd.value,
-		gender:$.genderAdd.value,
-		birthday:$.bdayAdd.value,
-		address:$.addressAdd.value,
-		job:$.nameAdd.value,	
-		custom:	$.nameAdd.value,
-
-		hairStyle:$.hairStyle.value,	
-		hairColor:$.hairColor.value,
-		
-		skinColor:$.skinColor.value,	
-		faceShape:$.faceShape.value,							
-		eyeShape:$.eyeShape.value,		
-		
-		extraGlassess:$.extraGlasses.value,	
-		extraMustache:$.extraMustache.value,
-		extraExtra:$.extraExtra.value,		
-	});
-		
-	detailInfo.save();
-	people.add(detailInfo);
-	closeWindow();
+	if($.nameAdd.value!=""){
+		var people = Alloy.Collections.people;
+		var detailInfo = Alloy.createModel("people",{
+			name:$.nameAdd.value,
+			gender:$.genderAdd.value,
+			birthday:$.bdayAdd.value,
+			address:$.addressAdd.value,
+			job:$.nameAdd.value,	
+			custom:	$.customAdd.value,
+	
+			hairStyle:$.hairStyle.value,	
+			hairColor:$.hairColor.value,
+			
+			skinColor:$.skinColor.value,	
+			faceShape:$.faceShape.value,							
+			eyeShape:$.eyeShape.value,		
+			
+			extraGlassess:$.extraGlasses.value,	
+			extraMustache:$.extraMustache.value,
+			extraExtra:$.extraExtra.value,		
+		});
+			
+		detailInfo.save();
+		people.add(detailInfo);
+		closeWindow();
+	}
+	else { alert("Please input name")};
 };
 
 $.genderAdd.addEventListener("click",function(e){
@@ -57,7 +60,8 @@ $.genderAdd.addEventListener("click",function(e){
 	$.phoneAdd.blur();
 	$.addressAdd.blur();
 	$.address2Add.blur();
-	$.viewGenderPicker.visible=true;
+	$.viewGenderPicker.visible="true";
+	$.lowerView.visible="false";	
 	$.done.visible="true";
 });
 
@@ -65,68 +69,53 @@ $.genderPicker.addEventListener('change', function(e) {
 	$.genderAdd.value = e.selectedValue[0];
 });
 
-$.genderPicker.addEventListener('change', function(e) {
-	$.genderAdd.value = e.selectedValue[0];
-});
-
-$.genderPicker.addEventListener('change', function(e) {
-	$.genderAdd.value = e.selectedValue[0];
-});
 
 $.done.addEventListener("click",function(e){
-	$.viewGenderPicker.visible=false;	
-	$.done.visible=false;	
+	$.lowerView.visible="true";	
+	$.viewGenderPicker.visible="false";	
+	$.done.visible="false";	
 });
+
 
 
 // Image editing follows
 
 $.btn_imageEdit.addEventListener("click",function(e){
-	$.viewImageEditCategory.visible=true;	
-	$.btn_faceEditCategory.visible=true;	
-	$.btn_hairEditCategory.visible=true;	
-	$.btn_extraEditCategory.visible=true;	
-	$.btn_doneEdit.visible=true;
-	$.btn_imageEdit.visible=false;
+	$.viewImageEditCategory.visible="true";	
+	$.faceImagePicker.visible="true";
 });
 
 $.btn_doneEdit.addEventListener("click",function(e){
-	$.viewImageEditCategory.visible=false;	
-	$.btn_faceEditCategory.visible=false;	
-	$.btn_hairEditCategory.visible=false;	
-	$.btn_extraEditCategory.visible=false;	
+	$.viewImageEditCategory.visible="false";	
 	closePickers();
-	$.btn_imageEdit.visible=true;
-	
-	changePic();
-
+	$.btn_imageEdit.visible="true";
 });
 
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;		
-	
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;			
 }
 
 
 function closePickers(){
-	$.faceImagePicker.visible=false;
-	$.hairImagePicker.visible=false;
-	$.extraImagePicker.visible=false;							
+	$.faceImagePicker.visible="false";
+	$.hairImagePicker.visible="false";
+	$.extraImagePicker.visible="false";							
 }
 
 // Face Choice
 
 $.btn_faceEditCategory.addEventListener("click",function(e){
 	closePickers();
-	$.faceImagePicker.visible=true;	
+	$.faceImagePicker.visible="true";	
 });
 
 $.faceImagePicker.addEventListener('change', function(e) {
 	$.skinColor.value = e.selectedValue[0];
 	$.faceShape.value = e.selectedValue[1];
-	$.eyeShape.value = e.selectedValue[2];					
+	$.eyeShape.value = e.selectedValue[2];	
+	changePic();			
 });
 
 
@@ -135,52 +124,60 @@ $.faceImagePicker.addEventListener('change', function(e) {
 
 $.btn_hairEditCategory.addEventListener("click",function(e){
 	closePickers();	
-	$.hairImagePicker.visible=true;	
+	$.hairImagePicker.visible="true";	
 });
 
 $.hairImagePicker.addEventListener('change', function(e) {
 	$.hairStyle.value = e.selectedValue[0];
 	$.hairColor.value = e.selectedValue[1];	
+	changePic();
 });
-
 
 
 // Extra Choice
 
 $.btn_extraEditCategory.addEventListener("click",function(e){
 	closePickers();
-	$.extraImagePicker.visible=true;	
+	$.extraImagePicker.visible="true";	
 });
 
 $.extraImagePicker.addEventListener('change', function(e) {
 	$.extraGlasses.value = e.selectedValue[0];
 	$.extraMustache.value = e.selectedValue[1];
-	$.extraExtra.value = e.selectedValue[2];		
+	$.extraExtra.value = e.selectedValue[2];
+	changePic();			
 });
 
 
-// done button for each picker : can be deleted 
+$.btn_addMore.addEventListener("click",function(e){	
+	$.scrollView.visible="false";		
+	$.customAddView.visible="true";
+	$.customAddCategory.value="";
+	$.customAddContent.value="";	
+});	
+	
 
-
-$.btn_faceEdit.addEventListener("click",function(e){
-	closePickers();		
-});
-
-$.btn_hairEdit.addEventListener("click",function(e){
-	closePickers();
-});
-
-$.btn_extraEdit.addEventListener("click",function(e){
-	closePickers();	
+$.doneCustomAdd.addEventListener("click",function(e){
+	if($.customAddCategory.value !==""){
+		$.customAdd.value=$.customAdd.value+"!@#"+ $.customAddCategory.value + "$%^" + $.customAddContent.value;
+		alert($.customAdd.value);
+		alert($.customAdd.value.substring(3,7));
+		$.customAddView.visible="false";	
+		$.scrollView.visible="true";	
+	}
+		else{
+			alert("Please input category title");
+		}		
 });
 
 
 function closeWindow(){
-	$.nameAdd.blur();
-	$.phoneAdd.blur();
-	$.addressAdd.blur();
-	$.address2Add.blur();
-	$.address3Add.blur();
+	// $.nameAdd.blur();
+	// $.phoneAdd.blur();
+	// $.addressAdd.blur();
+	// $.address2Add.blur();
+	// $.address3Add.blur();
 
 	Alloy.Globals.TabGroup.setActiveTab(0);
 }
+
