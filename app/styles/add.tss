@@ -17,7 +17,7 @@
 
 ".addView":{
 	width:"100%",
-	heught:"100%",
+	// heught:"100%",
 },
 
 
@@ -97,6 +97,19 @@
 	layout:"vertical",
 	width:"100%",
 },
+
+
+".bottomView":{
+	left:0,
+	layout:"vertical",
+	width:"100%",
+},
+
+
+
+
+
+
 
 "#customAddView":{
 	backgroundColor:"white", 

@@ -7,6 +7,7 @@
 		<Button class="Button" onClick="closeWindow">Cancel</Button>	
 		<Button class="rightButton" onClick="addItem">ADD</Button>		
 	</View>		
+	
 	<View id="addView" top="30">
 	<ScrollView id="scrollView" width="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
 	<View  class="container" >
@@ -27,9 +28,7 @@
 									
 			 		<Button id="btn_imageEdit" backgroundImage="editIcon.png" top=100 left=90 />							
 				</ImageView>			
-				
-				
-					
+							
 													
 			<!-- </View> -->
 			<View class="personalView">
@@ -83,30 +82,21 @@
 				</View>
 				
 	// Additional custom category ???		
-				<View class="rowAdditional">
-				<Label class="titleAdditional" text="  Title"></Label>
-				<TextField class="inputBox" id="addtionalValue" value="Wine"/>			
-				</View>		
-				<View class="rowAdditional">
+
+				<View class="rowAdditional" visible="false">
 				<Label class="titleAdditional" text="  Custom"></Label>
 				<TextField class="inputBox" id="customAdd" value=""/>			
-				</View>		
-
-				<View class="rowAdditional"/>
-								
-				<View class="rowAdditional">
-				<Button id="btn_addMore" backgroundColor="blue" title="Add More" left="10" />	
-				</View>	
-
-					
-				<View class="rowAdditional"/>
-				<View class="rowAdditional"/>				
-				<View class="rowAdditional"/>
-											
+				</View>						
 	</View>	
-	
-		
+
 	</ScrollView>
+
+		<View id="bottomView" backgroundColor="pink" class="bottomView" top="300" left="250" height="30" width="70">												
+
+				<Button id="btn_addMore" backgroundColor="blue" title="Add More" left="0" />	
+		</View>		
+
+
 	
 	</View>	
 	
