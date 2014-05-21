@@ -15,7 +15,9 @@ var performAddressBookFunction = function(){
             title = "(no name)";
         }
         var row = Alloy.createController('importTableView',{
-        	title: title
+        	title: title,
+        	address: contacts[i].address
+        	
         }).getView();
     	data.push(row);
     }
@@ -47,11 +49,12 @@ var clickImportDone = function(e){
 			var section = importData[i];
 			for(var j=0;j<section.rowCount;j++) {
 				var row = section.rows[j];
-				if(row.importCheck===true){
-					Ti.API.debug(row);
+				
+				if(row.children[0].checkBtn==='true'){
+					//Ti.API.debug(row.children);
 					var people = Alloy.Collections.people;
 					var detailInfo = Alloy.createModel("people",{
-					name: row.firstName 
+					name: row.children[1].text 
 					// gender:$.genderAdd.value,
 					// birthday:$.bdayAdd.value,
 					// address:$.addressAdd.value,
@@ -80,20 +83,33 @@ var clickImportDone = function(e){
 				
 			}
 				
-
-
+		
+	for(var i=0;i<importData.length;i++) {
+		var section = importData[i];
+		
+		for(var j=0;j<section.rowCount;j++) {	
+			var row = section.rows[j];
+			//Ti.API.debug(row.children[0]);
+			row.children[0].color='gray';
+			row.children[0].checkBtn='false';
+			
+		};
+	};
 };
 
 var clickImportCancel = function(e){
-	//alert('pushed Cancel');
+	// alert('pushed Cancel');
 	var importData = $.importTable.getData();
 	for(var i=0;i<importData.length;i++) {
 		var section = importData[i];
-		for(var j=0;j<section.rowCount;j++) {
+		
+		for(var j=0;j<section.rowCount;j++) {	
 			var row = section.rows[j];
-			if(row.importCheck===true){
-				row.importCheck=false;
-			};			
+			//Ti.API.debug(row.children[0]);
+			row.children[0].color='gray';
+			row.children[0].checkBtn='false';
+			
 		};
 	};
+	
 };

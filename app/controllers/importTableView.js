@@ -1,20 +1,20 @@
 var args = arguments[0] || {};
 
 var title = args.title;
+var address = args.address;
 
 $.importTableRow.text = title;
 
 
-var checkBtn = false;
-//Alloy.Globals.checkArry = [];
 
 var checkClick = function(e){
-	checkBtn =! checkBtn;
-	$.importTableView.importCheck = checkBtn;
-	if(checkBtn===true){
-		$.checkbox.color = 'blue';
-		
-	}else{
+	//Ti.API.debug(e);
+	if(this.checkBtn=='true'){
 		$.checkbox.color = 'gray';
+		this.checkBtn = 'false';
+			
+	}else{
+		this.checkBtn = 'true';		
+		$.checkbox.color = 'red';
 	};
 };
