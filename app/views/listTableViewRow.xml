@@ -1,0 +1,6 @@
+<Alloy>
+	<TableViewRow class="container" height='45'>
+		<ImageView>'default_default_default.png'</ImageView>
+		<Label id='listTableRow' ></Label>
+	</TableViewRow>
+</Alloy>
