@@ -1,6 +1,10 @@
 <Alloy>
 	<Window>
-		<View class="container">
+		<View class="container" layout="vertical">
+			<View id="firstMenu" layout="horizontal">
+				<Button title="By Name"/>
+				<Button title="By Text"/>		
+			</View>
 		</View>
 	</Window>
 </Alloy>

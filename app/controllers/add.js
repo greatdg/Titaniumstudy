@@ -1,11 +1,18 @@
 var args = arguments[0] || {};
+var customAddNumber=1 ;
+
+// var field=Alloy.createController("customfield",{
+	// name:"",
+	// field:"",	
+	// }).getView();	
+// 			
+	// $.lowerView.add(field);
 
 
 $.addWin.addEventListener("focus",function(e){
 	$.nameAdd.value="";
 	$.genderAdd.value="";	
 	$.bdayAdd.value="";
-
 
 	$.addressAdd.value="";
 	$.jobAdd.value="";	
@@ -25,7 +32,6 @@ $.addWin.addEventListener("focus",function(e){
 	changePic();
 		
 });
-
 
 function addItem(){
 	if($.nameAdd.value!=""){
@@ -156,53 +162,49 @@ $.btn_addMore.addEventListener("click",function(e){
 	$.customAddView.visible="true";
 	$.customAddCategory.value="";
 	$.customAddContent.value="";	
+
+	// var elements = $.lowerView.getChildren();
+	// Ti.API.info(elements);
+	//$.lowerView.remove(field);	
+	
+	
+	
+	
+	
 });	
 	
 
 $.doneCustomAdd.addEventListener("click",function(e){
 	if($.customAddCategory.value !==""){
-		$.customAdd.value=$.customAdd.value+"!@#"+ $.customAddCategory.value + "$%^" + $.customAddContent.value;
-		alert("wow");
-		alert($.customAdd.value.substring(3,7));
+		$.customAdd.value=$.customAdd.value+ $.customAddCategory.value + "&&" + $.customAddContent.value + "##" ;
+
+		$.customAddCategory.blur();
+		$.customAddContent.blur();
+		//	alert($.customAdd.value);
+
+		var title = $.customAddCategory.value,
+			content = $.customAddContent.value;
+		
+		
+		var field=Alloy.createController("customfield",{
+			name:title,
+			field:content,	
+		}).getView();	
+			
+			$.lowerView.add(field);
+
 		$.customAddView.visible="false";	
 		$.scrollView.visible="true";	
+
+
 	}
 		else{
-			alert("Please input category title");
+			// alert("Please input category title");
+			$.customAddView.visible="false";	
+			$.scrollView.visible="true";	
+			
 		}		
 });
-
-var field=Alloy.createController("customfield",{
-	name:"name",
-	field:"fieldvalue",	
-}).getView();
-
-$.lowerView.add(field);
-
-
-
-
-
-// var win = Ti.UI.createWindow();
-// var view1 = $.addView;
-// var view2 = field;
-// var scrollableView = Ti.UI.createScrollableView({
-  // views:[view1,view2],
-  // showPagingControl:true
-// });
-// 
-// $.addWin.add(scrollableView);
-// 
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -101,8 +101,10 @@
 	</View>	
 	
 	<View id="customAddView" visible="false">
-		<Button id="doneCustomAdd" backgroundColor="red" title="done" />
+
 		<!-- <Label id="customAdd" visible="false" value=""></Label>	 -->
+		<View class="rowAdditional" />	
+		
 		<View class="rowAdditional">
 		<Label class="titleAdditional" text="  Category"></Label>	
 		<TextField class="inputBox" id="customAddCategory" hintText="Title"/>			
@@ -110,7 +112,9 @@
 		<View class="rowAdditional">
 		<Label class="titleAdditional" text="  Contents"></Label>	
 		<TextField class="inputBox" id="customAddContent" hintText="Contents"/>			
-		</View>					
+		</View>			
+		
+		<Button id="doneCustomAdd" top="10" backgroundColor="red" title="done" />		
 	</View>
 	
 	

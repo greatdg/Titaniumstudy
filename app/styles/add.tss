@@ -100,22 +100,17 @@
 
 
 ".bottomView":{
-	left:0,
+	left:"0",
 	layout:"vertical",
 	width:"100%",
 },
-
-
-
-
-
 
 
 "#customAddView":{
 	backgroundColor:"white", 
 	layout:"vertical",
 	width:"100%",
-	top:0,
+	top:"0",
 	left:"0",
 	height:"100%",
 	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
@@ -123,10 +118,10 @@
 
 
 ".rowAdditional":{
-	left:0,
+	left:"0",
 	// backgroundColor:"pink",
 	layout:"horizontal",
-	height:40,
+	height:"40",
 	width:"100%",
 },
 
