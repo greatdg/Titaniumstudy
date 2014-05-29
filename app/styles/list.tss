@@ -34,6 +34,11 @@
 	fontSize:5,
 	width:"15%",
 	height:40,	
+},
+
+".listList":{
+	left: 70,
+	layout: 'vertical',
 }
 
 

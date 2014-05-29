@@ -4,6 +4,7 @@ var importTableData = [{title: 'John'}, {title: 'Mary'}];
 
 // $.importTable.setData(importTableData);
 
+
 var data = [];
 
 var performAddressBookFunction = function(){
@@ -50,6 +51,7 @@ var clickImportDone = function(e){
 			for(var j=0;j<section.rowCount;j++) {
 				var row = section.rows[j];
 				
+				
 				if(row.children[0].checkBtn==='true'){
 					//Ti.API.debug(row.children);
 					var people = Alloy.Collections.people;
@@ -70,12 +72,13 @@ var clickImportDone = function(e){
 // 					
 					// extraGlassess:$.extraGlasses.value,	
 					// extraMustache:$.extraMustache.value,
-					// extraExtra:$.extraExtra.value,		
+					// extraExtra:$.extraExtra.value,
+							
 					});
 // 			 		
 				  detailInfo.save();
 				  people.add(detailInfo);
-			
+				 					
 					}
 
 				}
@@ -97,9 +100,15 @@ var clickImportDone = function(e){
 	};
 };
 
-var clickImportCancel = function(e){
-	// alert('pushed Cancel');
-	var importData = $.importTable.getData();
+
+
+var buttonImportCancel = Ti.UI.createButton({
+	title: 'Cancel',
+	color: 'red',
+});
+
+buttonImportCancel.addEventListener('click', function(e){
+		var importData = $.importTable.getData();
 	for(var i=0;i<importData.length;i++) {
 		var section = importData[i];
 		
@@ -111,5 +120,39 @@ var clickImportCancel = function(e){
 			
 		};
 	};
+	$.contactImport.leftNavButton = null;
+});
+		// <LeftNavButton>
+			// <Button title="Cancel" id="buttonImportCancel" onClick="clickImportCancel">
+		// </LeftNavButton>
+// 		
+// 		
+$.contactImport.leftNavButton = null;
+
+$.importTable.addEventListener('click',function(e){
+	var importData = $.importTable.getData();
+	var isChecked = false;
+	
+for(var i=0;i<importData.length;i++) {
+	var section = importData[i];
+					
+	for(var j=0;j<section.rowCount;j++) {	
+		var row = section.rows[j];		
+		if(row.children[0].checkBtn==='true'){
+			 isChecked = true;
+			 break;
+		};
+	};
+	if( isChecked == true ) {
+		$.contactImport.leftNavButton=buttonImportCancel;	
+	} else {
+		$.contactImport.leftNavButton=null;
+	}
 	
 };
+});
+
+
+
+
+

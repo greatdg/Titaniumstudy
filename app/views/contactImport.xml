@@ -5,13 +5,9 @@
 			<Button title="Done" id="buttonImportDone" onClick="clickImportDone">
 		</RightNavButton>
 		
-		<LeftNavButton>
-			<Button title="Cancel" id="buttonImportCancel" onClick="clickImportCancel">
-		</LeftNavButton>
-		
 		<View class="container">
 			<TableView id='importTable'>
-				<SearchBar hintText="Search" id="importSearch" showCancel="false" height="43" top="0" color='red' barColor='#ABC'/>
+				<SearchBar hintText="Search" id="importSearch" showCancel="false" height="43" top="0" barColor='#FFF'/>
 				
 			</TableView>
 		</View>

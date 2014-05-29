@@ -4,7 +4,11 @@
 		
 		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable=true>
 			<SearchBar hintText="Search" id="listSearch" showCancel="false" height="43" top="0" color='red' barColor='#ABC'/>
-			<TableViewRow title='{title}' alloy_id='{alloy_id}'>
+			<TableViewRow alloy_id='{alloy_id}' height='55'>
+				<ImageView image="default_default_default.png" width='50' height='50' left="10" />
+				<Label id='listList' text='{title}' class='listList'></Label>
+				</TableViewRow>
+				
 			</TableView>
 	</View>
 	</Window>

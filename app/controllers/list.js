@@ -3,24 +3,29 @@ var people = Alloy.Collections.people;
 
 people.fetch();
 
+//alert(people.length);
+
 function transformfunction(item) {
 	var item = item.toJSON();
 	item.title = item.name;
 	return item;
-}
+	//$.listList.text = item.name;
+};
 
 
-// var listTableData = [{title: 'James'}, {title: 'Amy'}];
+// var data = [];
+// 
+// var row = Alloy.createController('listTableViewRow').getView();
+    	// data.push(row);
+// $.listTable.data = data;
 
-// $.listTable.setData(listTableData);	
+
 	
 $.listTable.addEventListener('click',function(e){
 	var win = Alloy.createController('detail',{
 		alloyId: e.row.alloy_id
 	}).getView();
-	//alert(e.index)
-	
-	//Ti.API.debug(name);
+
 	Alloy.Globals.activeTab.openWindow(win);
 
  });
