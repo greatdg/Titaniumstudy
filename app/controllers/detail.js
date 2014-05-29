@@ -4,16 +4,25 @@ var people = Alloy.Collections.people;
 var alloyId = args.alloyId;
 //var personalData = people.get(alloyId).get("birthday");
 
-var personalData = people.get(alloyId).toJSON();
+
 
 //Ti.API.debug(personalData);
+// $.detailWin.addEventListener('focus', function(e){
+// 
+// });
 
 $.imageGlasses.hide();
 
+Titanium.App.addEventListener('doneEdit', function(e){
+	Ti.API.debug(alloyId);
+	personalDetail(alloyId);
 
+});
 
 //--------set text data on the detail page--------//
-$.name.setText(personalData.name);
+var personalDetail = function(id){
+	var personalData = people.get(id).toJSON();
+	$.name.setText(personalData.name);
 $.birthday.setText(personalData.birthday);
 $.gender.setText(personalData.gender);
 $.phoneNumber.setText(personalData.phoneNumber);
@@ -31,16 +40,17 @@ $.imageCloth.image = personalData.cloth;
 if(personalData.glasses===1){
 	$.imageGlasses.show();
 };
+};
+
+personalDetail(alloyId);
 
 
 
 
 
 var clickEdit = function(e){
-		var win = Alloy.createController('add',{
-		personalData: personalData
-		
-		
+		var win = Alloy.createController('detailEdit',{
+		alloyId: alloyId
 	}).getView();
 	Alloy.Globals.activeTab.openWindow(win);
 };
