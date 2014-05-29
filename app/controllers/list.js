@@ -12,6 +12,9 @@ function transformfunction(item) {
 	//$.listList.text = item.name;
 };
 
+$.listWin.addEventListener('focus', function(e){
+	people.fetch();
+});
 
 // var data = [];
 // 

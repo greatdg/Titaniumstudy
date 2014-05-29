@@ -1,5 +1,5 @@
 <Alloy>
-	<Window backgroundColor="red" title='List'>
+	<Window backgroundColor="red" title='List' id='listWin'>
 	<View class="container">
 		
 		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable=true>
