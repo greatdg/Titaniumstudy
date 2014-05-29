@@ -1,14 +1,17 @@
 <Alloy>
 	<Window id="addWin" title = "Add Item" modal="true">	
 
+		<RightNavButton title ="Add" text="Add" >
 
-
-	<View class="menuAddView" >
-		<Button class="Button" onClick="closeWindow">Cancel</Button>	
-		<Button class="rightButton" onClick="addItem">ADD</Button>		
-	</View>		
+			<Button title="Add" onClick="addItemDone"/>
+		</RightNavButton>
+		
+		<LeftNavButton>
+			<Button title="Cancel" onClick="cancleAdd"/>
+		</LeftNavButton>
+		
 	
-	<View id="addView" top="30">
+	<View id="addView" top="2">
 	<ScrollView id="scrollView" width="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
 	<View  class="container" >
 
@@ -151,8 +154,6 @@
 					<Label id="picExtraName" color="white" top=90 text="extraName" visible="true"></Label>										
 																
 				</ImageView>			
-				
-
 
 			<Button id="btn_faceEditCategory" backgroundColor="pink" title = "Face" top=100 />
 			<Button id="btn_hairEditCategory" backgroundColor="green" title = "Hair" top=100 />
