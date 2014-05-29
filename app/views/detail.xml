@@ -1,6 +1,6 @@
 <Alloy>
 	
-	<Window title="Detail" backgroundColor="gray">
+	<Window id='detailWin' title="Detail" backgroundColor="gray">
 		<RightNavButton>
 			<Button title="Edit" id="buttonEdit" onClick="clickEdit">
 		</RightNavButton>

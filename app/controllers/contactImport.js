@@ -43,6 +43,15 @@ if (Ti.Contacts.contactsAuthorization == Ti.Contacts.AUTHORIZATION_AUTHORIZED){
 }
 
 
+
+var buttonImportCancel = Ti.UI.createButton({
+	title: 'Cancel',
+	color: 'red',
+});
+
+$.contactImport.leftNavButton = null;
+
+
 var clickImportDone = function(e){
 	
 		var importData = $.importTable.getData();
@@ -98,14 +107,13 @@ var clickImportDone = function(e){
 			
 		};
 	};
+	
+	$.contactImport.leftNavButton = null;
 };
 
 
 
-var buttonImportCancel = Ti.UI.createButton({
-	title: 'Cancel',
-	color: 'red',
-});
+
 
 buttonImportCancel.addEventListener('click', function(e){
 		var importData = $.importTable.getData();
@@ -127,7 +135,7 @@ buttonImportCancel.addEventListener('click', function(e){
 		// </LeftNavButton>
 // 		
 // 		
-$.contactImport.leftNavButton = null;
+
 
 $.importTable.addEventListener('click',function(e){
 	var importData = $.importTable.getData();
