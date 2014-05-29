@@ -1,10 +1,109 @@
 <Alloy>
-	<Window>
-		<View class="container" layout="vertical">
-			<View id="firstMenu" layout="horizontal">
-				<Button title="By Name"/>
-				<Button title="By Text"/>		
+	<Window title="Search">
+		<View class="container" layout="vertical" bacgroundColor="blue">
+			<View class="firstMenu" layout="horizontal"width="100%">
+				<Button id="btn_Appearance" title="  By Appearance  "/>
+				<Button id="btn_byText" title="By Text"/>	
+			</View>	
+			
+			<View id="byTextView" visible="false" height="200" layout="vertical">
+				<Label top="30" left="30" width="100%" text="Word?"/>
+				<TextField id="searchTextInput" left="30" width="70%" backgroundColor="white" hintText="red wine"/>
+				<Button id="btn_byTextSearch" title="Search"top="30" />
+			
 			</View>
+					
+			<View id="viewImageEditCategory" visible="false">
+		
+					<ImageView class="person" image="default_default_default.png">								
+							<Label id="picName" color="white" top=50 text="picName" visible="true" ></Label>	
+							<Label id="picHairName" color="white" top=70 text="hairName" visible="true" ></Label>					
+							<Label id="picExtraName" color="white" top=90 text="extraName" visible="true"></Label>																						
+					</ImageView>			
+						
+					<Button id="btn_faceEditCategory" backgroundColor="pink" title = "Face" top="30" />
+					<Button id="btn_hairEditCategory" backgroundColor="green" title = "Hair" top="30" />
+					<Button id="btn_extraEditCategory" backgroundColor="yellow" title = "Extra" top="30" />
+					<Button id="btn_doneEdit" backgroundImage="done.png" top="5" width="70" height="70"/>
+
+			</View>
+			<View id="lowPickerView" background="black">
+				<View id="faceImagePicker" top="0" visible="false">
+					<Picker id="imageFacePicker" selectionIndicator="true" useSpinner="true">
+			                	  
+							<PickerColumn id="skinColor">
+								<PickerRow title=""/>
+			                	<PickerRow title="black"/>
+			                	<PickerRow title="yellow"/>
+			                	<PickerRow title="white"/>                 	              	                	
+			                </PickerColumn>  
+			                
+							<PickerColumn id="faceShape">
+								<PickerRow title=""/>
+			                	<PickerRow title="narrow"/>
+			                	<PickerRow title="egg"/>
+			                	<PickerRow title="round"/>
+			                	<PickerRow title="square"/>
+			                </PickerColumn>               	
+			 
+			 				<PickerColumn id="eyeShape">
+								<PickerRow title=""/>
+			                	<PickerRow title="narrow"/>
+			                	<PickerRow title="normal"/>
+			                	<PickerRow title="big"/>
+			                </PickerColumn>               	                                        				
+					</Picker>
+				</View>
+			
+					
+				<View id="hairImagePicker" top="0" visible="false">
+			
+					<Picker id="imageHairPicker" selectionIndicator="true" useSpinner="true">
+							<PickerColumn id="hairStyle">
+								<PickerRow title=""/>
+			                	<PickerRow title="bold"/>
+			                	<PickerRow title="lady"/>
+			                	<PickerRow title="bot"/>
+			                	<PickerRow title="gentleman"/>
+			                </PickerColumn>               	
+			                	  
+							<PickerColumn id="hairColor">
+								<PickerRow title=""/>
+			                	<PickerRow title="blond"/>
+			                	<PickerRow title="black"/>
+			                	<PickerRow title="yellow"/>
+			                	<PickerRow title="green"/>                 	              	                	
+			                </PickerColumn>                             				
+					</Picker>
+				</View>
+			
+				<View id="extraImagePicker" top="0" visible="false">
+					<Picker id="imageExtraPicker" selectionIndicator="true" useSpinner="true">             	  
+							<PickerColumn id="extraGlasses">
+								<PickerRow title=""/>
+			                	<PickerRow title="roundGlasses"/>
+			                	<PickerRow title="squareGlasses"/>
+			                	<PickerRow title="sunGlasses"/>                 	              	                	
+			                </PickerColumn>  
+			                
+							<PickerColumn id="extraMustache">
+								<PickerRow title=""/>
+			                	<PickerRow title="narrowMustache"/>
+			                	<PickerRow title="toughMustache"/>
+			                	<PickerRow title="curlyMustache"/>
+			                	<PickerRow title="funMustache"/>
+			                </PickerColumn>               	
+			 
+			 				<PickerColumn id="extraExtra">
+								<PickerRow title=""/>
+			                	<PickerRow title="extra1"/>
+			                	<PickerRow title="extra2"/>
+			                	<PickerRow title="extra3"/>
+			                </PickerColumn>               	                                        				
+					</Picker>
+				</View>
+			</View>
+				
 		</View>
 	</Window>
 </Alloy>

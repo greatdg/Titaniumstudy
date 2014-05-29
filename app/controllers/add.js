@@ -33,7 +33,7 @@ $.addWin.addEventListener("focus",function(e){
 		
 });
 
-function addItem(){
+var addItemDone = function (e){
 	if($.nameAdd.value!=""){
 		var people = Alloy.Collections.people;
 		var detailInfo = Alloy.createModel("people",{
@@ -60,8 +60,14 @@ function addItem(){
 		people.add(detailInfo);
 		closeWindow();
 	}
-	else { alert("Please input name")};
+	else { alert("Please input name");
+	};
 };
+
+var cancleAdd = function(e){
+	Alloy.Globals.TabGroup.setActiveTab(0);
+};
+
 
 $.genderAdd.addEventListener("click",function(e){
 	$.nameAdd.blur();
@@ -83,7 +89,6 @@ $.done.addEventListener("click",function(e){
 	$.viewGenderPicker.visible="false";	
 	$.done.visible="false";	
 });
-
 
 
 // Image editing follows
@@ -161,16 +166,7 @@ $.btn_addMore.addEventListener("click",function(e){
 	$.scrollView.visible="false";		
 	$.customAddView.visible="true";
 	$.customAddCategory.value="";
-	$.customAddContent.value="";	
-
-	// var elements = $.lowerView.getChildren();
-	// Ti.API.info(elements);
-	//$.lowerView.remove(field);	
-	
-	
-	
-	
-	
+	$.customAddContent.value="";		
 });	
 	
 
@@ -205,8 +201,6 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			
 		}		
 });
-
-
 
 
 function closeWindow(){

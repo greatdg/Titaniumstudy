@@ -1,7 +1,40 @@
 "Window": {
-	backgroundColor: "#FFF",
+	backgroundColor: "#FCC",
 }
 
-".container" : {
-  
+
+"#viewImageEditCategory":{
+	layout:"horizontal",
+	backgroundColor:"white",	
+	height:"140",
+	width:"100%",
+	top:"-200",
+},
+
+"#categoryMenu":{
+	layout:"horizontal",		
+	height:480,
+	left:0,
+	top:0,
+},
+
+
+
+".firstMenu":{
+	layout:"horizontal",	
+	backgroundColor:"#333",
+	height:"30",
+	left:"0",
+	top:"0"
+},
+
+
+".person":{
+	backgroundColor:"white",
+	top:"0",
+	left:"0",	
+	width:"35%",
+	height:"140",
+	// zIndex:"1"
 }
+
