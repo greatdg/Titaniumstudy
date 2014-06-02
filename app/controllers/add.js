@@ -1,14 +1,6 @@
 var args = arguments[0] || {};
 var customAddNumber=1 ;
 
-// var field=Alloy.createController("customfield",{
-	// name:"",
-	// field:"",	
-	// }).getView();	
-// 			
-	// $.lowerView.add(field);
-
-
 $.addWin.addEventListener("focus",function(e){
 	$.nameAdd.value="";
 	$.genderAdd.value="";	

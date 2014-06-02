@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 var people = Alloy.Collections.people;
 var table = people.config.adapter.collection_name;
-
+// var resultListWin=Alloy.CreateController();
 
 
 $.btn_Appearance.addEventListener("click",function(e){
@@ -26,15 +26,17 @@ $.btn_byTextSearch.addEventListener("click",function(e){
 	
 	// search Actions!!!!
 
-people.fetch({query: "SELECT * FROM " + table + " where name like '%"+$.searchTextInput.value+"%'"});
+	var searchResultList = people.fetch({query: "SELECT * FROM " + table + " where name like '%"+$.searchTextInput.value+"%'"});
 
-Ti.API.debug('-----');
-Ti.API.debug(people);
+	Ti.API.debug('-----');
+	Ti.API.debug(people);
 
-
-	
-	
 	$.byTextView.visible="false";
+
+	var result = Alloy.createController('searchResult').getView();
+	// Alloy.Globals.ActiveTab.open(result);
+
+
 });
 
 
