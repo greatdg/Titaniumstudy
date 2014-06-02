@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="editWin" title = "Add Item" modal="true">	
+	<Window>	
 
 
 

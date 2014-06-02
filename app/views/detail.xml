@@ -1,36 +1,84 @@
 <Alloy>
-	
-	<Window id='detailWin' title="Detail" backgroundColor="gray">
+	<Window title="Detail">	
 		<RightNavButton>
-			<Button title="Edit" id="buttonEdit" onClick="clickEdit">
+			<Button title="Edit" onClick="clickEdit"/>
 		</RightNavButton>
-
-				<ImageView id='imageBody' image="body.png" width="150" height="50" left='15' top='150'/>
-				<ImageView id='imageFace' image="face.png" width="120" height="150" left='25' top='15'/>
-				<ImageView id='imageHair' image="hair.png" width="130" height="30" left='20' top='15'/>
-				<ImageView id='imageCloth' image='cloth.png' />
-				<ImageView id='imageGlasses' image='glasses.png' />
-				<ImageView id='imageEye' image='eye.png' />
-				
-		<ScrollView class='detailLabels' layout="vertical">
-
-
-				<Label id="titleTop">name</Label>
-				<Label id="name" left='180' text='James'></Label>
-				<Label id="titleTop">birthday</Label>
-				<Label id="birthday" left='180' text='25'></Label>
-				<Label id="titleTop">gender</Label>
-				<Label id="gender" left='180'>Male</Label>
-				<Label id="titleTop">phone number</Label>
-				<Label id="phoneNumber" left='180'>+64 21 123 4567</Label>
-				<Label id="titleBottom">address</Label>
-				<Label id="address" left='5'></Label>
-				<Label id="titleBottom">job</Label>
-				<Label id="job" left='5'></Label>
-				<Label id="titleBottom">email</Label>
-				<Label id="email" left='5'>james@jamesshine.com</Label>
-
-		</ScrollView>
 	
+	<View id="detailView" top="2">
+	<ScrollView id="scrollView" width="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
+	<View  class="container" >
+
+		
+		<View class="upperView">
+			<!-- <View class="emoticonView"> -->
+				<!-- emoticon area -->
+
+											
+				<ImageView class="person" image="default_default_default.png">
+					<!-- <ImageView class="hair" image="person.png" /> -->
+									
+									
+					<Label id="picName" color="white" top=50 text="picName" visible="false" ></Label>	
+					<Label id="picHairName" color="white" top=70 text="hairName" visible="false" ></Label>					
+					<Label id="picExtraName" color="white" top=90 text="extraName" visible="false"></Label>										
+									
+				</ImageView>			
+							
+													
+			<!-- </View> -->
+			<View class="personalView">
+				<!-- name, birthday, phone numberand gender -->
+
+				<View class="rowPersonal">
+				<Label class="namePersonal" text="Name "></Label>
+				<Label id="name" text = "sdf" />
+				</View>
+				
+				<View class="rowPersonal">
+				<Label class="genderPersonal" text="Gender "></Label>
+				<Label id="">
+				</View>	
+	
+				<View class="rowPersonal">
+				<Label id="bdayPersonal" text="Birthday "></Label>
+				</View>			
+
+				<View class="rowPersonal">
+				<Label id="phonePersonal" text="Phone "></Label>
+				</View>
+				
+				<View class="rowPersonal">
+				<Label id="jobAdd" text="Job "></Label>
+				</View>
+						
+			</View>			
+
+		</View>
+	</View>
+		
+	<View id="lowerView" class="lowerView">			
+			
+				<View class="rowAdditional">
+				<Label class="titleAdditional" text="  Address "></Label>
+				<TextField class="inputBox" id="addressAdd" hintText="4 March Place"/>
+				</View>
+
+				<View class="rowAdditional">
+				<Label class="titleAdditional" text="     "></Label>
+				<TextField class="inputBox" id="address2Add" hintText="Belfast"/>
+				</View>
+
+				<View class="rowAdditional">
+				<Label class="titleAdditional" text="      "></Label>
+				<TextField class="inputBox" id="address3Add" hintText="Christchurch"/>
+				</View>
+				
+
+	</View>	
+
+	</ScrollView>
+	
+	</View>	
+
 	</Window>
 </Alloy>
