@@ -6,6 +6,7 @@ exports.definition = {
 		    "birthday": "text",
 		    "phoneNumber": "text",
 		    "address": "text",
+		    "email": "text",
 		    "job": "text",
 		    "custom": "text",		    
 		    "hairStyle":"text",

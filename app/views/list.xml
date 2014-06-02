@@ -2,7 +2,7 @@
 	<Window backgroundColor="red" title='List' id='listWin'>
 	<View class="container">
 		
-		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable=true>
+		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable='true'>
 			<SearchBar hintText="Search" id="listSearch" showCancel="false" height="43" top="0" color='red' barColor='#ABC'/>
 			<TableViewRow alloy_id='{alloy_id}' height='55'>
 				<ImageView image="default_default_default.png" width='50' height='50' left="10" />

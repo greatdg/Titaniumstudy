@@ -61,8 +61,8 @@ function addItem(){
 		});
 		 //Ti.API.debug(selectModel);
 		 Titanium.App.fireEvent('doneEdit');
-	}
-	else { alert("Please input name")};
+	}else{
+		alert("Please input name");};
 };
 
 $.genderAdd.addEventListener("click",function(e){
