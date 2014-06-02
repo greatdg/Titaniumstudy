@@ -1,0 +1,43 @@
+
+".container" : {
+  
+},
+
+
+".listView":{
+	backgroundColor:"blue",
+	fontSize:5,
+	layout:"horizontal",
+	width:"30%",
+	height:20,	
+},
+
+
+".listName":{
+	fontSize:"5",
+	layout:"horizontal",
+	left:"65",
+	height:"20",	
+},
+
+".listGender":{
+	fontSize:"5",
+	layout:"horizontal",
+	left:"150",
+	height:"20",	
+},
+
+".smallPerson":{
+	backgroundColor:"blue",
+	left:10,
+	layout:"horizontal",
+	fontSize:5,
+	width:"15%",
+	height:40,	
+},
+
+".listList":{
+	left: 70,
+	layout: 'vertical',
+}
+

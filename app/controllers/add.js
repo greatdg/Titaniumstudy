@@ -33,7 +33,7 @@ var addItemDone = function (e){
 			gender:$.genderAdd.value,
 			birthday:$.bdayAdd.value,
 			address:$.addressAdd.value,
-			job:$.nameAdd.value,	
+			job:$.jobAdd.value,	
 			custom:	$.customAdd.value,
 	
 			hairStyle:$.hairStyle.value,	
@@ -68,7 +68,7 @@ $.genderAdd.addEventListener("click",function(e){
 	$.address2Add.blur();
 	$.viewGenderPicker.visible="true";
 	$.lowerView.visible="false";	
-	$.done.visible="true";
+
 });
 
 $.genderPicker.addEventListener('change', function(e) {
@@ -76,11 +76,27 @@ $.genderPicker.addEventListener('change', function(e) {
 });
 
 
-$.done.addEventListener("click",function(e){
+var doneForGender = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.DONE
+});
+
+var flexSpace = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+});
+
+
+
+
+doneForGender.addEventListener("click",function(e){
 	$.lowerView.visible="true";	
 	$.viewGenderPicker.visible="false";	
-	$.done.visible="false";	
 });
+
+$.toolbar.items = [flexSpace, doneForGender];
+
+$.datepicker.type = Ti.UI.PICKER_TYPE_DATE_AND_TIME;
+
+
 
 
 // Image editing follows
@@ -93,13 +109,16 @@ $.btn_imageEdit.addEventListener("click",function(e){
 $.btn_doneEdit.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="false";	
 	closePickers();
+	$.person.image=$.skinColor.value;
 	$.btn_imageEdit.visible="true";
 });
 
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;			
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;		
+	// alert($.skinColor.value);	
+	$.personImageEdit.image=$.skinColor.value;
 }
 
 
@@ -117,7 +136,7 @@ $.btn_faceEditCategory.addEventListener("click",function(e){
 });
 
 $.faceImagePicker.addEventListener('change', function(e) {
-	$.skinColor.value = e.selectedValue[0];
+	$.skinColor.value = e.selectedValue[0].customTitle;
 	$.faceShape.value = e.selectedValue[1];
 	$.eyeShape.value = e.selectedValue[2];	
 	changePic();			
@@ -168,7 +187,7 @@ $.doneCustomAdd.addEventListener("click",function(e){
 
 		$.customAddCategory.blur();
 		$.customAddContent.blur();
-		//	alert($.customAdd.value);
+			// alert($.customAdd.value);
 
 		var title = $.customAddCategory.value,
 			content = $.customAddContent.value;
@@ -190,6 +209,8 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			// alert("Please input category title");
 			$.customAddView.visible="false";	
 			$.scrollView.visible="true";	
+			$.customAddCategory.blur();
+			$.customAddContent.blur();
 			
 		}		
 });

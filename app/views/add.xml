@@ -21,13 +21,13 @@
 				<!-- emoticon area -->
 
 											
-				<ImageView class="person" image="default_default_default.png">
+				<ImageView class="person" id="person" >
 					<!-- <ImageView class="hair" image="person.png" /> -->
 									
 									
-					<Label id="picName" color="white" top=50 text="picName" visible="false" ></Label>	
-					<Label id="picHairName" color="white" top=70 text="hairName" visible="false" ></Label>					
-					<Label id="picExtraName" color="white" top=90 text="extraName" visible="false"></Label>										
+					<Label id="picName" color="white" top="50" text="picName" visible="false" ></Label>	
+					<Label id="picHairName" color="white" top="70" text="hairName" visible="false" ></Label>					
+					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>										
 									
 			 		<Button id="btn_imageEdit" backgroundImage="editIcon.png" top=100 left=90 />							
 				</ImageView>			
@@ -60,9 +60,16 @@
 				<View class="rowPersonal">
 				<Label id="jobAdd" text="Job "></Label>
 				<TextField class="inputBox" id="jobAdd" hintText="student" />
-				</View>
-						
+				</View>						
 			</View>			
+
+	<View id="viewDatePicker">
+		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
+		<Picker id="datepicker" selectionIndicator="true" useSpinner="true" >            
+        </Picker>
+	</View>
+
+
 
 		</View>
 	</View>
@@ -130,6 +137,7 @@
 
 
 	<View id="viewGenderPicker" visible="false">
+		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
 		<Picker id="genderPicker" selectionIndicator="true" top="150" useSpinner="true" >
 				<PickerColumn id="column1">
 					<PickerRow title=""/>
@@ -137,7 +145,6 @@
                 	<PickerRow title="Female"/>
             </PickerColumn>				
 		</Picker>
-		<Button id="done" backgroundColor="blue" title="done" top=130 left=250 visible="false" />		
 	</View>
 
 
@@ -145,20 +152,20 @@
 		<View id="categoryMenu">
 
 											
-				<ImageView class="person" image="default_default_default.png" top="80">
+				<ImageView class="person" id="personImageEdit" top="80">
 					<!-- <ImageView class="hair" image="person.png" /> -->
 									
-									
+									<!-- 
 					<Label id="picName" color="white" top=50 text="picName" visible="true" ></Label>	
 					<Label id="picHairName" color="white" top=70 text="hairName" visible="true" ></Label>					
-					<Label id="picExtraName" color="white" top=90 text="extraName" visible="true"></Label>										
+					<Label id="picExtraName" color="white" top=90 text="extraName" visible="true"></Label>	 -->									
 																
 				</ImageView>			
 
-			<Button id="btn_faceEditCategory" backgroundColor="pink" title = "Face" top=100 />
-			<Button id="btn_hairEditCategory" backgroundColor="green" title = "Hair" top=100 />
-			<Button id="btn_extraEditCategory" backgroundColor="yellow" title = "Extra" top=100 />
-			<Button id="btn_doneEdit" backgroundImage="done.png" top=100 width="70" height="70"/>
+			<Button id="btn_faceEditCategory" backgroundColor="pink" title = "Face" top="100" />
+			<Button id="btn_hairEditCategory" backgroundColor="green" title = "Hair" top="100" />
+			<Button id="btn_extraEditCategory" backgroundColor="yellow" title = "Extra" top="100" />
+			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" height="70"/>
 		</View>
 	</View>
 
@@ -189,9 +196,13 @@
                 	  
 				<PickerColumn id="skinColor">
 					<PickerRow title=""/>
-                	<PickerRow title="black"/>
-                	<PickerRow title="yellow"/>
-                	<PickerRow title="white"/>                 	              	                	
+                	<PickerRow customTitle="black_face.png">
+                		<ImageView image="black_face.png" />
+                	</PickerRow>
+                	<PickerRow customTitle="yellow_face.png">
+                		<ImageView image="yellow_face.png"/>
+                	</PickerRow>	
+                	<PickerRow customTitle="white" title = "white" />                 	              	                	
                 </PickerColumn>  
                 
 				<PickerColumn id="faceShape">
@@ -212,7 +223,7 @@
 	</View>
 
 
-	<View id="extraImagePicker" top=130 visible="false">
+	<View id="extraImagePicker" top="130" visible="false">
 		<Picker id="imageExtraPicker" selectionIndicator="true" useSpinner="true">             	  
 				<PickerColumn id="extraGlasses">
 					<PickerRow title=""/>

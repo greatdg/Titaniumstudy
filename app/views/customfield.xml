@@ -1,0 +1,7 @@
+<Alloy>
+	<View class="container" layout="horizontal" backgroundColor='white' width='100%' height="40">				
+			<Label left="10" id="name"/>
+			<Label text=" : " />
+			<Label id="fieldvalue"/>			
+	</View>
+</Alloy>

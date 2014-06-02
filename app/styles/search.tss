@@ -6,7 +6,7 @@
 "#viewImageEditCategory":{
 	layout:"horizontal",
 	backgroundColor:"white",	
-	height:"140",
+	height:"200",
 	width:"100%",
 	top:"-200",
 },

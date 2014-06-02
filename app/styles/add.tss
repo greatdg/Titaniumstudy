@@ -78,7 +78,10 @@
 	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
 },
 
-
+"#toolbar": {
+	opacity: 1.0,
+	bottom:205
+},
 
 ".personalView":{
 	// backgroundColor:"green",
