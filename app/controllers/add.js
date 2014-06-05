@@ -32,7 +32,9 @@ var addItemDone = function (e){
 			name:$.nameAdd.value,
 			gender:$.genderAdd.value,
 			birthday:$.bdayAdd.value,
+			phoneNumber:$.phoneAdd.value,
 			address:$.addressAdd.value,
+			email:$.emailAdd.value,
 			job:$.jobAdd.value,	
 			custom:	$.customAdd.value,
 	

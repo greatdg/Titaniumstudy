@@ -36,7 +36,7 @@
 				
 				<View class="rowPersonal">
 				<Label class="genderPersonal" text="Gender "></Label>
-				<Label id="">
+				<Label id="" />
 				</View>	
 	
 				<View class="rowPersonal">

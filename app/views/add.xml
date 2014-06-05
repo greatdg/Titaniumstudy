@@ -29,7 +29,7 @@
 					<Label id="picHairName" color="white" top="70" text="hairName" visible="false" ></Label>					
 					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>										
 									
-			 		<Button id="btn_imageEdit" backgroundImage="editIcon.png" top=100 left=90 />							
+			 		<Button id="btn_imageEdit" backgroundImage="editIcon.png" top="100" left="90" />							
 				</ImageView>			
 							
 													
@@ -57,6 +57,12 @@
 				<TextField class="inputBox" id="phoneAdd" hintText="021 85 7700" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
 				</View>
 				
+				<View class="rowPersonal">
+				<Label id="emailAdd" text="email "></Label>
+				<TextField class="inputBox" id="emailAdd" hintText="jsshin@gmail.com" />
+				</View>		
+
+
 				<View class="rowPersonal">
 				<Label id="jobAdd" text="Job "></Label>
 				<TextField class="inputBox" id="jobAdd" hintText="student" />
@@ -153,13 +159,7 @@
 
 											
 				<ImageView class="person" id="personImageEdit" top="80">
-					<!-- <ImageView class="hair" image="person.png" /> -->
-									
-									<!-- 
-					<Label id="picName" color="white" top=50 text="picName" visible="true" ></Label>	
-					<Label id="picHairName" color="white" top=70 text="hairName" visible="true" ></Label>					
-					<Label id="picExtraName" color="white" top=90 text="extraName" visible="true"></Label>	 -->									
-																
+
 				</ImageView>			
 
 			<Button id="btn_faceEditCategory" backgroundColor="pink" title = "Face" top="100" />

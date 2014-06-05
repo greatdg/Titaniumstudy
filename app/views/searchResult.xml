@@ -1,11 +1,11 @@
 <Alloy>
-	<Window backgroundColor="red" title='Result' id='searchResultWin'>
+	<Window backgroundColor="red" title="Result" id='searchResultWin'>
 	<View class="container">
 		
 		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable=true>
-			<TableViewRow alloy_id='{alloy_id}' height='55'>
-				<ImageView image="default_default_default.png" width='50' height='50' left="10" />
-				<Label id='listList' text='{title}' class='listList'></Label>
+			<TableViewRow alloy_id='{alloy_id}' height="55">
+				<ImageView image="default_default_default.png" width="50" height="50" left="10" />
+				<Label id="listList" text="{title}" class="listList"></Label>
 				</TableViewRow>				
 			</TableView>
 	</View>
