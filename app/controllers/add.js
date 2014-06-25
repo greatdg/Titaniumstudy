@@ -1,6 +1,15 @@
 var args = arguments[0] || {};
 var customAddNumber=1 ;
 
+$.addWin.addEventListener('blur', function(e) {
+	var lowerView = $.lowerView.getChildren();
+	for( var i=0;i<lowerView.length;i++ ) {
+		if( i > 4 ) {
+			$.lowerView.remove(lowerView[i]);
+		}
+	}
+});
+
 $.addWin.addEventListener("focus",function(e){
 	$.nameAdd.value="";
 	$.genderAdd.value="";	
@@ -9,6 +18,8 @@ $.addWin.addEventListener("focus",function(e){
 	$.addressAdd.value="";
 	$.jobAdd.value="";	
 	$.customAdd.value="";
+	$.phoneAdd.value="";
+	$.emailAdd.value="";
 
 	$.hairStyle.value="default";	
 	$.hairColor.value="default";	
@@ -20,6 +31,7 @@ $.addWin.addEventListener("focus",function(e){
 	$.extraGlasses.value="default";		
 	$.extraMustache.value="default";	
 	$.extraExtra.value="default";			
+	
 
 	changePic();
 		
@@ -85,8 +97,6 @@ var doneForGender = Ti.UI.createButton({
 var flexSpace = Ti.UI.createButton({
     systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
 });
-
-
 
 
 doneForGender.addEventListener("click",function(e){

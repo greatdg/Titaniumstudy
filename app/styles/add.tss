@@ -26,34 +26,34 @@
 },
 
 ".rightButton":{
-	left:210
+	left:"210"
 },
 
 ".upperView":{
 	layout:"horizontal",
 	width:"100%",
 	top:"0",
-	height:"140",
-	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+	height:"150",
+	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_NONE
 },
 
 ".person":{
-	backgroundColor:"red",
-	top:0,
-	left:0,	
+	backgroundColor:"#FFF",
+	top:"0",
+	left:"0",	
 	width:"35%",
-	height:140,
-	zIndex:1
+	height:"150",
+	zIndex:"1"
 },
 
 
 ".rowPersonal":{
-	top:0,
-	left:10,
-	fontSize:7,
+	top:"1",
+	left:"10",
+	fontSize:"7",
 	layout:"horizontal",
-	width:180,
-	height:27
+	width:"160",
+	height:"27"
 },
 
 
@@ -68,10 +68,10 @@
 "#categoryMenu":{
 	layout:"horizontal",	
 	// backgroundColor:"purple",	
-	height:480,
-	left:0,
+	height:"480",
+	left:"0",
 	// opacity:9,
-	top:-80
+	top:"-80",
 },
 
 ".inputBox":{
@@ -79,24 +79,24 @@
 },
 
 "#toolbar": {
-	opacity: 1.0,
-	bottom:205
+	opacity: "1.0",
+	bottom:"205"
 },
 
 ".personalView":{
 	// backgroundColor:"green",
-	fontSize:5,
+	fontSize:"5",
 	layout:"vertical",
 	width:"60%",
-	height:200
+	height:"200"
 },
 
 ".lowerView":{
-	top:145,
-	fontSize:7,
+	top:"0",
+	fontSize:"7",
 	// backgroundColor:"#EEE",
 	// top:3,
-	left:0,
+	left:"0",
 	layout:"vertical",
 	width:"100%",
 },
@@ -130,7 +130,7 @@
 
 
 ".titleAdditional":{
-	left:0,
+	left:"0",
 	layout:"vertical",
 	width:"25%",
 }

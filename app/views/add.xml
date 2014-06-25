@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="addWin" title = "Add Item" modal="true">	
+	<Window id="addWin" title = "Add mate" modal="true">	
 
 		<RightNavButton title ="Add" text="Add" >
 
@@ -11,7 +11,7 @@
 		</LeftNavButton>
 		
 	
-	<View id="addView" top="2">
+	<View id="addView" top="0">
 	<ScrollView id="scrollView" width="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
 	<View  class="container" >
 
@@ -34,42 +34,78 @@
 							
 													
 			<!-- </View> -->
-			<View class="personalView">
+			<View class="personalView" top ="7">
 				<!-- name, birthday, phone numberand gender -->
 
 				<View class="rowPersonal">
-				<Label class="namePeresonal" text="Name "></Label>
-				<TextField class="inputBox" id="nameAdd" value="" hintText="John Dow"/ >
+				<ImageView image="N.png" height="16" />	
+				<TextField class="inputBox" height="17" id="nameAdd" value="" hintText="Name"/ >
 				</View>
 				
 				<View class="rowPersonal">
-				<Label class="genderPeresonal" text="Gendar "></Label>
-				<TextField class="inputBox" id="genderAdd" hintText="Female" editable="false"/>
+				<ImageView image="G.png" height="16" />						
+				<TextField class="inputBox" height="17" id="genderAdd" hintText="Gender" editable="false"/>
 				</View>	
 	
 				<View class="rowPersonal">
-				<Label id="bdayPeresonal" text="Birthday "></Label>
-				<TextField class="inputBox" id="bdayAdd" hintText="04/07/1969" editable="false"/>
+				<ImageView image="B.png" height="16" />						
+				<TextField class="inputBox" height="17" id="bdayAdd" hintText="Birthday" editable="false"/>
 				</View>			
 
 				<View class="rowPersonal">
-				<Label id="phonePeresonal" text="Phone "></Label>
-				<TextField class="inputBox" id="phoneAdd" hintText="021 85 7700" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
+				<ImageView image="P.png" height="16" />						
+				<TextField class="inputBox" height="17" id="phoneAdd" hintText="Phone Number" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
 				</View>
 				
 				<View class="rowPersonal">
-				<Label id="emailAdd" text="email "></Label>
-				<TextField class="inputBox" id="emailAdd" hintText="jsshin@gmail.com" />
+				<ImageView image="e.png" height="16" />					
+				<TextField class="inputBox" height="17" id="emailAdd" hintText="email" />
 				</View>		
+					
+			</View>
+				<!-- personal View 		 -->
+		</View>
+			<!-- upper View  -->
 
 
+	<View id="lowerView" class="lowerView">			
 				<View class="rowPersonal">
 				<Label id="jobAdd" text="Job "></Label>
-				<TextField class="inputBox" id="jobAdd" hintText="student" />
-				</View>						
-			</View>			
+				<TextField class="inputBox" height="17" id="jobAdd" hintText="student" />
+				</View>	
+			
+				<View class="rowAdditional">
+				<Label class="titleAdditional" text="  Address "></Label>
+				<TextField class="inputBox" height="17" id="addressAdd" hintText="4 March Place"/>
+				</View>
 
-	<View id="viewDatePicker">
+				<View class="rowAdditional">
+				<Label class="titleAdditional" text="     "></Label>
+				<TextField class="inputBox" height="17" id="address2Add" hintText="Belfast"/>
+				</View>
+
+				<View class="rowAdditional">
+				<Label class="titleAdditional" text="      "></Label>
+				<TextField class="inputBox" height="17" id="address3Add" hintText="Christchurch"/>
+				</View>
+				
+	// Additional custom category ???		
+
+				<View height="3" visible="false">
+				<TextField class="inputBox" height="17" id="customAdd" value=""/>			
+				</View>			
+				
+							
+		</View>	
+			 <!-- lower View  -->
+	
+	</View>
+		<!-- Container  -->
+		
+
+	</ScrollView>
+
+	<View id="viewDatePicker" top="150" visible="false">
 		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
 		<Picker id="datepicker" selectionIndicator="true" useSpinner="true" >            
         </Picker>
@@ -77,39 +113,9 @@
 
 
 
-		</View>
-	</View>
-		
-	<View id="lowerView" class="lowerView">			
-			
-				<View class="rowAdditional">
-				<Label class="titleAdditional" text="  Address "></Label>
-				<TextField class="inputBox" id="addressAdd" hintText="4 March Place"/>
-				</View>
+		<View id="bottomView" class="bottomView" top="300" left="140" height="40" width="40">												
 
-				<View class="rowAdditional">
-				<Label class="titleAdditional" text="     "></Label>
-				<TextField class="inputBox" id="address2Add" hintText="Belfast"/>
-				</View>
-
-				<View class="rowAdditional">
-				<Label class="titleAdditional" text="      "></Label>
-				<TextField class="inputBox" id="address3Add" hintText="Christchurch"/>
-				</View>
-				
-	// Additional custom category ???		
-
-				<View class="rowAdditional" visible="false">
-				<Label class="titleAdditional" text="  Custom"></Label>
-				<TextField class="inputBox" id="customAdd" value=""/>			
-				</View>						
-	</View>	
-
-	</ScrollView>
-
-		<View id="bottomView" backgroundColor="pink" class="bottomView" top="300" left="250" height="30" width="70">												
-
-				<Button id="btn_addMore" backgroundColor="blue" title="Add More" left="0" />	
+				<Button id="btn_addMore" backgroundImage ="more.png" height="40" width="40" />	
 		</View>		
 
 
@@ -130,7 +136,7 @@
 		<TextField class="inputBox" id="customAddContent" hintText="Contents"/>			
 		</View>			
 		
-		<Button id="doneCustomAdd" top="10" backgroundColor="red" title="done" />		
+		<Button id="doneCustomAdd" top="10" backgroundImage="done_more.png" width="60" height="60"/>		
 	</View>
 	
 	
@@ -162,10 +168,10 @@
 
 				</ImageView>			
 
-			<Button id="btn_faceEditCategory" backgroundColor="pink" title = "Face" top="100" />
-			<Button id="btn_hairEditCategory" backgroundColor="green" title = "Hair" top="100" />
-			<Button id="btn_extraEditCategory" backgroundColor="yellow" title = "Extra" top="100" />
-			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" height="70"/>
+			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="2"/>
+			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left ="5" />
+			<Button id="btn_extraEditCategory" backgroundImage="hairBtn.png" top="120" left ="5" />
+			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" left="7" height="70"/>
 		</View>
 	</View>
 
