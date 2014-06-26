@@ -8,6 +8,8 @@ $.btn_Appearance.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="true";	
 	$.faceImagePicker.visible="true";
 	$.byTextView.visible="false";
+	$.rightDot.visible="false";
+	$.leftDot.visible="true";	
 });
 
 $.btn_byText.addEventListener("click",function(e){
@@ -15,6 +17,8 @@ $.btn_byText.addEventListener("click",function(e){
 	closePickers();	
 	$.byTextView.visible="true";
 	$.searchTextInput.value="";
+	$.rightDot.visible="true";
+	$.leftDot.visible="false";	
 });
 
 
@@ -75,7 +79,7 @@ $.searchTextInput.addEventListener("focus",function(e){
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;			
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;			
 };
 
 
@@ -122,7 +126,6 @@ $.btn_extraEditCategory.addEventListener("click",function(e){
 $.extraImagePicker.addEventListener('change', function(e) {
 	$.extraGlasses.value = e.selectedValue[0];
 	$.extraMustache.value = e.selectedValue[1];
-	$.extraExtra.value = e.selectedValue[2];
 	changePic();			
 });
 

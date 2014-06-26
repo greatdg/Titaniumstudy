@@ -30,8 +30,7 @@ $.addWin.addEventListener("focus",function(e){
 		
 	$.extraGlasses.value="default";		
 	$.extraMustache.value="default";	
-	$.extraExtra.value="default";			
-	
+
 
 	changePic();
 		
@@ -58,8 +57,7 @@ var addItemDone = function (e){
 			eyeShape:$.eyeShape.value,		
 			
 			extraGlassess:$.extraGlasses.value,	
-			extraMustache:$.extraMustache.value,
-			extraExtra:$.extraExtra.value,		
+			extraMustache:$.extraMustache.value,	
 		});
 			
 		detailInfo.save();
@@ -128,7 +126,7 @@ $.btn_doneEdit.addEventListener("click",function(e){
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;		
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;		
 	// alert($.skinColor.value);	
 	$.personImageEdit.image=$.skinColor.value;
 }
@@ -180,13 +178,12 @@ $.btn_extraEditCategory.addEventListener("click",function(e){
 $.extraImagePicker.addEventListener('change', function(e) {
 	$.extraGlasses.value = e.selectedValue[0];
 	$.extraMustache.value = e.selectedValue[1];
-	$.extraExtra.value = e.selectedValue[2];
 	changePic();			
 });
 
 
 $.btn_addMore.addEventListener("click",function(e){	
-	$.scrollView.visible="false";		
+	$.container.visible="false";		
 	$.customAddView.visible="true";
 	$.customAddCategory.value="";
 	$.customAddContent.value="";		
@@ -213,14 +210,14 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			$.lowerView.add(field);
 
 		$.customAddView.visible="false";	
-		$.scrollView.visible="true";	
+		$.container.visible="true";	
 
 
 	}
 		else{
 			// alert("Please input category title");
 			$.customAddView.visible="false";	
-			$.scrollView.visible="true";	
+			$.container.visible="true";	
 			$.customAddCategory.blur();
 			$.customAddContent.blur();
 			

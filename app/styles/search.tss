@@ -1,5 +1,5 @@
 "Window": {
-	backgroundColor: "#FCC",
+	backgroundColor: "#FFF",
 }
 
 
@@ -8,22 +8,22 @@
 	backgroundColor:"white",	
 	height:"200",
 	width:"100%",
-	top:"-200",
+	top:"-170",
 },
 
 "#categoryMenu":{
 	layout:"horizontal",		
-	height:480,
-	left:0,
-	top:0,
+	height:"450",
+	left:"0",
+	top:"0",
 },
 
 
 
 ".firstMenu":{
 	layout:"horizontal",	
-	backgroundColor:"#333",
-	height:"30",
+	backgroundColor:"#FFF",
+	height:"45",
 	left:"0",
 	top:"0"
 },
