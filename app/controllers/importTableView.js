@@ -1,14 +1,16 @@
 var args = arguments[0] || {};
 
-var title = args.title;
-var address = args.address;
+var contactData = args.contactData;
 
-$.importTableRow.text = title;
+
+$.importTableRow.text = contactData.fullName;
+$.importTableRow.email = contactData.email;
+$.importTableRow.allData = contactData;
 
 
 
 var checkClick = function(e){
-	//Ti.API.debug(e);
+	
 	if(this.checkBtn=='true'){
 		$.checkbox.color = 'gray';
 		this.checkBtn = 'false';

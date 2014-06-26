@@ -1,5 +1,5 @@
 <Alloy>
-	<Window title="Import" backgroundColor="blue">
+	<Window title="Import" backgroundColor="blue" barColor="#9997C0" translucent="false">
 		
 		<RightNavButton>
 			<Button title="Done" id="buttonImportDone" onClick="clickImportDone">
@@ -7,7 +7,7 @@
 		
 		<View class="container">
 			<TableView id='importTable'>
-				<SearchBar hintText="Search" id="importSearch" showCancel="false" height="43" top="0" barColor='#FFF'/>
+				<SearchBar borderColor="#9997C0" hintText="Search" id="importSearch" showCancel="false" height="43" top="0" barColor='#FFF'/>
 				
 			</TableView>
 		</View>

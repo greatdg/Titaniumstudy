@@ -38,4 +38,4 @@ $.listTable.addEventListener('delete', function(e){
 	
 	var model=people.get(e.row.alloy_id);
 	model.destroy();
-})
+});

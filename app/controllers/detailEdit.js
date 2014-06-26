@@ -3,23 +3,20 @@ var customAddNumber=1 ;
 var alloyId = args.alloyId;
 // Ti.API.debug(alloyId);
 var people = Alloy.Collections.people;
+
+$.detailEdit.addEventListener('focus', function(e){
+	people.fetch();
+});
 var personalData = people.get(alloyId).toJSON();
-// var field=Alloy.createController("customfield",{
-	// name:"",
-	// field:"",	
-	// }).getView();	
-// 			
-	// $.lowerView.add(field);
 
+	$.nameEdit.value= personalData.name;
+	$.genderEdit.value= personalData.gender;	
+	$.bdayEdit.value= personalData.birthday;
+	$.phoneEdit.value = personalData.phoneNumber;
 
-// $.editWin.addEventListener("focus",function(e){
-	$.nameAdd.value= personalData.name;
-	$.genderAdd.value= personalData.gender;	
-	$.bdayAdd.value= personalData.birthday;
-
-	$.addressAdd.value= personalData.address;
-	$.jobAdd.value=personalData.job;	
-	$.customAdd.value="";
+	$.addressEdit.value= personalData.address;
+	$.jobEdit.value=personalData.job;	
+	$.customEdit.value="";
 
 	$.hairStyle.value=personalData.hairStyle;	
 	$.hairColor.value=personalData.hairColor;	
@@ -36,17 +33,17 @@ var personalData = people.get(alloyId).toJSON();
 		
 // });
 
-function addItem(){
-	if($.nameAdd.value!=""){
+function editDone(){
+	if($.nameEdit.value!=""){
 		var model = people.get(alloyId);
 		model.save({
-			name:$.nameAdd.value,
-			gender:$.genderAdd.value,
-			birthday:$.bdayAdd.value,
-			address:$.addressAdd.value,
-			job:$.jobAdd.value,	
-			custom:	$.customAdd.value,
-			phoneNumber: $.phoneAdd.value,
+			name:$.nameEdit.value,
+			gender:$.genderEdit.value,
+			birthday:$.bdayEdit.value,
+			address:$.addressEdit.value,
+			job:$.jobEdit.value,	
+			custom:	$.customEdit.value,
+			phoneNumber: $.phoneEdit.value,
 	
 			hairStyle:$.hairStyle.value,	
 			hairColor:$.hairColor.value,
@@ -60,23 +57,27 @@ function addItem(){
 			extraExtra:$.extraExtra.value,			
 		});
 		 //Ti.API.debug(selectModel);
-		 Titanium.App.fireEvent('doneEdit');
+		 //Titanium.App.fireEvent('doneEdit');
+		var win = Alloy.createController('detail',{
+		alloyId: alloyId
+	}).getView();
+	Alloy.Globals.activeTab.openWindow(win);
 	}else{
 		alert("Please input name");};
 };
 
-$.genderAdd.addEventListener("click",function(e){
-	$.nameAdd.blur();
-	$.phoneAdd.blur();
-	$.addressAdd.blur();
-	$.address2Add.blur();
+$.genderEdit.addEventListener("click",function(e){
+	$.nameEdit.blur();
+	$.phoneEdit.blur();
+	$.addressEdit.blur();
+	$.address2Edit.blur();
 	$.viewGenderPicker.visible="true";
 	$.lowerView.visible="false";	
 	$.done.visible="true";
 });
 
 $.genderPicker.addEventListener('change', function(e) {
-	$.genderAdd.value = e.selectedValue[0];
+	$.genderEdit.value = e.selectedValue[0];
 });
 
 
@@ -159,54 +160,9 @@ $.extraImagePicker.addEventListener('change', function(e) {
 });
 
 
-$.btn_addMore.addEventListener("click",function(e){	
-	$.scrollView.visible="false";		
-	$.customAddView.visible="true";
-	$.customAddCategory.value="";
-	$.customAddContent.value="";	
-
-	// var elements = $.lowerView.getChildren();
-	// Ti.API.info(elements);
-	//$.lowerView.remove(field);	
-	
-	
-	
-	
-	
-});	
-	
-
-$.doneCustomAdd.addEventListener("click",function(e){
-	if($.customAddCategory.value !==""){
-		$.customAdd.value=$.customAdd.value+ $.customAddCategory.value + "&&" + $.customAddContent.value + "##" ;
-
-		$.customAddCategory.blur();
-		$.customAddContent.blur();
-		//	alert($.customAdd.value);
-
-		var title = $.customAddCategory.value,
-			content = $.customAddContent.value;
-		
-		
-		var field=Alloy.createController("customfield",{
-			name:title,
-			field:content,	
-		}).getView();	
-			
-			$.lowerView.add(field);
-
-		$.customAddView.visible="false";	
-		$.scrollView.visible="true";	
 
 
-	}
-		else{
-			// alert("Please input category title");
-			$.customAddView.visible="false";	
-			$.scrollView.visible="true";	
-			
-		}		
-});
+
 
 
 

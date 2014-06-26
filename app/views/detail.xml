@@ -1,5 +1,5 @@
 <Alloy>
-	<Window title="Detail">	
+	<Window title="Detail" barColor="#9BEAE8">	
 		<RightNavButton>
 			<Button title="Edit" onClick="clickEdit"/>
 		</RightNavButton>
@@ -36,19 +36,22 @@
 				
 				<View class="rowPersonal">
 				<Label class="genderPersonal" text="Gender "></Label>
-				<Label id="">
+				<Label id="gender" />
 				</View>	
 	
 				<View class="rowPersonal">
 				<Label id="bdayPersonal" text="Birthday "></Label>
+				<Label id="birthday" />
 				</View>			
 
 				<View class="rowPersonal">
 				<Label id="phonePersonal" text="Phone "></Label>
+				<Label id="phoneNumber" onClick="phoneClick"/>
 				</View>
 				
 				<View class="rowPersonal">
-				<Label id="jobAdd" text="Job "></Label>
+				<Label id="jobAdd" text="Job"></Label>
+				<Label id="job" />
 				</View>
 						
 			</View>			
@@ -57,24 +60,50 @@
 	</View>
 		
 	<View id="lowerView" class="lowerView">			
-			
+				
+				<View class="rowAdditional">
+					<Label class="titleAdditional" text="Email" />
+					<Label id="email" onClick="emailClick" />
+				</View>
+				
 				<View class="rowAdditional">
 				<Label class="titleAdditional" text="  Address "></Label>
-				<TextField class="inputBox" id="addressAdd" hintText="4 March Place"/>
+				<Label id="address1" />
 				</View>
 
 				<View class="rowAdditional">
 				<Label class="titleAdditional" text="     "></Label>
-				<TextField class="inputBox" id="address2Add" hintText="Belfast"/>
+				<Label id="address2" />
 				</View>
 
 				<View class="rowAdditional">
 				<Label class="titleAdditional" text="      "></Label>
-				<TextField class="inputBox" id="address3Add" hintText="Christchurch"/>
+				<Label id="address3" />
 				</View>
 				
+				
+				<View class="rowAdditional" visible="false">
+				<Label class="titleAdditional" text="  Custom"></Label>
+				<TextField class="inputBox" id="customAdd" value=""/>			
+				</View>
 
 	</View>	
+	
+	<View id="customAddView" visible="false">
+
+		<!-- <Label id="customAdd" visible="false" value=""></Label>	 -->
+		<View class="rowAdditional" />	
+		
+			<View class="rowAdditional">
+				<Label class="titleAdditional" text="  Category"></Label>	
+				<Label id="customAddCategory" />			
+			</View>	
+			<View class="rowAdditional">
+				<Label class="titleAdditional" text="  Contents"></Label>	
+				<Label id="customAddContent" hintText="Contents"/>			
+			</View>			
+		
+	</View>
 
 	</ScrollView>
 	

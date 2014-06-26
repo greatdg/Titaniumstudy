@@ -1,6 +1,6 @@
 var args = arguments[0] || {};
 
-var importTableData = [{title: 'John'}, {title: 'Mary'}];
+
 
 // $.importTable.setData(importTableData);
 
@@ -11,13 +11,15 @@ var performAddressBookFunction = function(){
 	var contacts = Ti.Contacts.getAllPeople();
     
     for (var i = 0; i < contacts.length; i++) {
+        var contactData = contacts[i];
         var title = contacts[i].fullName;
+       Ti.API.debug(contacts[i]);
         if (!title || title.length === 0) {
             title = "(no name)";
         }
         var row = Alloy.createController('importTableView',{
-        	title: title,
-        	address: contacts[i].address
+        	contactData : contactData
+        	
         	
         }).getView();
     	data.push(row);
@@ -53,7 +55,7 @@ $.contactImport.leftNavButton = null;
 
 
 var clickImportDone = function(e){
-	
+		
 		var importData = $.importTable.getData();
 		for(var i=0;i<importData.length;i++) {
 			var section = importData[i];
@@ -64,14 +66,22 @@ var clickImportDone = function(e){
 				if(row.children[0].checkBtn==='true'){
 					//Ti.API.debug(row.children);
 					var people = Alloy.Collections.people;
+					
+					var personalInfo = row.children[1];
+					Ti.API.debug(personalInfo.allData.fullName);
+					var email_string = JSON.stringify(personalInfo.email);
+					
+					
 					var detailInfo = Alloy.createModel("people",{
-					name: row.children[1].text 
+					name: personalInfo.text,
+					email: email_string
+					 
 					// gender:$.genderAdd.value,
 					// birthday:$.bdayAdd.value,
 					// address:$.addressAdd.value,
 					// job:$.nameAdd.value,	
 					// custom:	$.nameAdd.value,
-// 
+					
 					// hairStyle:$.hairStyle.value,	
 					// hairColor:$.hairColor.value,
 // 					
@@ -84,6 +94,9 @@ var clickImportDone = function(e){
 					// extraExtra:$.extraExtra.value,
 							
 					});
+					
+					
+
 // 			 		
 				  detailInfo.save();
 				  people.add(detailInfo);

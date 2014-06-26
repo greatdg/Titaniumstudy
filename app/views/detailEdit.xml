@@ -1,12 +1,11 @@
 <Alloy>
 	<Window>	
 
+		<RightNavButton>
+			<Button title="Done" onClick="editDone"/>
+		</RightNavButton>
 
-
-	<View class="menuAddView" >
-		<Button class="Button" onClick="closeWindow">Cancel</Button>	
-		<Button class="rightButton" onClick="addItem">ADD</Button>		
-	</View>		
+	
 	
 	<View id="addView" top="30">
 	<ScrollView id="scrollView" width="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
@@ -36,27 +35,27 @@
 
 				<View class="rowPersonal">
 				<Label class="namePeresonal" text="Name "></Label>
-				<TextField class="inputBox" id="nameAdd" value="" hintText="John Dow"/ >
+				<TextField class="inputBox" id="nameEdit" value="" hintText="John Dow"/ >
 				</View>
 				
 				<View class="rowPersonal">
 				<Label class="genderPeresonal" text="Gendar "></Label>
-				<TextField class="inputBox" id="genderAdd" hintText="Female" editable="false"/>
+				<TextField class="inputBox" id="genderEdit" hintText="Female" editable="false"/>
 				</View>	
 	
 				<View class="rowPersonal">
 				<Label id="bdayPeresonal" text="Birthday "></Label>
-				<TextField class="inputBox" id="bdayAdd" hintText="04/07/1969" editable="false"/>
+				<TextField class="inputBox" id="bdayEdit" hintText="04/07/1969" editable="false"/>
 				</View>			
 
 				<View class="rowPersonal">
 				<Label id="phonePeresonal" text="Phone "></Label>
-				<TextField class="inputBox" id="phoneAdd" hintText="021 85 7700" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
+				<TextField class="inputBox" id="phoneEdit" hintText="021 85 7700" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
 				</View>
 				
 				<View class="rowPersonal">
 				<Label id="jobPersonal" text="Job "></Label>
-				<TextField class="inputBox" id="jobAdd" hintText="student" />
+				<TextField class="inputBox" id="jobEdit" hintText="student" />
 				</View>
 						
 			</View>			
@@ -65,27 +64,32 @@
 	</View>
 		
 	<View id="lowerView" class="lowerView">			
-			
+				<View class="rowAdditional">
+				<Label class="titleAdditional" text="Email" />
+				<TextField class="inputBox" id="emailEdit" hintText="4 March Place"/>
+				</View>
+
+				
 				<View class="rowAdditional">
 				<Label class="titleAdditional" text="  Address "></Label>
-				<TextField class="inputBox" id="addressAdd" hintText="4 March Place"/>
+				<TextField class="inputBox" id="addressEdit" hintText="4 March Place"/>
 				</View>
 
 				<View class="rowAdditional">
 				<Label class="titleAdditional" text="     "></Label>
-				<TextField class="inputBox" id="address2Add" hintText="Belfast"/>
+				<TextField class="inputBox" id="address2Edit" hintText="Belfast"/>
 				</View>
 
 				<View class="rowAdditional">
 				<Label class="titleAdditional" text="      "></Label>
-				<TextField class="inputBox" id="address3Add" hintText="Christchurch"/>
+				<TextField class="inputBox" id="address3Edit" hintText="Christchurch"/>
 				</View>
 				
 	// Additional custom category ???		
 
 				<View class="rowAdditional" visible="false">
 				<Label class="titleAdditional" text="  Custom"></Label>
-				<TextField class="inputBox" id="customAdd" value=""/>			
+				<TextField class="inputBox" id="customEdit" value=""/>			
 				</View>						
 	</View>	
 
