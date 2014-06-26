@@ -11,3 +11,5 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 Alloy.Collections.people = Alloy.createCollection('people');
+var searchInput ="";
+var searchCondition ="";

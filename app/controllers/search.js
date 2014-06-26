@@ -1,13 +1,15 @@
 var args = arguments[0] || {};
 var people = Alloy.Collections.people;
-var table = people.config.adapter.collection_name;
+// var table = people.config.adapter.collection_name;
 // var resultListWin=Alloy.CreateController();
-
+searchCondition ="name";
 
 $.btn_Appearance.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="true";	
 	$.faceImagePicker.visible="true";
 	$.byTextView.visible="false";
+	$.rightDot.visible="false";
+	$.leftDot.visible="true";	
 });
 
 $.btn_byText.addEventListener("click",function(e){
@@ -15,30 +17,61 @@ $.btn_byText.addEventListener("click",function(e){
 	closePickers();	
 	$.byTextView.visible="true";
 	$.searchTextInput.value="";
+	$.rightDot.visible="true";
+	$.leftDot.visible="false";	
 });
 
 
 
 
 $.btn_byTextSearch.addEventListener("click",function(e){
-	$.searchTextInput.blur();
-	alert($.searchTextInput.value);
-	
+
+	$.searchTextInput.blur();	
 	// search Actions!!!!
+	searchInput = $.searchTextInput.value;
 
-	var searchResultList = people.fetch({query: "SELECT * FROM " + table + " where name like '%"+$.searchTextInput.value+"%'"});
+	// people.fetch({query: "SELECT * FROM " + table + " where name like '%"+$.searchTextInput.value+"%'"});
 
-	Ti.API.debug('-----');
-	Ti.API.debug(people);
+	// Ti.API.debug('-----');
+	// Ti.API.debug(people);
 
 	$.byTextView.visible="false";
 
 	var result = Alloy.createController('searchResult').getView();
-	// Alloy.Globals.ActiveTab.open(result);
 
+	Alloy.Globals.activeTab.open(result);
 
 });
 
+
+
+
+$.searchCondition.addEventListener("click",function(e){
+	$.searchTextInput.blur();
+	$.searchConditionPicker.visible="true";
+	// $.lowerView.visible="false";	
+	// $.done.visible="true";
+});
+
+$.searchConditionPicker.addEventListener('change', function(e) {
+	$.searchCondition.value = e.selectedValue[0];
+	searchCondition = $.searchCondition.value;
+});
+
+
+var doneForCategory = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.DONE
+});
+
+var flexSpace = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+});
+
+$.toolbar.items = [flexSpace, doneForCategory];
+
+$.searchTextInput.addEventListener("focus",function(e){
+	$.searchConditionPicker.visible="false";	
+});
 
 
 
@@ -46,8 +79,8 @@ $.btn_byTextSearch.addEventListener("click",function(e){
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;			
-}
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;			
+};
 
 
 $.btn_doneEdit.addEventListener("click",function(e){
@@ -93,7 +126,6 @@ $.btn_extraEditCategory.addEventListener("click",function(e){
 $.extraImagePicker.addEventListener('change', function(e) {
 	$.extraGlasses.value = e.selectedValue[0];
 	$.extraMustache.value = e.selectedValue[1];
-	$.extraExtra.value = e.selectedValue[2];
 	changePic();			
 });
 

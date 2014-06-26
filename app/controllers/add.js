@@ -1,6 +1,15 @@
 var args = arguments[0] || {};
 var customAddNumber=1 ;
 
+$.addWin.addEventListener('blur', function(e) {
+	var lowerView = $.lowerView.getChildren();
+	for( var i=0;i<lowerView.length;i++ ) {
+		if( i > 4 ) {
+			$.lowerView.remove(lowerView[i]);
+		}
+	}
+});
+
 $.addWin.addEventListener("focus",function(e){
 	$.nameAdd.value="";
 	$.genderAdd.value="";	
@@ -9,6 +18,8 @@ $.addWin.addEventListener("focus",function(e){
 	$.addressAdd.value="";
 	$.jobAdd.value="";	
 	$.customAdd.value="";
+	$.phoneAdd.value="";
+	$.emailAdd.value="";
 
 	$.hairStyle.value="default";	
 	$.hairColor.value="default";	
@@ -19,7 +30,7 @@ $.addWin.addEventListener("focus",function(e){
 		
 	$.extraGlasses.value="default";		
 	$.extraMustache.value="default";	
-	$.extraExtra.value="default";			
+
 
 	changePic();
 		
@@ -32,8 +43,10 @@ var addItemDone = function (e){
 			name:$.nameAdd.value,
 			gender:$.genderAdd.value,
 			birthday:$.bdayAdd.value,
+			phoneNumber:$.phoneAdd.value,
 			address:$.addressAdd.value,
-			job:$.nameAdd.value,	
+			email:$.emailAdd.value,
+			job:$.jobAdd.value,	
 			custom:	$.customAdd.value,
 	
 			hairStyle:$.hairStyle.value,	
@@ -44,8 +57,7 @@ var addItemDone = function (e){
 			eyeShape:$.eyeShape.value,		
 			
 			extraGlassess:$.extraGlasses.value,	
-			extraMustache:$.extraMustache.value,
-			extraExtra:$.extraExtra.value,		
+			extraMustache:$.extraMustache.value,	
 		});
 			
 		detailInfo.save();
@@ -68,7 +80,7 @@ $.genderAdd.addEventListener("click",function(e){
 	$.address2Add.blur();
 	$.viewGenderPicker.visible="true";
 	$.lowerView.visible="false";	
-	$.done.visible="true";
+
 });
 
 $.genderPicker.addEventListener('change', function(e) {
@@ -76,11 +88,25 @@ $.genderPicker.addEventListener('change', function(e) {
 });
 
 
-$.done.addEventListener("click",function(e){
+var doneForGender = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.DONE
+});
+
+var flexSpace = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+});
+
+
+doneForGender.addEventListener("click",function(e){
 	$.lowerView.visible="true";	
 	$.viewGenderPicker.visible="false";	
-	$.done.visible="false";	
 });
+
+$.toolbar.items = [flexSpace, doneForGender];
+
+$.datepicker.type = Ti.UI.PICKER_TYPE_DATE_AND_TIME;
+
+
 
 
 // Image editing follows
@@ -93,13 +119,16 @@ $.btn_imageEdit.addEventListener("click",function(e){
 $.btn_doneEdit.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="false";	
 	closePickers();
+	$.person.image=$.skinColor.value;
 	$.btn_imageEdit.visible="true";
 });
 
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;			
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;		
+	// alert($.skinColor.value);	
+	$.personImageEdit.image=$.skinColor.value;
 }
 
 
@@ -117,7 +146,7 @@ $.btn_faceEditCategory.addEventListener("click",function(e){
 });
 
 $.faceImagePicker.addEventListener('change', function(e) {
-	$.skinColor.value = e.selectedValue[0];
+	$.skinColor.value = e.selectedValue[0].customTitle;
 	$.faceShape.value = e.selectedValue[1];
 	$.eyeShape.value = e.selectedValue[2];	
 	changePic();			
@@ -149,13 +178,12 @@ $.btn_extraEditCategory.addEventListener("click",function(e){
 $.extraImagePicker.addEventListener('change', function(e) {
 	$.extraGlasses.value = e.selectedValue[0];
 	$.extraMustache.value = e.selectedValue[1];
-	$.extraExtra.value = e.selectedValue[2];
 	changePic();			
 });
 
 
 $.btn_addMore.addEventListener("click",function(e){	
-	$.scrollView.visible="false";		
+	$.container.visible="false";		
 	$.customAddView.visible="true";
 	$.customAddCategory.value="";
 	$.customAddContent.value="";		
@@ -168,7 +196,7 @@ $.doneCustomAdd.addEventListener("click",function(e){
 
 		$.customAddCategory.blur();
 		$.customAddContent.blur();
-		//	alert($.customAdd.value);
+			// alert($.customAdd.value);
 
 		var title = $.customAddCategory.value,
 			content = $.customAddContent.value;
@@ -182,14 +210,16 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			$.lowerView.add(field);
 
 		$.customAddView.visible="false";	
-		$.scrollView.visible="true";	
+		$.container.visible="true";	
 
 
 	}
 		else{
 			// alert("Please input category title");
 			$.customAddView.visible="false";	
-			$.scrollView.visible="true";	
+			$.container.visible="true";	
+			$.customAddCategory.blur();
+			$.customAddContent.blur();
 			
 		}		
 });
