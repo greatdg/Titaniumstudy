@@ -22,7 +22,7 @@
 
 											
 				<ImageView class="person" id="person" >
-					<!-- <ImageView class="hair" image="person.png" /> -->
+
 									
 									
 					<Label id="picName" color="white" top="50" text="picName" visible="false" ></Label>	
@@ -197,13 +197,15 @@
                 	  
 				<PickerColumn id="skinColor">
 					<PickerRow title=""/>
-                	<PickerRow customTitle="black_face.png">
-                		<ImageView image="black_face.png" />
+                	<PickerRow customTitle="black">
+                		<ImageView image="black__.png" />
                 	</PickerRow>
-                	<PickerRow customTitle="yellow_face.png">
-                		<ImageView image="yellow_face.png"/>
+                	<PickerRow customTitle="yellow">
+                		<ImageView image="yellow__.png"/>
                 	</PickerRow>	
-                	<PickerRow customTitle="white" title = "white" />                 	              	                	
+                	<PickerRow customTitle="white" >
+               			<ImageView image="yellow__.png"/>  
+               		</PickerRow>	              	                 	              	                	
                 </PickerColumn>  
                 
 				<PickerColumn id="faceShape">

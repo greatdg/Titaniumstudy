@@ -1,6 +1,7 @@
 var args = arguments[0] || {};
 var customAddNumber=1 ;
 
+
 $.addWin.addEventListener('blur', function(e) {
 	var lowerView = $.lowerView.getChildren();
 	for( var i=0;i<lowerView.length;i++ ) {
@@ -31,7 +32,7 @@ $.addWin.addEventListener("focus",function(e){
 	$.extraGlasses.value="default";		
 	$.extraMustache.value="default";	
 
-
+	$.person.image="default_default_default.png";
 	changePic();
 		
 });
@@ -48,16 +49,10 @@ var addItemDone = function (e){
 			email:$.emailAdd.value,
 			job:$.jobAdd.value,	
 			custom:	$.customAdd.value,
-	
-			hairStyle:$.hairStyle.value,	
-			hairColor:$.hairColor.value,
-			
-			skinColor:$.skinColor.value,	
-			faceShape:$.faceShape.value,							
-			eyeShape:$.eyeShape.value,		
-			
-			extraGlassess:$.extraGlasses.value,	
-			extraMustache:$.extraMustache.value,	
+			faceShape:$.picName.text,	
+			hairStyle:$.hairStyle.value,					
+			extra:$.extraGlasses.value,	
+			minime:$.extraMustache.value,	
 		});
 			
 		detailInfo.save();
@@ -66,6 +61,7 @@ var addItemDone = function (e){
 	}
 	else { alert("Please input name");
 	};
+	alert($.picName.text);
 };
 
 var cancleAdd = function(e){
@@ -119,16 +115,18 @@ $.btn_imageEdit.addEventListener("click",function(e){
 $.btn_doneEdit.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="false";	
 	closePickers();
-	$.person.image=$.skinColor.value;
+	$.person.image=$.picName.text;
 	$.btn_imageEdit.visible="true";
+
 });
 
 function changePic(){
-	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
+	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value+".png";
+	alert($.picName.text);
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
 	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;		
-	// alert($.skinColor.value);	
-	$.personImageEdit.image=$.skinColor.value;
+		
+	$.personImageEdit.image=$.picName.text;
 }
 
 

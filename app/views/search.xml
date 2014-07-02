@@ -21,7 +21,7 @@
 
 			<View id="viewImageEditCategory" visible="true">
 		
-					<ImageView class="person" image="default_default_default.png">								
+					<ImageView class="person" id="personImageEdit" image="default_default_default.png">								
 							<Label id="picName" color="white" top=50 text="picName" visible="true" ></Label>	
 							<Label id="picHairName" color="white" top="70" text="hairName" visible="true" ></Label>					
 							<Label id="picExtraName" color="white" top="90" text="extraName" visible="true"></Label>																						
@@ -43,7 +43,7 @@
 							<PickerColumn>
 								<PickerRow title="name"/>
 			                	<PickerRow title="gender"/>
-			                	<PickerRow title="phone"/>
+			                	<PickerRow title="phoneNumber"/>
 			                	<PickerRow title="job"/>
 			                	<PickerRow title="address"/>
 			                	<PickerRow title="custom"/> 		                	                 	              	                	
@@ -57,13 +57,15 @@
 				                	  
 								<PickerColumn id="skinColor">
 									<PickerRow title=""/>
-				                	<PickerRow customTitle="black_face.png">
-				                		<ImageView image="black_face.png" />
+				                	<PickerRow customTitle="black">
+				                		<ImageView image="black__.png" />
 				                	</PickerRow>
-				                	<PickerRow customTitle="yellow_face.png">
-				                		<ImageView image="yellow_face.png"/>
+				                	<PickerRow customTitle="yellow">
+				                		<ImageView image="yellow__.png"/>
 				                	</PickerRow>	
-				                	<PickerRow customTitle="white" title = "white" />                 	              	                	
+				                	<PickerRow customTitle="white" >
+				                		<ImageView image="yellow__.png"/>
+				                	</PickerRow>	                 	              	                	
 				                </PickerColumn>  
 				                
 								<PickerColumn id="faceShape">
