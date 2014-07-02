@@ -58,10 +58,7 @@ function editDone(){
 		});
 		 //Ti.API.debug(selectModel);
 		 //Titanium.App.fireEvent('doneEdit');
-		var win = Alloy.createController('detail',{
-		alloyId: alloyId
-	}).getView();
-	Alloy.Globals.activeTab.openWindow(win);
+	$.detailEdit.close();
 	}else{
 		alert("Please input name");};
 };

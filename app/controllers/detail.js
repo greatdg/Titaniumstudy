@@ -25,24 +25,20 @@ var personalDetail = function(id){
 	$.job.setText(personalData.job);
 	
 	//create view of the custom fields
-	
-		if(personalData.custom !==""){
-		$.customAdd.value="test"
-
-		var title = "test",
-			content = "test";
+	Ti.API.debug(personalData.custom);
+		if(personalData.custom && personalData.custom.length > 0){
 		
+		var splitFields = personalData.custom.split('##');
 		
-		var field=Alloy.createController("customfield",{
-			name:title,
-			field:content,	
+		for(var i=0; i<splitFields.length; i++){
+			var splitField = splitFields[i].split('&&');
+			var field=Alloy.createController("customfield",{
+			name:splitField[0],
+			field:splitField[1],	
 		}).getView();	
 			
 			$.lowerView.add(field);
-
-
-
-
+		}
 	}
 		else{
 			// alert("Please input category title");
