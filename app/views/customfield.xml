@@ -1,7 +1,6 @@
 <Alloy>
-	<View class="container" layout="horizontal" backgroundColor='white' width='100%' height="40">				
-			<Label left="10" id="name"/>
-			<Label text=" : " />
-			<Label id="fieldvalue"/>			
-	</View>
+		<View class="rowAdditional">
+			<Label id="customTitle" class="titleAdditional" text="      "></Label>
+			<Label id="customLabel" />
+		</View>
 </Alloy>

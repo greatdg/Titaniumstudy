@@ -35,7 +35,6 @@ $.btn_byTextSearch.addEventListener("click",function(e){
 	// Ti.API.debug('-----');
 	// Ti.API.debug(people);
 
-	$.byTextView.visible="false";
 
 	var result = Alloy.createController('searchResult').getView();
 
@@ -44,13 +43,23 @@ $.btn_byTextSearch.addEventListener("click",function(e){
 });
 
 
+$.btn_doneEdit.addEventListener("click",function(e){
+	
+	searchInput = $.searchTextInput.value; 
+	// name of pic
+
+	var result = Alloy.createController('searchResult').getView();
+
+	Alloy.Globals.activeTab.open(result);
+	
+	closePickers();
+});
+
 
 
 $.searchCondition.addEventListener("click",function(e){
 	$.searchTextInput.blur();
 	$.searchConditionPicker.visible="true";
-	// $.lowerView.visible="false";	
-	// $.done.visible="true";
 });
 
 $.searchConditionPicker.addEventListener('change', function(e) {
@@ -77,16 +86,16 @@ $.searchTextInput.addEventListener("focus",function(e){
 
 
 function changePic(){
-	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
+	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value+".png";
+	alert($.skinColor.value);
+	alert($.picName.text);
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;			
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;		
+	$.personImageEdit.image=$.picName.text;	
 };
 
 
-$.btn_doneEdit.addEventListener("click",function(e){
-	$.viewImageEditCategory.visible="false";	
-	closePickers();
-});
+
 
 $.btn_faceEditCategory.addEventListener("click",function(e){
 	closePickers();
@@ -94,7 +103,7 @@ $.btn_faceEditCategory.addEventListener("click",function(e){
 });
 
 $.faceImagePicker.addEventListener('change', function(e) {
-	$.skinColor.value = e.selectedValue[0];
+	$.skinColor.value = e.selectedValue[0].customTitle;
 	$.faceShape.value = e.selectedValue[1];
 	$.eyeShape.value = e.selectedValue[2];	
 	changePic();			
