@@ -67,6 +67,10 @@ var addItemDone = function (e){
 			
 		detailInfo.save();
 		people.add(detailInfo);
+		var obj = detailInfo.toJSON();
+		Ti.API.info(obj.no);
+		doCrop(obj.no);
+		
 		closeWindow();
 	}
 	else { alert("Please input name");
@@ -215,7 +219,7 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			field:content,	
 		}).getView();	
 			
-			$.lowerView.add(field);
+		$.lowerView.add(field);
 
 		$.customAddView.visible="false";	
 		$.container.visible="true";	
@@ -235,18 +239,17 @@ $.doneCustomAdd.addEventListener("click",function(e){
 
 
 
-function doCrop(e) {
+function doCrop(name) {
 	Titanium.Media.takeScreenshot(function(e){
 		var image = e.media;
-		var newBlob = Imagefactory.imageAsCropped(image, { width:100, height:100, x:10, y:50 });
+		var newBlob = Imagefactory.imageAsCropped(image, { width:100, height:100, x:0, y:90 });
 		newBlob = Imagefactory.imageWithRoundedCorner(newBlob, { borderSize:4, cornerRadius:40});
-		var name = 	$.nameAdd.value + $.bdayAdd.value;
 		var imageFile = Ti.Filesystem.getFile(imageRootPath, name + ".jpg");
-		imageFile.createFile();		
+		imageFile.createFile();
+				
 		if ( imageFile.write(newBlob) === false){
 			alert("oversize");
 		} ;		
-		$.newImage.image = imageRootPath + name + ".jpg";
 	});
 }
 
