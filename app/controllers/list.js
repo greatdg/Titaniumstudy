@@ -9,7 +9,9 @@ function transformfunction(item) {
 	var item = item.toJSON();
 	item.title = item.name;
 	return item;
+	//$.smallFace.image = people.
 	//$.listList.text = item.name;
+	$.smallFace.image = item.no + '.jpg';
 };
 
 $.listWin.addEventListener('focus', function(e){

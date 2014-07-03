@@ -2,6 +2,7 @@ var args = arguments[0] || {};
 var people = Alloy.Collections.people;
 var alloyId = args.alloyId;
 
+
 // 
 // $.imageGlasses.hide();
 // 
