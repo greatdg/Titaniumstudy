@@ -1,6 +1,7 @@
 exports.definition = {
 	config: {
 		columns: {
+			"no": "INTEGER PRIMARY KEY AUTOINCREMENT",
 		    "name": "text",
 		    "gender": "integer",
 		    "birthday": "text",
@@ -18,7 +19,8 @@ exports.definition = {
 		},
 		adapter: {
 			type: "sql",
-			collection_name: "people"
+			collection_name: "people",
+			idAttribute : "no",
 		}
 	},
 	extendModel: function(Model) {

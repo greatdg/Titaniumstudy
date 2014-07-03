@@ -1,6 +1,16 @@
 var args = arguments[0] || {};
 var customAddNumber=1 ;
 
+var Imagefactory = require('ti.imagefactory');
+var imageFolderName = "person_image";
+var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
+
+var imageDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, imageFolderName);
+if( imageDir.exists() === false){
+	imageDir.createDirectory();
+}
+imageDir = null;
+
 
 $.addWin.addEventListener('blur', function(e) {
 	var lowerView = $.lowerView.getChildren();
@@ -57,11 +67,15 @@ var addItemDone = function (e){
 			
 		detailInfo.save();
 		people.add(detailInfo);
+		var obj = detailInfo.toJSON();
+		Ti.API.info(obj.no);
+		doCrop(obj.no);
+		
 		closeWindow();
 	}
 	else { alert("Please input name");
 	};
-	alert($.picName.text);
+	// alert($.picName.text);
 };
 
 var cancleAdd = function(e){
@@ -122,7 +136,7 @@ $.btn_doneEdit.addEventListener("click",function(e){
 
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value+".png";
-	alert($.picName.text);
+	// alert($.picName.text);
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
 	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;		
 		
@@ -205,7 +219,7 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			field:content,	
 		}).getView();	
 			
-			$.lowerView.add(field);
+		$.lowerView.add(field);
 
 		$.customAddView.visible="false";	
 		$.container.visible="true";	
@@ -221,6 +235,50 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			
 		}		
 });
+
+
+
+
+function doCrop(name) {
+	Titanium.Media.takeScreenshot(function(e){
+		var image = e.media;
+		var newBlob = Imagefactory.imageAsCropped(image, { width:100, height:100, x:0, y:90 });
+		newBlob = Imagefactory.imageWithRoundedCorner(newBlob, { borderSize:4, cornerRadius:40});
+		var imageFile = Ti.Filesystem.getFile(imageRootPath, name + ".jpg");
+		imageFile.createFile();
+				
+		if ( imageFile.write(newBlob) === false){
+			alert("oversize");
+		} ;		
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function closeWindow(){

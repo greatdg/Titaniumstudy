@@ -5,7 +5,7 @@
 		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable='true'>
 			<SearchBar barColor="#FFF" hintText="Search" id="listSearch" showCancel="false" height="43" top="0" ></SearchBar>
 			<TableViewRow alloy_id='{alloy_id}' height='55'>
-				<ImageView id='smallFace' width='50' height='50' left="10" />
+				<ImageView image="{PicName}" width='50' height='50' left="10" />
 				<Label id='listList' text='{title}' class='listList'></Label>
 				</TableViewRow>
 				

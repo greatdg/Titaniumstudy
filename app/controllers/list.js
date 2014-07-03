@@ -1,6 +1,7 @@
 var args = arguments[0] || {};
 var people = Alloy.Collections.people;
-
+var imageFolderName = "person_image";
+var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
 people.fetch();
 
 //alert(people.length);
@@ -8,6 +9,7 @@ people.fetch();
 function transformfunction(item) {
 	var item = item.toJSON();
 	item.title = item.name;
+	item.PicName = imageRootPath+item.no +".jpg";
 	return item;
 	//$.smallFace.image = people.
 	//$.listList.text = item.name;
