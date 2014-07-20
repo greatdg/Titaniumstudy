@@ -23,6 +23,7 @@
 
 ".scrollView":{
 	width:"100%",
+	layout:"vertical",
 },
 
 ".rightButton":{
@@ -92,11 +93,9 @@
 },
 
 ".lowerView":{
-	top:"0",
 	fontSize:"9",
 	// backgroundColor:"#EEE",
 	// top:3,
-	left:"0",
 	layout:"vertical",
 	width:"100%",
 },

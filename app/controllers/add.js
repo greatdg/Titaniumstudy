@@ -210,19 +210,22 @@ $.doneCustomAdd.addEventListener("click",function(e){
 		$.customAddContent.blur();
 			// alert($.customAdd.value);
 
+
+
 		var title = $.customAddCategory.value,
 			content = $.customAddContent.value;
 		
 		
-		var field=Alloy.createController("customfield",{
+		var field=Alloy.createController("customField",{
 			name:title,
 			field:content,	
 		}).getView();	
 			
 		$.lowerView.add(field);
-
+		// alert("custom here");
 		$.customAddView.visible="false";	
-		$.container.visible="true";	
+		$.container.visible="true";
+		$.container.height = parseInt($.container.height) + 40;
 
 
 	}
@@ -240,43 +243,20 @@ $.doneCustomAdd.addEventListener("click",function(e){
 
 
 function doCrop(name) {
+	$.btn_imageEdit.visible = false;
 	Titanium.Media.takeScreenshot(function(e){
 		var image = e.media;
-		var newBlob = Imagefactory.imageAsCropped(image, { width:100, height:100, x:0, y:90 });
-		newBlob = Imagefactory.imageWithRoundedCorner(newBlob, { borderSize:4, cornerRadius:40});
+		var newBlob = Imagefactory.imageAsCropped(image, { width:250, height:290, x:0, y:140 });
+		newBlob = Imagefactory.imageWithRoundedCorner(newBlob, { borderSize:4, cornerRadius:100});
 		var imageFile = Ti.Filesystem.getFile(imageRootPath, name + ".jpg");
 		imageFile.createFile();
+		$.btn_imageEdit.visible = true;
 				
 		if ( imageFile.write(newBlob) === false){
 			alert("oversize");
 		} ;		
 	});
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
