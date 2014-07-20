@@ -7,15 +7,13 @@ var alloyId = args.alloyId;
 // $.imageGlasses.hide();
 // 
 Titanium.App.addEventListener("doneEdit", function(e){
-	Ti.API.debug(alloyId);
 	personalDetail(alloyId);
-
 });
 // 
 //--------set text data on the detail page--------//
 var personalDetail = function(id){
 	var personalData = people.get(id).toJSON();
-	
+	Ti.API.debug(personalData);
 	$.name.setText(personalData.name);
 	$.birthday.setText(personalData.birthday);
 	$.gender.setText(personalData.gender);
@@ -24,9 +22,10 @@ var personalDetail = function(id){
 	$.address2.setText(personalData.address2);
 	$.address3.setText(personalData.address3);
 	$.job.setText(personalData.job);
+	$.email.setText(personalData.email);
 	
 	//create view of the custom fields
-	Ti.API.debug(personalData.custom);
+	//Ti.API.debug(personalData.custom);
 		if(personalData.custom && personalData.custom.length > 0){
 		
 		var splitFields = personalData.custom.split('##');
@@ -50,9 +49,11 @@ var personalDetail = function(id){
 
 };
 
+$.detail.addEventListener('focus', function(e){
+	personalDetail(alloyId);
+});
 
- 
-personalDetail(alloyId);
+
 
 var clickEdit = function(e){
 		var win = Alloy.createController("detailEdit",{

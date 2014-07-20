@@ -19,4 +19,5 @@ var checkClick = function(e){
 		this.checkBtn = 'true';		
 		$.checkbox.color = 'red';
 	};
+	//Ti.API.debug(contactData.address);
 };

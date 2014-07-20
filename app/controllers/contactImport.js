@@ -13,7 +13,8 @@ var performAddressBookFunction = function(){
     for (var i = 0; i < contacts.length; i++) {
         var contactData = contacts[i];
         var title = contacts[i].fullName;
-       Ti.API.debug(contacts[i]);
+        
+       //Ti.API.debug(contacts[i].birthday);
         if (!title || title.length === 0) {
             title = "(no name)";
         }
@@ -27,7 +28,7 @@ var performAddressBookFunction = function(){
     $.importTable.data = data;
 };
 var addressBookDisallowed = function(){
-	alert('test12222asdfdaf');
+	alert('testaaaaa1222daf');
 };
 
 if (Ti.Contacts.contactsAuthorization == Ti.Contacts.AUTHORIZATION_AUTHORIZED){
@@ -64,17 +65,72 @@ var clickImportDone = function(e){
 				
 				
 				if(row.children[0].checkBtn==='true'){
-					//Ti.API.debug(row.children);
+					
 					var people = Alloy.Collections.people;
 					
 					var personalInfo = row.children[1];
-					Ti.API.debug(personalInfo.allData.fullName);
-					var email_string = JSON.stringify(personalInfo.email);
+					var birthday = "",
+						email = "",
+						text = "";
+						phoneNumber = "";
+						organization = "";
+						address1 = "";
+						address2 = "";
+					// Ti.API.debug(personalInfo);
+					_.map(personalInfo, function(value, key) {
+						if( key == "allData" ) {
+							
+							if( personalInfo[key].birthday ) {
+								var splitBirthday = personalInfo.allData.birthday.split('T');
+								birthday = splitBirthday[0];	
+							};
+							
+							_.map(personalInfo[key].phone, function(value){
+								if (phoneNumber == "" && value && value.length > 0){
+									phoneNumber = value[0];
+								};
+							});
+							
+							if( personalInfo[key].organization ){
+								organization = personalInfo.allData.organization;
+							};
+							
+							_.map(personalInfo[key].address, function(value){
+								if (address1 == "" && value && value.length > 0){
+									address1 = value.Street;
+								};
+								if (address2 == "" && value && value.length > 0){
+									address2 = value.State;
+								};
+								
+							});
+							
+						} else if( key == "email" ) {
+							_.map(personalInfo[key], function(value) {
+								if( email == "" && value && value.length > 0 ) {
+									email = value[0];
+								}
+							});
+						} else if( key == "text" ) {
+							text = value;
+						} 
+						
+					});
 					
+					// {'email': {
+						// 'home': ['afdsasdfa']
+					// }}
 					
 					var detailInfo = Alloy.createModel("people",{
-					name: personalInfo.text,
-					email: email_string
+					name: text,
+					email: email,
+					birthday: birthday,
+					phoneNumber: phoneNumber,
+					job: organization,
+					address1: address1,
+					address2: address2
+					
+					
 					 
 					// gender:$.genderAdd.value,
 					// birthday:$.bdayAdd.value,

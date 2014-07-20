@@ -13,7 +13,7 @@ function transformfunction(item) {
 	return item;
 	//$.smallFace.image = people.
 	//$.listList.text = item.name;
-	$.smallFace.image = item.no + '.jpg';
+	// $.smallFace.image = item.no + '.jpg';
 };
 
 $.listWin.addEventListener('focus', function(e){
@@ -29,8 +29,9 @@ $.listWin.addEventListener('focus', function(e){
 
 	
 $.listTable.addEventListener('click',function(e){
+	//Ti.API.debug(e)
 	var win = Alloy.createController('detail',{
-		alloyId: e.row.alloy_id
+		alloyId: e.row.no
 	}).getView();
 
 	Alloy.Globals.activeTab.openWindow(win);
