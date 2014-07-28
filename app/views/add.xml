@@ -154,21 +154,21 @@
 	</View>
 
 
-	<View id="viewImageEditCategory" visible="false" backgroundColor="red">
-		<View id="categoryMenu" backgroundColor="blue">
+	<View id="viewImageEditCategory" visible="false">
+		<View id="categoryMenu">
 										
 				<ImageView class="person" id="personImageEdit" top="80">
 				</ImageView>		
-				<ImageView class="person" id="hairImageEdit" top="80" left ="-100" backgroundColor="red">
+				<!-- <ImageView class="person" id="hairImageEdit" top="80" left ="-112" >
 				</ImageView>
-				<ImageView class="person" id="extraImageEdit" top="80">
-				</ImageView>								
+				<ImageView class="person" id="extraImageEdit" top="80"left ="-112" >
+				</ImageView> -->								
 				
 					
 
 			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="12"/>
-			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="0" left ="5" />
-			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="-120" left ="5" />
+			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left ="5" />
+			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="120" left ="5" />
 			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" left="7" height="70"/>
 		</View>
 	</View>
