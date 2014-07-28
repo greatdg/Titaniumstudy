@@ -11,7 +11,6 @@ if( imageDir.exists() === false){
 }
 imageDir = null;
 
-
 $.addWin.addEventListener('blur', function(e) {
 	var lowerView = $.lowerView.getChildren();
 	for( var i=0;i<lowerView.length;i++ ) {
