@@ -14,7 +14,7 @@
 				<!-- emoticon area -->
 
 											
-				<ImageView class="person" image="default_default_default.png">
+				<ImageView id="facePic" class="person" image="default100.png">
 					<!-- <ImageView class="hair" image="person.png" /> -->
 									
 									
@@ -30,12 +30,12 @@
 				<!-- name, birthday, phone numberand gender -->
 
 				<View class="rowPersonal">
-				<Label class="namePersonal" text="Name "></Label>
+				<Label class="upper_title" text="Name "></Label>
 				<Label id="name" text = "sdf" />
 				</View>
 				
 				<View class="rowPersonal">
-				<Label class="genderPersonal" text="Gender "></Label>
+				<Label class="upper_text" text="Gender "></Label>
 				<Label id="gender" />
 				</View>	
 	

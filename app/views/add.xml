@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="addWin" title = "Add mate" modal="true">	
+	<Window id="addWin" title = "Add mate" modal="true" barColor="#9AB3CD">	
 
 		<RightNavButton title ="Add" text="Add" >
 
@@ -37,28 +37,28 @@
 				<!-- name, birthday, phone numberand gender -->
 
 				<View class="rowPersonal">
-				<ImageView image="N.png" height="16" />	
-				<TextField class="inputBox" height="17" id="nameAdd" value="" hintText="Name"/ >
+					<ImageView image="N.png" height="16" />	
+				<TextField class="inputBox" borderStyle="Ti.UI.INPUT_BORDERSTYLE_BEZEL " height="22" width="100" id="nameAdd" value="" hintText="Name"/ >
 				</View>
 				
 				<View class="rowPersonal">
 				<ImageView image="G.png" height="16" />						
-				<TextField class="inputBox" height="17" id="genderAdd" hintText="Gender" editable="false"/>
+				<TextField class="inputBox" height="25" id="genderAdd" hintText="Gender" editable="false"/>
 				</View>	
 	
 				<View class="rowPersonal">
 				<ImageView image="B.png" height="16" />						
-				<TextField class="inputBox" height="17" id="bdayAdd" hintText="Birthday" editable="false"/>
+				<TextField class="inputBox" height="25" id="bdayAdd" hintText="Birthday" editable="false"/>
 				</View>			
 
 				<View class="rowPersonal">
 				<ImageView image="P.png" height="16" />						
-				<TextField class="inputBox" height="17" id="phoneAdd" hintText="Phone Number" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
+				<TextField class="inputBox" height="25" id="phoneAdd" hintText="Phone Number" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
 				</View>
 				
 				<View class="rowPersonal">
 				<ImageView image="e.png" height="16" />					
-				<TextField class="inputBox" height="17" id="emailAdd" hintText="email" />
+				<TextField class="inputBox" height="25" id="emailAdd" hintText="email" />
 				</View>		
 					
 			</View>
@@ -90,8 +90,7 @@
 				
 				<Button id="btn_addMore" backgroundImage ="more.png" left="260" height="40" width="40" />	
 				
-				
-	// Additional custom category ???		
+					
 
 				<View height="3" visible="false">
 				<TextField class="inputBox" height="17" id="customAdd" value=""/>			

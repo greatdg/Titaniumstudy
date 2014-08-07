@@ -3,6 +3,8 @@ var customAddNumber=1 ;
 var alloyId = args.alloyId;
 // Ti.API.debug(alloyId);
 var people = Alloy.Collections.people;
+var imageFolderName = "person_image";
+var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
 
 $.detailEdit.addEventListener('focus', function(e){
 	people.fetch();
@@ -14,7 +16,9 @@ var personalData = people.get(alloyId).toJSON();
 	$.bdayEdit.value= personalData.birthday;
 	$.phoneEdit.value = personalData.phoneNumber;
 
-	$.addressEdit.value= personalData.address;
+	$.addressEdit.value= personalData.address1;
+	$.address2Edit.value= personalData.address2;
+	$.address3Edit.value= personalData.address3;
 	$.jobEdit.value=personalData.job;	
 	$.customEdit.value="";
 
@@ -27,7 +31,11 @@ var personalData = people.get(alloyId).toJSON();
 		
 	$.extraGlasses.value=personalData.extraGalsses;		
 	$.extraMustache.value=personalData.extraMustache;	
-	$.extraExtra.value=personalData.extraExtra;			
+	$.extraExtra.value=personalData.extraExtra;	
+	
+	$.emailEdit.value = personalData.email;
+	$.facePic.image = imageRootPath+alloyId +".jpg";
+		
 
 	changePic();
 		
@@ -44,6 +52,10 @@ function editDone(){
 			job:$.jobEdit.value,	
 			custom:	$.customEdit.value,
 			phoneNumber: $.phoneEdit.value,
+			email: $.emailEdit.value,
+			address1: $.addressEdit.value,
+			address2: $.address2Edit.value,
+			address3: $.address3Edit.value,
 	
 			hairStyle:$.hairStyle.value,	
 			hairColor:$.hairColor.value,
@@ -156,8 +168,50 @@ $.extraImagePicker.addEventListener('change', function(e) {
 	changePic();			
 });
 
+$.btn_addMore.addEventListener("click",function(e){	
+	$.container.visible="false";		
+	$.customAddView.visible="true";
+	$.customAddCategory.value="";
+	$.customAddContent.value="";		
+});	
 
 
+$.doneCustomAdd.addEventListener("click",function(e){
+	if($.customAddCategory.value !==""){
+		$.customAdd.value=$.customAdd.value+ $.customAddCategory.value + "&&" + $.customAddContent.value + "##" ;
+
+		$.customAddCategory.blur();
+		$.customAddContent.blur();
+			// alert($.customAdd.value);
+
+
+
+		var title = $.customAddCategory.value,
+			content = $.customAddContent.value;
+		
+		
+		var field=Alloy.createController("customField",{
+			name:title,
+			field:content,	
+		}).getView();	
+			
+		$.lowerView.add(field);
+		// alert("custom here");
+		$.customAddView.visible="false";	
+		$.container.visible="true";
+		$.container.height = parseInt($.container.height) + 40;
+
+
+	}
+		else{
+			// alert("Please input category title");
+			$.customAddView.visible="false";	
+			$.container.visible="true";	
+			$.customAddCategory.blur();
+			$.customAddContent.blur();
+			
+		}		
+});
 
 
 

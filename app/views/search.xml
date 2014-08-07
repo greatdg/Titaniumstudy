@@ -1,11 +1,11 @@
 <Alloy>
-	<Window title="Search">
+	<Window title="Search" barColor="#9EE0EF">
 		<View class="container" layout="vertical" bacgroundColor="blue">
-			<View class="firstMenu" layout="horizontal" width="100%">
-				<Button id="btn_Appearance" backgroundImage="appearance.png" width="110" left="40" top="5" />
+			<View class="firstMenu" layout="horizontal" width="100%" height="65">
+				<Button id="btn_Appearance" title="by Appearance" width="160" height="65" left="0" top="0"/>
 				<Button id="btn_byText" backgroundImage="textSearch.png" width="110" left="30" top="5"/>	
-				<ImageView id="leftDot" image="dot.png" left="-166" top="11" height="22" width="22" />
-				<ImageView id="rightDot" image="dot.png" left="39" top="11" height="22" width="22" visible="false" />				
+				<ImageView id="appearance_deselect" image="search_appearance.png" left="0" top="0" height="65" width="160" visible="false"/>
+				<ImageView id="rightDot" image="dot.png" left="39" top="11" height="22" width="22" visible="true" />				
 			</View>	
 			
 			<View id="byTextView" visible="false" height="170" layout="vertical">
@@ -21,7 +21,7 @@
 
 			<View id="viewImageEditCategory" visible="true">
 		
-					<ImageView class="person" id="personImageEdit" image="default_default_default.png">								
+					<ImageView class="person" id="personImageEdit" image="default100.png">								
 							<Label id="picName" color="white" top=50 text="picName" visible="true" ></Label>	
 							<Label id="picHairName" color="white" top="70" text="hairName" visible="true" ></Label>					
 							<Label id="picExtraName" color="white" top="90" text="extraName" visible="true"></Label>																						

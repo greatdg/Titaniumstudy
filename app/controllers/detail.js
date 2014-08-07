@@ -1,7 +1,8 @@
 var args = arguments[0] || {};
 var people = Alloy.Collections.people;
 var alloyId = args.alloyId;
-
+var imageFolderName = "person_image";
+var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
 
 // 
 // $.imageGlasses.hide();
@@ -23,6 +24,7 @@ var personalDetail = function(id){
 	$.address3.setText(personalData.address3);
 	$.job.setText(personalData.job);
 	$.email.setText(personalData.email);
+	$.facePic.image=imageRootPath+id +".jpg";
 	
 	//create view of the custom fields
 	//Ti.API.debug(personalData.custom);

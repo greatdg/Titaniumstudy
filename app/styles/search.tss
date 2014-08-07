@@ -31,10 +31,9 @@
 
 ".person":{
 	backgroundColor:"white",
-	top:"0",
-	left:"0",	
-	width:"35%",
-	height:"140",
+	top:"10",
+	left:"10",	
+
 	// zIndex:"1"
 }
 

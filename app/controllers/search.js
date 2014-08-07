@@ -7,9 +7,9 @@ searchCondition ="name";
 $.btn_Appearance.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="true";	
 	$.faceImagePicker.visible="true";
-	$.byTextView.visible="false";
+	$.byTextView.visible="true";
 	$.rightDot.visible="false";
-	$.leftDot.visible="true";	
+	$.appearance_deselect.visible="false";	
 });
 
 $.btn_byText.addEventListener("click",function(e){
@@ -18,7 +18,9 @@ $.btn_byText.addEventListener("click",function(e){
 	$.byTextView.visible="true";
 	$.searchTextInput.value="";
 	$.rightDot.visible="true";
-	$.leftDot.visible="false";	
+	$.appearance_deselect.zIndex="100";
+	$.appearance_deselect.visible="true";
+		
 });
 
 

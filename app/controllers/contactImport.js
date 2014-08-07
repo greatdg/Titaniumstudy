@@ -76,6 +76,7 @@ var clickImportDone = function(e){
 						organization = "";
 						address1 = "";
 						address2 = "";
+						address3 = "";
 					// Ti.API.debug(personalInfo);
 					_.map(personalInfo, function(value, key) {
 						if( key == "allData" ) {
@@ -95,15 +96,23 @@ var clickImportDone = function(e){
 								organization = personalInfo.allData.organization;
 							};
 							
-							_.map(personalInfo[key].address, function(value){
-								if (address1 == "" && value && value.length > 0){
-									address1 = value.Street;
-								};
-								if (address2 == "" && value && value.length > 0){
-									address2 = value.State;
-								};
-								
+							
+						
+							_.map(personalInfo[key].address, function(value, key){
+								_.map(value[0], function(val, subkey) {
+
+									if( address1 == "" && subkey == "Street" ) {
+										address1 = val;
+									} else if( address2 == "" && subkey == "State" ) {
+										address2 = val;
+									} else if( address3 == "" && subkey == "City" ) {
+										address3 = val;
+									};
+									
+								});
+										
 							});
+							
 							
 						} else if( key == "email" ) {
 							_.map(personalInfo[key], function(value) {
@@ -128,7 +137,8 @@ var clickImportDone = function(e){
 					phoneNumber: phoneNumber,
 					job: organization,
 					address1: address1,
-					address2: address2
+					address2: address2,
+					address3: address3
 					
 					
 					 

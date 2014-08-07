@@ -2,7 +2,9 @@
 
 
 	<TableViewRow class="container" importCheck='false' height='45'>
-		<Button id='checkbox' top='5' class="checkbox" title="\u2713" onClick='checkClick' checkBtn='false'></Button>
+		
+		<!--<Button id='checkbox' top='5' class="checkbox" title="\u2713" onClick='checkClick' checkBtn='false'></Button> !-->
+		
 		<Label id='importTableRow' top='10' email='email' allData='allData'></Label>
 	</TableViewRow>
 </Alloy>
