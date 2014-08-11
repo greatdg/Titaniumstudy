@@ -31,7 +31,7 @@ var personalData = people.get(alloyId).toJSON();
 		
 	$.extraGlasses.value=personalData.extraGalsses;		
 	$.extraMustache.value=personalData.extraMustache;	
-	$.extraExtra.value=personalData.extraExtra;	
+	//$.extraExtra.value=personalData.extraExtra;	
 	
 	$.emailEdit.value = personalData.email;
 	$.facePic.image = imageRootPath+alloyId +".jpg";
@@ -66,7 +66,7 @@ function editDone(){
 			
 			extraGlassess:$.extraGlasses.value,	
 			extraMustache:$.extraMustache.value,
-			extraExtra:$.extraExtra.value,			
+			//extraExtra:$.extraExtra.value,			
 		});
 		 //Ti.API.debug(selectModel);
 		 //Titanium.App.fireEvent('doneEdit');
@@ -90,12 +90,6 @@ $.genderPicker.addEventListener('change', function(e) {
 });
 
 
-$.done.addEventListener("click",function(e){
-	$.lowerView.visible="true";	
-	$.viewGenderPicker.visible="false";	
-	$.done.visible="false";	
-});
-
 
 
 // Image editing follows
@@ -114,7 +108,7 @@ $.btn_doneEdit.addEventListener("click",function(e){
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value;
 	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value +"_"+$.extraExtra.value;			
+	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;			
 }
 
 
@@ -164,7 +158,7 @@ $.btn_extraEditCategory.addEventListener("click",function(e){
 $.extraImagePicker.addEventListener('change', function(e) {
 	$.extraGlasses.value = e.selectedValue[0];
 	$.extraMustache.value = e.selectedValue[1];
-	$.extraExtra.value = e.selectedValue[2];
+	//$.extraExtra.value = e.selectedValue[2];
 	changePic();			
 });
 

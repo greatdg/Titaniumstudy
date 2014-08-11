@@ -12,7 +12,7 @@
 		
 
 	<ScrollView id="scrollView" width="100%" height="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
-	<View  class="container" id="container" top ="0" height="360" >
+	<View class="container" id="container" top ="0" height="360" >
 
 		
 		<View class="upperView" >
@@ -37,29 +37,22 @@
 				<!-- name, birthday, phone numberand gender -->
 
 				<View class="rowPersonal">
-					<ImageView image="N.png" height="16" />	
-				<TextField class="inputBox" borderStyle="Ti.UI.INPUT_BORDERSTYLE_BEZEL " height="22" width="100" id="nameAdd" value="" hintText="Name"/ >
+				<TextField class="inputBox" id="nameAdd" value="" hintText="Name"/ >
 				</View>
 				
-				<View class="rowPersonal">
-				<ImageView image="G.png" height="16" />						
-				<TextField class="inputBox" height="25" id="genderAdd" hintText="Gender" editable="false"/>
+				<View class="rowPersonal">										
+				<TextField class="inputBox" id="genderAdd" hintText="Gender" editable="false"/>
 				</View>	
 	
-				<View class="rowPersonal">
-				<ImageView image="B.png" height="16" />						
-				<TextField class="inputBox" height="25" id="bdayAdd" hintText="Birthday" editable="false"/>
+				<View class="rowPersonal">									
+				<TextField class="inputBox" id="bdayAdd" hintText="Birthday" editable="false"/>
 				</View>			
 
-				<View class="rowPersonal">
-				<ImageView image="P.png" height="16" />						
-				<TextField class="inputBox" height="25" id="phoneAdd" hintText="Phone Number" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
+				<View class="rowPersonal">									
+				<TextField class="inputBox" id="phoneAdd" hintText="Phone Number" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
 				</View>
 				
-				<View class="rowPersonal">
-				<ImageView image="e.png" height="16" />					
-				<TextField class="inputBox" height="25" id="emailAdd" hintText="email" />
-				</View>		
+					
 					
 			</View>
 				<!-- personal View 		 -->
@@ -67,28 +60,29 @@
 			<!-- upper View  -->
 
 
-	<View id="lowerView" class="lowerView" >			
-				<View class="rowPersonal">
-				<Label id="jobAdd" text="Job "></Label>
-				<TextField class="inputBox" height="17" id="jobAdd" hintText="student" />
+	<View id="lowerView" class="lowerView" >
+		
+				<View class="rowAdditional">
+				<TextField class="inputBox2" id="emailAdd" hintText="email" />
+				</View>	
+						
+				<View class="rowAdditional">
+				<TextField class="inputBox2" id="jobAdd" hintText="Job" />
 				</View>	
 			
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="  Address "></Label>
-				<TextField class="inputBox" height="17" id="addressAdd" hintText="4 March Place"/>
+				<TextField class="inputBox2" id="addressAdd" hintText="Address: Street"/>
 				</View>
 
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="     "></Label>
-				<TextField class="inputBox" height="17" id="address2Add" hintText="Belfast"/>
+				<TextField class="inputBox2" id="address2Add" hintText="Address: Suburb"/>
 				</View>
 
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="      "></Label>
-				<TextField class="inputBox" height="17" id="address3Add" hintText="Christchurch"/>
+				<TextField class="inputBox2" id="address3Add" hintText="Address: City"/>
 				</View>
 				
-				<Button id="btn_addMore" backgroundImage ="more.png" left="260" height="40" width="40" />	
+				<Button id="btn_addMore" backgroundImage ="more.png" left="180" height="40" width="120" />	
 				
 					
 
@@ -200,46 +194,28 @@
 				<PickerColumn id="skinColor">
 					<PickerRow title=""/>
                 	<PickerRow customTitle="black">
-                		<ImageView image="black_null_null.png" />
+                		<ImageView image="black__.png" />
                 	</PickerRow>
                 	<PickerRow customTitle="yellow">
-                		<ImageView image="yellow_null_null.png"/>
+                		<ImageView image="yellow__.png"/>
                 	</PickerRow>	
                 	<PickerRow customTitle="white" >
-               			<ImageView image="white_null_null.png"/>  
+               			<ImageView image="yellow__.png"/>  
                		</PickerRow>	              	                 	              	                	
                 </PickerColumn>  
                 
 				<PickerColumn id="faceShape">
 					<PickerRow title=""/>
-					<PickerRow customTitle="egg">
-						<ImageView image="null_egg_null.png" />
-                	</PickerRow>
-                	
-					<PickerRow customTitle="round">
-						<ImageView image="null_round_null.png" />
-                	</PickerRow>
-
-					<PickerRow customTitle="square">
-						<ImageView image="null_square_null.png" />
-                	</PickerRow>
-
+                	<PickerRow title="egg"/>
+                	<PickerRow title="round"/>
+                	<PickerRow title="square"/>
                 </PickerColumn>               	
  
  				<PickerColumn id="eyeShape">
 					<PickerRow title=""/>
-					<PickerRow customTitle="narrow">
-						<ImageView image="null_null_narrow.png" />
-                	</PickerRow>
-                	
-					<PickerRow customTitle="normal">
-						<ImageView image="null_null_normal.png" />
-                	</PickerRow>
-
-					<PickerRow customTitle="big">
-						<ImageView image="null_null_big.png" />
-                	</PickerRow>					
-					
+                	<PickerRow title="narrow"/>
+                	<PickerRow title="normal"/>
+                	<PickerRow title="big"/>
                 </PickerColumn>               	                                        				
 		</Picker>
 	</View>

@@ -1,5 +1,5 @@
 <Alloy>
-	<Window title="Detail" barColor="#9BEAE8">	
+	<Window title="Detail" barColor="#559BEAE8">	
 		<RightNavButton>
 			<Button title="Edit" onClick="clickEdit"/>
 		</RightNavButton>
@@ -10,80 +10,76 @@
 
 		
 		<View class="upperView">
-			<!-- <View class="emoticonView"> -->
-				<!-- emoticon area -->
-
 											
-				<ImageView id="facePic" class="person" image="default100.png">
-					<!-- <ImageView class="hair" image="person.png" /> -->
-									
-									
-					<Label id="picName" color="white" top=50 text="picName" visible="false" ></Label>	
-					<Label id="picHairName" color="white" top=70 text="hairName" visible="false" ></Label>					
-					<Label id="picExtraName" color="white" top=90 text="extraName" visible="false"></Label>										
-									
-				</ImageView>			
-							
-													
-			<!-- </View> -->
+				<ImageView id="facePic" class="person" image="default100.png" />
+
 			<View class="personalView">
 				<!-- name, birthday, phone numberand gender -->
 
-				<View class="rowPersonal">
-				<Label class="upper_title" text="Name "></Label>
-				<Label id="name" text = "sdf" />
+				<View class="rowPersonal" layout="vertical">
+				<Label class="upper_title" text="Name"></Label>
+				</View>
+				
+				<View class="rowPersonal" layout="vertical">
+				<Label id="name" class="upper_text" layout="vertical" />
 				</View>
 				
 				<View class="rowPersonal">
-				<Label class="upper_text" text="Gender "></Label>
-				<Label id="gender" />
+				<Label class="upper_title" text="Gender "></Label>
 				</View>	
+				
+				<View class="rowPersonal" layout="vertical">
+				<Label id="gender" class="upper_text" layout="vertical"/>
+				</View>
 	
 				<View class="rowPersonal">
-				<Label id="bdayPersonal" text="Birthday "></Label>
-				<Label id="birthday" />
-				</View>			
-
-				<View class="rowPersonal">
-				<Label id="phonePersonal" text="Phone "></Label>
-				<Label id="phoneNumber" onClick="phoneClick"/>
-				</View>
+				<Label id="bdayPersonal" class="upper_title" text="Birthday "></Label>
+				</View>		
 				
-				<View class="rowPersonal">
-				<Label id="jobAdd" text="Job"></Label>
-				<Label id="job" />
-				</View>
+				<View class="rowPersonal" layout="vertical">
+				<Label id="birthday" class="upper_text" />
+				</View>	
 						
 			</View>			
 
 		</View>
 	</View>
 		
-	<View id="lowerView" class="lowerView">			
+	<View id="lowerView" class="lowerView">	
+		
+				<View class="rowAdditional">
+					<Label id="phonePersonal" class="upper_title" text="Phone " />
+					<Label id="phoneNumber" class="upper_text" onClick="phoneClick"/>
+				</View>
+		
+				<View class="rowAdditional">
+					<Label id="jobAdd" class="upper_title" text="Job" />
+					<Label id="job" class="upper_text" />
+				</View>		
 				
 				<View class="rowAdditional">
-					<Label class="titleAdditional" text="Email" />
-					<Label id="email" onClick="emailClick" />
+					<Label class="upper_title" text="Email" />
+					<Label id="email" class="upper_text" onClick="emailClick" />
 				</View>
 				
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="  Address "></Label>
-				<Label id="address1" />
+					<Label class="upper_title" text="Address " />
+					<Label id="address1" class="upper_text" />
 				</View>
 
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="     "></Label>
-				<Label id="address2" />
+				<Label class="uuper_title" text="     "></Label>
+				<Label id="address2" class="upper_text"/>
 				</View>
 
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="      "></Label>
-				<Label id="address3" />
+				<Label class="upper_title" text="      "></Label>
+				<Label id="address3" class="upper_text" />
 				</View>
 				
 				
 				<View class="rowAdditional" visible="false">
-				<Label class="titleAdditional" text="  Custom"></Label>
+				<Label class="titleAdditional" text="Custom"></Label>
 				<TextField class="inputBox" id="customAdd" value=""/>			
 				</View>
 
