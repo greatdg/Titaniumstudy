@@ -7,17 +7,20 @@ var args = arguments[0] || {};
 
 var data = [];
 
-var performAddressBookFunction = function(){
+var performAddressBookFunction = function(){	
 	var contacts = Ti.Contacts.getAllPeople();
-    
+	// Ti.API.debug("start")
+	// Ti.API.debug(contacts.length)
     for (var i = 0; i < contacts.length; i++) {
         var contactData = contacts[i];
-        var title = contacts[i].fullName;
+        
+        var title = contacts[i].fullName;   
         
        //Ti.API.debug(contacts[i].birthday);
         if (!title || title.length === 0) {
             title = "(no name)";
         }
+        Ti.API.debug(contactData);
         var row = Alloy.createController('importTableView',{
         	contactData : contactData
         	
@@ -62,13 +65,13 @@ var clickImportDone = function(e){
 			var section = importData[i];
 			for(var j=0;j<section.rowCount;j++) {
 				var row = section.rows[j];
-				
-				
-				if(row.children[0].checkBtn==='true'){
+							
+				if(row.children[0].checkBtn === true){
 					
 					var people = Alloy.Collections.people;
 					
 					var personalInfo = row.children[1];
+					
 					var birthday = "",
 						email = "",
 						text = "";
@@ -77,7 +80,6 @@ var clickImportDone = function(e){
 						address1 = "";
 						address2 = "";
 						address3 = "";
-					// Ti.API.debug(personalInfo);
 					_.map(personalInfo, function(value, key) {
 						if( key == "allData" ) {
 							
@@ -225,7 +227,7 @@ for(var i=0;i<importData.length;i++) {
 					
 	for(var j=0;j<section.rowCount;j++) {	
 		var row = section.rows[j];		
-		if(row.children[0].checkBtn==='true'){
+		if(row.children[0].checkBtn===true){			
 			 isChecked = true;
 			 break;
 		};

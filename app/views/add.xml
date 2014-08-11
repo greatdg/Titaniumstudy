@@ -1,9 +1,8 @@
 <Alloy>
 	<Window id="addWin" title = "Add mate" modal="true" barColor="#9AB3CD">	
 
-		<RightNavButton title ="Add" text="Add" >
-
-			<Button title="Add" onClick="addItemDone"/>
+		<RightNavButton title ="Add" text="Add" class="rightBtn">
+			<Button title="Add" onClick="addItemDone" class="rightBtn"/>
 		</RightNavButton>
 		
 		<LeftNavButton>
@@ -150,12 +149,12 @@
 	<View id="viewImageEditCategory" visible="false">
 		<View id="categoryMenu">
 										
-				<ImageView class="person" id="personImageEdit" top="80">
+				<ImageView class="person" id="personImageEdit" top="80" left="0">
 				</ImageView>		
-				<!-- <ImageView class="person" id="hairImageEdit" top="80" left ="-112" >
+				<ImageView class="person" id="hairImageEdit" top="80" left="-130"  >
 				</ImageView>
-				<ImageView class="person" id="extraImageEdit" top="80"left ="-112" >
-				</ImageView> -->								
+<!-- 				<ImageView class="person" id="extraImageEdit" top="80" left="0">
+				</ImageView>	 -->							
 				
 					
 
@@ -193,14 +192,14 @@
                 	  
 				<PickerColumn id="skinColor">
 					<PickerRow title=""/>
-                	<PickerRow customTitle="black">
-                		<ImageView image="black__.png" />
+                	<PickerRow title="black">
+                		<ImageView image="black_null_null.png" />
                 	</PickerRow>
-                	<PickerRow customTitle="yellow">
-                		<ImageView image="yellow__.png"/>
+                	<PickerRow title="yellow">
+                		<ImageView image="yellow_null_null.png"/>
                 	</PickerRow>	
-                	<PickerRow customTitle="white" >
-               			<ImageView image="yellow__.png"/>  
+                	<PickerRow title="white" >
+               			<ImageView image="yellow_null_null.png"/>  
                		</PickerRow>	              	                 	              	                	
                 </PickerColumn>  
                 

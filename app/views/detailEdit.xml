@@ -6,9 +6,12 @@
 		</RightNavButton>
 
 	
-	
+
 	<ScrollView id="scrollView" width="100%" height="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
-	<View class="container" id="container" top ="0" height="360" >
+	<View id="test" layout="vertical">
+		
+	</View>
+	<View class="container" id="container" top ="100" height="360" >
 
 		
 		<View class="upperView" >

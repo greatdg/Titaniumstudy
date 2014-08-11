@@ -2,7 +2,7 @@
 	<Window title="Import" backgroundColor="blue" barColor="#9997C0" translucent="false">
 		
 		<RightNavButton>
-			<Button title="Done" id="buttonImportDone" onClick="clickImportDone">
+			<Button title="Done" id="buttonImportDone" onClick="clickImportDone"/>
 		</RightNavButton>
 		
 		<View class="container">

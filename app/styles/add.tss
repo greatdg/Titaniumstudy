@@ -1,5 +1,6 @@
 "Window": {
 	backgroundColor: "#FFF",
+    navTintColor: "yellow"
 },
 
 ".container": {
@@ -8,7 +9,9 @@
 },
 
 
-
+".rightBtn": {
+	
+}
 
 ".upperView": {
 	layout:"horizontal",
@@ -19,10 +22,9 @@
 },
 
 ".person": {
-	backgroundColor:"#FFF",
 	top:"0",
 	left:"0",	
-	width:"35%",
+	width:"110",
 	height:"150",
 	zIndex:"1"
 },

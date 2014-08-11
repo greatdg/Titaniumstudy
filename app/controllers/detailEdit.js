@@ -6,6 +6,26 @@ var people = Alloy.Collections.people;
 var imageFolderName = "person_image";
 var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
 
+var aa = "abc&&1##def&&2";
+var split = aa.split("##");
+var customField = [];
+for(var i=0;i<split.length;i++) {
+	var key = split[i].split("&&");
+	var keyField = Ti.UI.createTextField({
+		value: key[0]
+	});
+	var valueField = Ti.UI.createTextField({
+		value: key[1]
+	});
+	$.test.add(keyField);
+	$.test.add(valueField);
+	// customField.splice(i, 1);
+	customField.push({
+		key: keyField, 
+		value: valueField
+	});
+}
+
 $.detailEdit.addEventListener('focus', function(e){
 	people.fetch();
 });
@@ -42,6 +62,12 @@ var personalData = people.get(alloyId).toJSON();
 // });
 
 function editDone(){
+	for(var i =0;i<customField.length;i++) {
+		Ti.API.debug(customField[i].key.value);
+		Ti.API.debug(customField[i].value.value);
+
+	}
+	return;
 	if($.nameEdit.value!=""){
 		var model = people.get(alloyId);
 		model.save({
