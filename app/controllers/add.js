@@ -141,7 +141,7 @@ $.btn_doneEdit.addEventListener("click",function(e){
 function changePic(){
 	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value+".png";
 	// alert($.picName.text);
-	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
+	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value+".png";	
 	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;		
 		
 	$.personImageEdit.image=$.picName.text;
