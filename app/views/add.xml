@@ -194,46 +194,28 @@
 				<PickerColumn id="skinColor">
 					<PickerRow title=""/>
                 	<PickerRow customTitle="black">
-                		<ImageView image="black_null_null.png" />
+                		<ImageView image="black__.png" />
                 	</PickerRow>
                 	<PickerRow customTitle="yellow">
-                		<ImageView image="yellow_null_null.png"/>
+                		<ImageView image="yellow__.png"/>
                 	</PickerRow>	
                 	<PickerRow customTitle="white" >
-               			<ImageView image="white_null_null.png"/>  
+               			<ImageView image="yellow__.png"/>  
                		</PickerRow>	              	                 	              	                	
                 </PickerColumn>  
                 
 				<PickerColumn id="faceShape">
 					<PickerRow title=""/>
-					<PickerRow customTitle="egg">
-						<ImageView image="null_egg_null.png" />
-                	</PickerRow>
-                	
-					<PickerRow customTitle="round">
-						<ImageView image="null_round_null.png" />
-                	</PickerRow>
-
-					<PickerRow customTitle="square">
-						<ImageView image="null_square_null.png" />
-                	</PickerRow>
-
+                	<PickerRow title="egg"/>
+                	<PickerRow title="round"/>
+                	<PickerRow title="square"/>
                 </PickerColumn>               	
  
  				<PickerColumn id="eyeShape">
 					<PickerRow title=""/>
-					<PickerRow customTitle="narrow">
-						<ImageView image="null_null_narrow.png" />
-                	</PickerRow>
-                	
-					<PickerRow customTitle="normal">
-						<ImageView image="null_null_normal.png" />
-                	</PickerRow>
-
-					<PickerRow customTitle="big">
-						<ImageView image="null_null_big.png" />
-                	</PickerRow>					
-					
+                	<PickerRow title="narrow"/>
+                	<PickerRow title="normal"/>
+                	<PickerRow title="big"/>
                 </PickerColumn>               	                                        				
 		</Picker>
 	</View>
