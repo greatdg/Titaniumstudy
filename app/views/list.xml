@@ -1,5 +1,5 @@
 <Alloy>
-	<Window title='Mate List' id='listWin' barColor="#9BEAE8" translucent="false">
+	<Window title='Mate List' id='listWin' barColor="#9BEAE8">
 	<View class="container">
 		
 		<TableView id='listTable' dataCollection="people" dataTransform='transformfunction' editable='true'>

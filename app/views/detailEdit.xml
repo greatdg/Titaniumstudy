@@ -7,107 +7,105 @@
 
 	
 	
-	<View id="addView" top="30">
-	<ScrollView id="scrollView" width="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
-	<View class="container" id="container" >
+	<ScrollView id="scrollView" width="100%" height="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
+	<View class="container" id="container" top ="0" height="360" >
 
 		
-		<View class="upperView">
+		<View class="upperView" >
 			<!-- <View class="emoticonView"> -->
 				<!-- emoticon area -->
 
 											
+											
 				<ImageView id="facePic" class="person" image="default_default_default.png">
-					<!-- <ImageView class="hair" image="person.png" /> -->
+
 									
 									
-					<Label id="picName" color="white" top=50 text="picName" visible="false" ></Label>	
-					<Label id="picHairName" color="white" top=70 text="hairName" visible="false" ></Label>					
-					<Label id="picExtraName" color="white" top=90 text="extraName" visible="false"></Label>										
+					<Label id="picName" color="white" top="50" text="picName" visible="false" ></Label>	
+					<Label id="picHairName" color="white" top="70" text="hairName" visible="false" ></Label>					
+					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>										
 									
-			 		<Button id="btn_imageEdit" backgroundImage="editIcon.png" top=100 left=90 />							
+			 		<Button id="btn_imageEdit" backgroundImage="editIcon.png" top="100" left="80" width="30" height="30" />							
 				</ImageView>			
 							
 													
 			<!-- </View> -->
-			<View class="personalView">
+			<View class="personalView" top ="7">
 				<!-- name, birthday, phone numberand gender -->
 
 				<View class="rowPersonal">
-				<Label class="namePeresonal" text="Name "></Label>
-				<TextField class="inputBox" id="nameEdit" value=""/ >
+				<TextField class="inputBox" id="nameEdit" value="" hintText="Name"/ >
 				</View>
 				
-				<View class="rowPersonal">
-				<Label class="genderPeresonal" text="Gendar "></Label>
-				<TextField class="inputBox" id="genderEdit" editable="false"/>
+				<View class="rowPersonal">										
+				<TextField class="inputBox" id="genderEdit" hintText="Gender" editable="false"/>
 				</View>	
 	
-				<View class="rowPersonal">
-				<Label id="bdayPeresonal" text="Birthday "></Label>
-				<TextField class="inputBox" id="bdayEdit" editable="false"/>
+				<View class="rowPersonal">									
+				<TextField class="inputBox" id="bdayEdit" hintText="Birthday" editable="false"/>
 				</View>			
 
-				<View class="rowPersonal">
-				<Label id="phonePeresonal" text="Phone "></Label>
-				<TextField class="inputBox" id="phoneEdit" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
+				<View class="rowPersonal">									
+				<TextField class="inputBox" id="phoneEdit" hintText="Phone Number" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
 				</View>
 				
-				<View class="rowPersonal">
-				<Label id="jobPersonal" text="Job "></Label>
-				<TextField class="inputBox" id="jobEdit" />
-				</View>
-						
-			</View>			
-
+					
+					
+			</View>
+				<!-- personal View 		 -->
 		</View>
-	</View>
+			<!-- upper View  -->
+
+
+	<View id="lowerView" class="lowerView" >
 		
-	<View id="lowerView" class="lowerView">			
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="Email" />
-				<TextField class="inputBox" id="emailEdit"/>
-				</View>
-
-				
+				<TextField class="inputBox2" id="emailEdit" hintText="email" />
+				</View>	
+						
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="  Address "></Label>
-				<TextField class="inputBox" id="addressEdit"/>
-				</View>
-
+				<TextField class="inputBox2" id="jobEdit" hintText="Job" />
+				</View>	
+			
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="     "></Label>
-				<TextField class="inputBox" id="address2Edit" />
+				<TextField class="inputBox2" id="addressEdit" hintText="Address: Street"/>
 				</View>
 
 				<View class="rowAdditional">
-				<Label class="titleAdditional" text="      "></Label>
-				<TextField class="inputBox" id="address3Edit" h/>
+				<TextField class="inputBox2" id="address2Edit" hintText="Address: Suburb"/>
+				</View>
+
+				<View class="rowAdditional">
+				<TextField class="inputBox2" id="address3Edit" hintText="Address: City"/>
 				</View>
 				
-	// Additional custom category ???		
-
-				<View class="rowAdditional" visible="false">
-				<Label class="titleAdditional" text="  Custom"></Label>
-				<TextField class="inputBox" id="customEdit" value=""/>			
-				</View>		
+				<Button id="btn_addMore" backgroundImage ="more.png" left="180" height="40" width="120" />	
 				
+					
+
 				<View height="3" visible="false">
-				<TextField class="inputBox" height="17" id="customAdd" value=""/>			
-				</View>						
-	</View>	
+				<TextField class="inputBox" height="17" id="customEdit" value=""/>			
+				</View>			
+				
+							
+		</View>	
+			 <!-- lower View  -->
+	
+	</View>
+		<!-- Container  -->
+		
 
 	</ScrollView>
 
-		<View id="bottomView" backgroundColor="pink" class="bottomView" top="300" left="250" height="30" width="70">												
+		
+	<View id="viewDatePicker" top="150" visible="false">
+		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
+		<Picker id="datepicker" selectionIndicator="true" useSpinner="true" >            
+        </Picker>
+	</View>
+		<!-- datePicker  -->
 
-				<Button id="btn_addMore" backgroundColor="blue" title="Add More" left="0" />	
-		</View>		
 
-
-	
-	</View>	
-	
 	<View id="customAddView" visible="false">
 
 		<!-- <Label id="customAdd" visible="false" value=""></Label>	 -->
@@ -122,7 +120,7 @@
 		<TextField class="inputBox" id="customAddContent" hintText="Contents"/>			
 		</View>			
 		
-		<Button id="doneCustomAdd" top="10" backgroundColor="red" title="done" />		
+		<Button id="doneCustomAdd" top="10" backgroundImage="done_more.png" width="60" height="60"/>		
 	</View>
 	
 	
@@ -135,6 +133,7 @@
 
 
 	<View id="viewGenderPicker" visible="false">
+		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
 		<Picker id="genderPicker" selectionIndicator="true" top="150" useSpinner="true" >
 				<PickerColumn id="column1">
 					<PickerRow title=""/>
@@ -142,30 +141,25 @@
                 	<PickerRow title="Female"/>
             </PickerColumn>				
 		</Picker>
-		<Button id="done" backgroundColor="blue" title="done" top=130 left=250 visible="false" />		
 	</View>
 
 
 	<View id="viewImageEditCategory" visible="false">
 		<View id="categoryMenu">
-
-											
-				<ImageView class="person" image="default_default_default.png" top="80">
-					<!-- <ImageView class="hair" image="person.png" /> -->
-									
-									
-					<Label id="picName" color="white" top=50 text="picName" visible="true" ></Label>	
-					<Label id="picHairName" color="white" top=70 text="hairName" visible="true" ></Label>					
-					<Label id="picExtraName" color="white" top=90 text="extraName" visible="true"></Label>										
-																
-				</ImageView>			
+										
+				<ImageView class="person" id="personImageEdit" top="80">
+				</ImageView>		
+				<!-- <ImageView class="person" id="hairImageEdit" top="80" left ="-112" >
+				</ImageView>
+				<ImageView class="person" id="extraImageEdit" top="80"left ="-112" >
+				</ImageView> -->								
 				
+					
 
-
-			<Button id="btn_faceEditCategory" backgroundColor="pink" title = "Face" top=100 />
-			<Button id="btn_hairEditCategory" backgroundColor="green" title = "Hair" top=100 />
-			<Button id="btn_extraEditCategory" backgroundColor="yellow" title = "Extra" top=100 />
-			<Button id="btn_doneEdit" backgroundImage="done.png" top=100 width="70" height="70"/>
+			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="12"/>
+			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left ="5" />
+			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="120" left ="5" />
+			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" left="7" height="70"/>
 		</View>
 	</View>
 
@@ -174,18 +168,18 @@
 		<Picker id="imageHairPicker" selectionIndicator="true" useSpinner="true">
 				<PickerColumn id="hairStyle">
 					<PickerRow title=""/>
-                	<PickerRow title="bold"/>
-                	<PickerRow title="lady"/>
-                	<PickerRow title="bot"/>
                 	<PickerRow title="gentleman"/>
+                	<PickerRow title="boy"/>
+                	<PickerRow title="long"/>
+                	<PickerRow title="curly"/>
+                    <PickerRow title="ppippi"/>            	
                 </PickerColumn>               	
                 	  
 				<PickerColumn id="hairColor">
 					<PickerRow title=""/>
                 	<PickerRow title="blond"/>
                 	<PickerRow title="black"/>
-                	<PickerRow title="yellow"/>
-                	<PickerRow title="green"/>                 	              	                	
+                	<PickerRow title="red"/>                	              	                	
                 </PickerColumn>                             				
 		</Picker>
 	</View>
@@ -196,14 +190,19 @@
                 	  
 				<PickerColumn id="skinColor">
 					<PickerRow title=""/>
-                	<PickerRow title="black"/>
-                	<PickerRow title="yellow"/>
-                	<PickerRow title="white"/>                 	              	                	
+                	<PickerRow customTitle="black">
+                		<ImageView image="black__.png" />
+                	</PickerRow>
+                	<PickerRow customTitle="yellow">
+                		<ImageView image="yellow__.png"/>
+                	</PickerRow>	
+                	<PickerRow customTitle="white" >
+               			<ImageView image="yellow__.png"/>  
+               		</PickerRow>	              	                 	              	                	
                 </PickerColumn>  
                 
 				<PickerColumn id="faceShape">
 					<PickerRow title=""/>
-                	<PickerRow title="narrow"/>
                 	<PickerRow title="egg"/>
                 	<PickerRow title="round"/>
                 	<PickerRow title="square"/>
@@ -219,10 +218,10 @@
 	</View>
 
 
-	<View id="extraImagePicker" top=130 visible="false">
+	<View id="extraImagePicker" top="130" visible="false">
 		<Picker id="imageExtraPicker" selectionIndicator="true" useSpinner="true">             	  
 				<PickerColumn id="extraGlasses">
-					<PickerRow title=""/>
+					<PickerRow title="none"/>
                 	<PickerRow title="roundGlasses"/>
                 	<PickerRow title="squareGlasses"/>
                 	<PickerRow title="sunGlasses"/>                 	              	                	
@@ -230,18 +229,11 @@
                 
 				<PickerColumn id="extraMustache">
 					<PickerRow title=""/>
-                	<PickerRow title="narrowMustache"/>
-                	<PickerRow title="toughMustache"/>
-                	<PickerRow title="curlyMustache"/>
-                	<PickerRow title="funMustache"/>
+                	<PickerRow title="underNose"/>
+                	<PickerRow title="chin"/>
+                	<PickerRow title="both"/>
                 </PickerColumn>               	
- 
- 				<PickerColumn id="extraExtra">
-					<PickerRow title=""/>
-                	<PickerRow title="extra1"/>
-                	<PickerRow title="extra2"/>
-                	<PickerRow title="extra3"/>
-                </PickerColumn>               	                                        				
+          	                                        				
 		</Picker>
 	</View>
 

@@ -18,6 +18,7 @@ var importCheck = Ti.UI.createButton({
     checkBtn: 'false'
 });
 
+
 importCheck.addEventListener('click',function(e){
    if(this.checkBtn=='true'){
 		//$.checkbox.color = 'gray';
