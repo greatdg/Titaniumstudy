@@ -47,33 +47,38 @@ $.addWin.addEventListener("focus",function(e){
 });
 
 var addItemDone = function (e){
-	if($.nameAdd.value!=""){
-		var people = Alloy.Collections.people;
-		var detailInfo = Alloy.createModel("people",{
-			name:$.nameAdd.value,
-			gender:$.genderAdd.value,
-			birthday:$.bdayAdd.value,
-			phoneNumber:$.phoneAdd.value,
-			address:$.addressAdd.value,
-			email:$.emailAdd.value,
-			job:$.jobAdd.value,	
-			custom:	$.customAdd.value,
-			faceShape:$.picName.text,	
-			hairStyle:$.hairStyle.value,					
-			extra:$.extraGlasses.value,	
-			minime:$.extraMustache.value,	
-		});
+	$.scrollView.setScrollsToTop(true);
+	
+		if($.nameAdd.value!=""){
+			var people = Alloy.Collections.people;
+			var detailInfo = Alloy.createModel("people",{
+				name:$.nameAdd.value,
+				gender:$.genderAdd.value,
+				birthday:$.bdayAdd.value,
+				phoneNumber:$.phoneAdd.value,
+				address:$.addressAdd.value,
+				email:$.emailAdd.value,
+				job:$.jobAdd.value,	
+				custom:	$.customAdd.value,
+				faceShape:$.picName.text,	
+				hairStyle:$.hairStyle.value,					
+				extra:$.extraGlasses.value,	
+				minime:$.extraMustache.value,	
+			});
+				
+			detailInfo.save();
+			people.add(detailInfo);
+			var obj = detailInfo.toJSON();
+			Ti.API.info(obj.no);
+	
+			doCrop(obj.no);
 			
-		detailInfo.save();
-		people.add(detailInfo);
-		var obj = detailInfo.toJSON();
-		Ti.API.info(obj.no);
-		doCrop(obj.no);
+			closeWindow();
+		}
+		else { alert("Please input name");
+		};
 		
-		closeWindow();
-	}
-	else { alert("Please input name");
-	};
+	
 	// alert($.picName.text);
 };
 
@@ -158,8 +163,8 @@ $.btn_faceEditCategory.addEventListener("click",function(e){
 
 $.faceImagePicker.addEventListener('change', function(e) {
 	$.skinColor.value = e.selectedValue[0].customTitle;
-	$.faceShape.value = e.selectedValue[1];
-	$.eyeShape.value = e.selectedValue[2];	
+	$.faceShape.value = e.selectedValue[1].customTitle;
+	$.eyeShape.value = e.selectedValue[2].customTitle;	
 	changePic();			
 });
 
