@@ -8,10 +8,8 @@
 	
 
 	<ScrollView id="scrollView" width="100%" height="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
-	<View id="test" layout="vertical">
-		
-	</View>
-	<View class="container" id="container" top ="100" height="360" >
+
+	<View class="container" id="container" top="100" height="360">
 
 		
 		<View class="upperView" >
@@ -33,11 +31,11 @@
 							
 													
 			<!-- </View> -->
-			<View class="personalView" top ="7">
+			<View class="personalView" top="7">
 				<!-- name, birthday, phone numberand gender -->
 
 				<View class="rowPersonal">
-				<TextField class="inputBox" id="nameEdit" value="" hintText="Name"/ >
+				<TextField class="inputBox" id="nameEdit" value="" hintText="Name" />
 				</View>
 				
 				<View class="rowPersonal">										
@@ -161,12 +159,12 @@
 
 			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="12"/>
 			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left ="5" />
-			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="120" left ="5" />
+			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="120" left="5" />
 			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" left="7" height="70"/>
 		</View>
 	</View>
 
-	<View id="hairImagePicker" top=130 visible="false">
+	<View id="hairImagePicker" top="130" visible="false">
 
 		<Picker id="imageHairPicker" selectionIndicator="true" useSpinner="true">
 				<PickerColumn id="hairStyle">
@@ -187,7 +185,7 @@
 		</Picker>
 	</View>
 
-	<View id="faceImagePicker" top=130 visible="false">
+	<View id="faceImagePicker" top="130" visible="false">
 
 		<Picker id="imageFacePicker" selectionIndicator="true" useSpinner="true">
                 	  

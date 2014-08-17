@@ -12,7 +12,7 @@
 	layout: "horizontal",
 	width: "100%",
 	top: "0",
-	height: "150",
+	height:"150",
 	borderStyle: Titanium.UI.INPUT_BORDERSTYLE_NONE,
 },
 
@@ -21,7 +21,7 @@
 	top: "0",
 	left: "0",	
 	width: "35%",
-	height: "150",
+	height:"150",
 	zIndex: "1"
 },
 

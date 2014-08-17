@@ -1,7 +1,7 @@
 <Alloy>
-	<Window id="addWin" title = "Add mate" modal="true" barColor="#9AB3CD">	
+	<Window id="addWin" title="Add mate" modal="true" barColor="#9AB3CD">	
 
-		<RightNavButton title ="Add" text="Add" class="rightBtn">
+		<RightNavButton title="Add" text="Add" class="rightBtn">
 			<Button title="Add" onClick="addItemDone" class="rightBtn"/>
 		</RightNavButton>
 		
@@ -36,7 +36,7 @@
 				<!-- name, birthday, phone numberand gender -->
 
 				<View class="rowPersonal">
-				<TextField class="inputBox" id="nameAdd" value="" hintText="Name"/ >
+				<TextField class="inputBox" id="nameAdd" value="" hintText="Name" />
 				</View>
 				
 				<View class="rowPersonal">										
@@ -159,13 +159,13 @@
 					
 
 			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="12"/>
-			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left ="5" />
+			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left="5" />
 			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="120" left ="5" />
 			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" left="7" height="70"/>
 		</View>
 	</View>
 
-	<View id="hairImagePicker" top=130 visible="false">
+	<View id="hairImagePicker" top="130" visible="false">
 
 		<Picker id="imageHairPicker" selectionIndicator="true" useSpinner="true">
 				<PickerColumn id="hairStyle">
@@ -186,7 +186,7 @@
 		</Picker>
 	</View>
 
-	<View id="faceImagePicker" top=130 visible="false">
+	<View id="faceImagePicker" top="130" visible="false">
 
 		<Picker id="imageFacePicker" selectionIndicator="true" useSpinner="true">
                 	  

@@ -7,20 +7,35 @@ var args = arguments[0] || {};
 
 var data = [];
 
-var performAddressBookFunction = function(){	
+var singleValue = [
+  'recordId', 'firstName', 'middleName', 'lastName', 'fullName', 'prefix', 'suffix',
+  'nickname', 'firstPhonetic', 'middlePhonetic', 'lastPhonetic', 'organization',
+  'jobTitle', 'department', 'note', 'birthday', 'created', 'modified', 'kind'
+];
+var multiValue = [
+  'email', 'address', 'phone', 'instantMessage', 'relatedNames', 'date', 'url'
+];
+
+var performAddressBookFunction = function() {	
 	var contacts = Ti.Contacts.getAllPeople();
 	// Ti.API.debug("start")
 	// Ti.API.debug(contacts.length)
     for (var i = 0; i < contacts.length; i++) {
         var contactData = contacts[i];
-        
+    //     for (var j=0, jlen=singleValue.length; j<jlen; j++){
+		  //   Ti.API.info(singleValue[j] + ': ' + contactData[singleValue[j]]);
+		  // }
+		  // for (var j=0, jlen=multiValue.length; j<jlen; j++){
+		  //   Ti.API.info(multiValue[j] + ': ' + JSON.stringify(contactData[multiValue[j]]));
+		  // }
+
+
         var title = contacts[i].fullName;   
         
-       //Ti.API.debug(contacts[i].birthday);
+
         if (!title || title.length === 0) {
             title = "(no name)";
         }
-        Ti.API.debug(contactData);
         var row = Alloy.createController('importTableView',{
         	contactData : contactData
         	
@@ -69,6 +84,7 @@ var clickImportDone = function(e){
 				if(row.children[0].checkBtn === true){
 					
 					var people = Alloy.Collections.people;
+
 					
 					var personalInfo = row.children[1];
 					

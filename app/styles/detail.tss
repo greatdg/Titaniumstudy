@@ -22,10 +22,10 @@
 
 ".person":{
 	layout: "vertical",
-	top: 20,
-	left: 10,	
-	width: 150,
-	height: 150,
+	top:"20",
+	left:"10",	
+	width:"150",
+	height:"150",
 },
 
 
@@ -42,7 +42,7 @@
 	fontSize: 9,
 	layout: "vertical",
 	width: "50%",
-	height: 200
+	height:"200"
 },
 
 ".lowerView":{

@@ -27,7 +27,6 @@ $.btn_byText.addEventListener("click",function(e){
 
 
 $.btn_byTextSearch.addEventListener("click",function(e){
-
 	$.searchTextInput.blur();	
 	// search Actions!!!!
 	searchInput = $.searchTextInput.value;

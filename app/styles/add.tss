@@ -66,8 +66,8 @@
 
 ".inputBox2": {
 	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
-	width: "100%",
-	height: "30",
+	width:"100%",
+	height:"30",
 	borderColor: "#9AB3CD",
 },
 

@@ -2,10 +2,10 @@ var args = arguments[0] || {};
 var people = Alloy.Collections.people;
 var imageFolderName = "person_image";
 var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
+$.listTable.setSearch($.listSearch);
+
 people.fetch();
 
-//alert(people.length);
-//$.defaultImage.hide();
 
 function transformfunction(item) {
 	var item = item.toJSON();
@@ -48,7 +48,7 @@ $.listTable.addEventListener('delete', function(e){
 	model.destroy();
 });
 
-$.listTable.setSearch($.listSearch);
+
 
 // $.listSearch.addEventListener('change', function(e) {
 	// //alert('est');
