@@ -1,11 +1,10 @@
 var args = arguments[0] || {};
 
-var contactData = args.contactData;
-$.importTableRow.checkBtn = false;
+var index = args.index;
+var fullName = args.fullName || "";
 
-$.importTableRow.text = contactData.fullName;
-$.importTableRow.email = contactData.email;
-$.importTableRow.allData = contactData;
+$.importTableView.checkBtn = false;
+$.importTableView.index = index;
 
 var importCheck = Ti.UI.createButton({
     backgroundImage: 'untick.png',    
@@ -17,15 +16,17 @@ var importCheck = Ti.UI.createButton({
     
 });
 
+$.importTableRow.text = fullName;
+
 
 $.importTableRow.addEventListener('click',function(e){
    if($.importTableRow.checkBtn==true){
-		$.importTableRow.checkBtn = false;
+		$.importTableView.checkBtn = false;
         importCheck.backgroundImage = 'untick.png';
 			
 	}else{
         importCheck.backgroundImage = 'tick.png';
-		$.importTableRow.checkBtn = true;		
+		$.importTableView.checkBtn = true;		
 	}
 });
 

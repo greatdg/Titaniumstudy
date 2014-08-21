@@ -1,16 +1,16 @@
 <Alloy>
 	
-	<TabGroup backgroundColor='#'>
-		<Tab title="List" icon="icon_list.png" tintColor="red">
+	<TabGroup>
+		<Tab icon="icon_list.png">
 			<Require src="list" />
 		</Tab>
-		<Tab title="Search" icon="icon_search.png">
+		<Tab icon="icon_search.png">
 			<Require src="search" />
 		</Tab>
-		<Tab title="Add" icon="icon_add.png" >
+		<Tab icon="icon_add.png" >
 			<Require src="add" />
 		</Tab>
-		<Tab title="Import" icon="icon_import.png" >
+		<Tab icon="icon_import.png" >
 			<Require src="contactImport" />
 		</Tab>
 		<!-- <Tab title="Settings" icon="KS_nav_views.png">

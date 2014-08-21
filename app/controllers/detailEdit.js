@@ -17,8 +17,8 @@ for(var i=0;i<split.length;i++) {
 	var valueField = Ti.UI.createTextField({
 		value: key[1]
 	});
-	$.test.add(keyField);
-	$.test.add(valueField);
+	// $.test.add(keyField);
+	// $.test.add(valueField);
 	// customField.splice(i, 1);
 	customField.push({
 		key: keyField, 

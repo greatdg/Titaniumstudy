@@ -4,7 +4,7 @@ var args = arguments[0] || {};
 
 // $.importTable.setData(importTableData);
 
-
+var contacts;
 var data = [];
 
 var singleValue = [
@@ -16,12 +16,13 @@ var multiValue = [
   'email', 'address', 'phone', 'instantMessage', 'relatedNames', 'date', 'url'
 ];
 
+
 var performAddressBookFunction = function() {	
-	var contacts = Ti.Contacts.getAllPeople();
+	contacts = Ti.Contacts.getAllPeople();
 	// Ti.API.debug("start")
 	// Ti.API.debug(contacts.length)
     for (var i = 0; i < contacts.length; i++) {
-        var contactData = contacts[i];
+        var contactData = contacts[i];        
     //     for (var j=0, jlen=singleValue.length; j<jlen; j++){
 		  //   Ti.API.info(singleValue[j] + ': ' + contactData[singleValue[j]]);
 		  // }
@@ -37,9 +38,8 @@ var performAddressBookFunction = function() {
             title = "(no name)";
         }
         var row = Alloy.createController('importTableView',{
-        	contactData : contactData
-        	
-        	
+        	index: i,
+        	fullName: title
         }).getView();
     	data.push(row);
     }
@@ -80,14 +80,10 @@ var clickImportDone = function(e){
 			var section = importData[i];
 			for(var j=0;j<section.rowCount;j++) {
 				var row = section.rows[j];
-							
-				if(row.children[0].checkBtn === true){
-					
+				if(row.checkBtn === true){
 					var people = Alloy.Collections.people;
 
-					
-					var personalInfo = row.children[1];
-					
+					var personalInfo = contacts[row.index];
 					var birthday = "",
 						email = "",
 						text = "";
@@ -96,57 +92,51 @@ var clickImportDone = function(e){
 						address1 = "";
 						address2 = "";
 						address3 = "";
-					_.map(personalInfo, function(value, key) {
-						if( key == "allData" ) {
-							
-							if( personalInfo[key].birthday ) {
-								var splitBirthday = personalInfo.allData.birthday.split('T');
-								birthday = splitBirthday[0];	
-							};
-							
-							_.map(personalInfo[key].phone, function(value){
+
+
+						if( personalInfo['birthday'] && personalInfo['birthday'].length > 0 ) {
+							var splitBirthday = personalInfo['birthday'].split('T');
+							birthday = splitBirthday[0];	
+						}
+
+						if( personalInfo['phone'] ) {
+							_.map(personalInfo['phone'], function(value){
 								if (phoneNumber == "" && value && value.length > 0){
 									phoneNumber = value[0];
 								};
 							});
-							
-							if( personalInfo[key].organization ){
-								organization = personalInfo.allData.organization;
-							};
-							
-							
-						
-							_.map(personalInfo[key].address, function(value, key){
-								_.map(value[0], function(val, subkey) {
+						}
 
-									if( address1 == "" && subkey == "Street" ) {
-										address1 = val;
-									} else if( address2 == "" && subkey == "State" ) {
-										address2 = val;
-									} else if( address3 == "" && subkey == "City" ) {
-										address3 = val;
-									};
-									
-								});
-										
-							});
+						if( personalInfo['organization'] ){
+							organization = personalInfo['organization'];
+						};
 							
 							
-						} else if( key == "email" ) {
-							_.map(personalInfo[key], function(value) {
-								if( email == "" && value && value.length > 0 ) {
-									email = value[0];
-								}
-							});
-						} else if( key == "text" ) {
-							text = value;
-						} 
 						
-					});
-					
-					// {'email': {
-						// 'home': ['afdsasdfa']
-					// }}
+						_.map(personalInfo['address'], function(value, key){
+							_.map(value[0], function(val, subkey) {
+
+								if( address1 == "" && subkey == "Street" ) {
+									address1 = val;
+								} else if( address2 == "" && subkey == "State" ) {
+									address2 = val;
+								} else if( address3 == "" && subkey == "City" ) {
+									address3 = val;
+								};
+								
+							});
+									
+						});
+							
+
+						_.map(personalInfo['email'], function(value) {
+							if( email == "" && value && value.length > 0 ) {
+								email = value[0];
+							}
+						});
+						
+						text = personalInfo['fullName'];
+
 					
 					var detailInfo = Alloy.createModel("people",{
 					name: text,
