@@ -110,14 +110,12 @@ var flexSpace = Ti.UI.createButton({
     systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
 });
 
-
 doneForGender.addEventListener("click",function(e){
 	$.lowerView.visible="true";	
 	$.viewGenderPicker.visible="false";	
 });
 
 $.toolbar.items = [flexSpace, doneForGender];
-
 $.datepicker.type = Ti.UI.PICKER_TYPE_DATE_AND_TIME;
 
 
@@ -135,6 +133,7 @@ $.btn_doneEdit.addEventListener("click",function(e){
 	closePickers();
 	$.person.image=$.picName.text;
 	$.btn_imageEdit.visible="true";
+	$.btn_addMore.visible="true";
 
 });
 
@@ -277,7 +276,7 @@ function doCrop(name) {
 	$.btn_imageEdit.visible = false;
 	Titanium.Media.takeScreenshot(function(e){
 		var image = e.media;
-		var newBlob = Imagefactory.imageAsCropped(image, { width:250, height:290, x:0, y:140 });
+		var newBlob = Imagefactory.imageAsCropped(image, { width:250, height:290, x:380, y:140 });
 		newBlob = Imagefactory.imageWithRoundedCorner(newBlob, { borderSize:4, cornerRadius:100});
 		var imageFile = Ti.Filesystem.getFile(imageRootPath, name + ".jpg");
 		imageFile.createFile();

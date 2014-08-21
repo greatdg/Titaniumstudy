@@ -58,16 +58,18 @@
 },
 
 ".inputBox": {
-	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
+	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_NONE,
 	width: "180",
-	height: "30",
+	height: "40",
+	borderWidth:"0",
 	borderColor: "#9AB3CD",
 },
 
 ".inputBox2": {
-	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
-	width:"100%",
-	height:"30",
+	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_NONE,
+	width:"70%",
+	height:"40",
+	borderWidth:"0",
 	borderColor: "#9AB3CD",
 },
 

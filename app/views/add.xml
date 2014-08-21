@@ -11,11 +11,38 @@
 		
 
 	<ScrollView id="scrollView" width="100%" height="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
-	<View class="container" id="container" top ="0" height="360" >
+	<View class="container" id="container" top ="0" height="460" >
 
 		
 		<View class="upperView" >
 			<!-- <View class="emoticonView"> -->
+	
+			<View class="personalView" top ="7">
+				<!-- name, birthday, phone numberand gender -->
+
+				<View class="rowPersonal">
+				<ImageView  image="addname.png" left="2"/>
+				<TextField class="inputBox" id="nameAdd" value="" hintText="Name"  left="4" />
+				</View>
+				<View backgroundColor="#9AB3CD" height="1" width="70%" left ="40" />
+				
+				<View class="rowPersonal">	
+				<ImageView  image="addgender.png" left="3"/>									
+				<TextField class="inputBox" id="genderAdd" hintText="Gender" editable="false" top="2" left="4" />
+				</View>	
+				<View backgroundColor="#9AB3CD" height="1" width="70%" left ="40" />
+	
+				<View class="rowPersonal">
+				<ImageView  image="addbday.png" left="3"/>										
+				<TextField class="inputBox" id="bdayAdd" hintText="Birthday" editable="false" top="2" left="4" />
+				</View>			
+				<View backgroundColor="#9AB3CD" height="1" width="70%" left ="40" />
+
+				
+					
+			</View>
+				<!-- personal View 		 -->	
+	
 				<!-- emoticon area -->
 
 											
@@ -32,29 +59,7 @@
 							
 													
 			<!-- </View> -->
-			<View class="personalView" top ="7">
-				<!-- name, birthday, phone numberand gender -->
 
-				<View class="rowPersonal">
-				<TextField class="inputBox" id="nameAdd" value="" hintText="Name" />
-				</View>
-				
-				<View class="rowPersonal">										
-				<TextField class="inputBox" id="genderAdd" hintText="Gender" editable="false"/>
-				</View>	
-	
-				<View class="rowPersonal">									
-				<TextField class="inputBox" id="bdayAdd" hintText="Birthday" editable="false"/>
-				</View>			
-
-				<View class="rowPersonal">									
-				<TextField class="inputBox" id="phoneAdd" hintText="Phone Number" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD"/>
-				</View>
-				
-					
-					
-			</View>
-				<!-- personal View 		 -->
 		</View>
 			<!-- upper View  -->
 
@@ -62,29 +67,45 @@
 	<View id="lowerView" class="lowerView" >
 		
 				<View class="rowAdditional">
-				<TextField class="inputBox2" id="emailAdd" hintText="email" />
+				<ImageView  image="addphone.png" left="5"/>		
+				<TextField class="inputBox2" id="phoneAdd" hintText="phone" keyboardType="Titanium.UI.KEYBOARD_PHONE_PAD" left ="6"/>
 				</View>	
+
+				<View backgroundColor="#9AB3CD" height="1" width="80%" left ="35" />
+		
+				<View class="rowAdditional">
+				<ImageView  image="addemail.png" left="5"/>		
+				<TextField class="inputBox2" id="emailAdd" hintText="email" left ="6"/>
+				</View>	
+				
+				<View backgroundColor="#9AB3CD" height="1" width="80%" left ="35" />
 						
 				<View class="rowAdditional">
-				<TextField class="inputBox2" id="jobAdd" hintText="Job" />
+				<ImageView  image="addjob.png" left="5"/>		
+				<TextField class="inputBox2" id="jobAdd" hintText="Job" left ="6" />
 				</View>	
 			
+				<View backgroundColor="#9AB3CD" height="1" width="80%" left ="35" />
+			
 				<View class="rowAdditional">
-				<TextField class="inputBox2" id="addressAdd" hintText="Address: Street"/>
+				<ImageView  image="addhome.png" left="5"/>
+				<TextField class="inputBox2" id="addressAdd" hintText="Street" left ="6" />
 				</View>
-
-				<View class="rowAdditional">
-				<TextField class="inputBox2" id="address2Add" hintText="Address: Suburb"/>
-				</View>
-
-				<View class="rowAdditional">
-				<TextField class="inputBox2" id="address3Add" hintText="Address: City"/>
-				</View>
+				<View backgroundColor="#9AB3CD" height="1" width="80%" left ="35" />
 				
-				<Button id="btn_addMore" backgroundImage ="more.png" left="180" height="40" width="120" />	
-				
-					
+				<View class="rowAdditional">
+				<TextField class="inputBox2" id="address2Add" hintText="Suburb" left="35"/>
+				</View>
+				<View backgroundColor="#9AB3CD" height="1" width="80%" left ="35" />
 
+				<View class="rowAdditional">
+				<TextField class="inputBox2" id="address3Add" hintText="City"left="35"/>
+				</View>
+				<View backgroundColor="#9AB3CD" height="1" width="80%" left ="35" />
+				<View backgroundColor="white" height="20" width="100%"  />
+				
+				<Button id="btn_addMore" backgroundImage ="addmore.png" left="6" width="100" height="25" />
+				
 				<View height="3" visible="false">
 				<TextField class="inputBox" height="17" id="customAdd" value=""/>			
 				</View>			
@@ -128,7 +149,7 @@
 	
 	
 	<View id="viewDatePicker" visible="false">
-		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
+		<Toolbar width="100%" height="30" id="dateToolbar" barColor="#DDD"></Toolbar>
 		<Picker id="datePicker" selectionIndicator="true" useSpinner="true"></Picker>
 	</View>
 	
@@ -136,7 +157,7 @@
 
 	<View id="viewGenderPicker" visible="false">
 		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
-		<Picker id="genderPicker" selectionIndicator="true" top="150" useSpinner="true" >
+		<Picker id="genderPicker" selectionIndicator="true" useSpinner="true" >
 				<PickerColumn id="column1">
 					<PickerRow title=""/>
                 	<PickerRow title="Male"/>
@@ -149,16 +170,16 @@
 	<View id="viewImageEditCategory" visible="false">
 		<View id="categoryMenu">
 										
-				<ImageView class="person" id="personImageEdit" top="80" left="0">
+				<ImageView class="person" id="personImageEdit" top="100" left="15" width="80" height="110">
 				</ImageView>		
-				<ImageView class="person" id="hairImageEdit" top="80" left="-130"  >
+				<ImageView class="person" id="hairImageEdit" top="90" left="-130"  >
 				</ImageView>
 <!-- 				<ImageView class="person" id="extraImageEdit" top="80" left="0">
 				</ImageView>	 -->							
 				
 					
 
-			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="12"/>
+			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="40"/>
 			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left="5" />
 			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="120" left ="5" />
 			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" left="7" height="70"/>
