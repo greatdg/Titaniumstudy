@@ -47,16 +47,18 @@
 
 											
 				<ImageView class="person" id="person" >
-
-									
 									
 					<Label id="picName" color="white" top="50" text="picName" visible="false" ></Label>	
 					<Label id="picHairName" color="white" top="70" text="hairName" visible="false" ></Label>					
-					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>										
-									
-			 		<Button id="btn_imageEdit" backgroundImage="editIcon.png" top="100" left="80" width="30" height="30" />							
+					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>																
+				<Button id="btn_imageEdit" backgroundImage="editIcon.png" top="100" left="0" width="30" height="30" />
 				</ImageView>			
 							
+				<ImageView class="person" id="hairImageEdit" top="0" left="-80" width="80" height="110" >
+				</ImageView>	
+				
+			
+	
 													
 			<!-- </View> -->
 
@@ -172,7 +174,7 @@
 										
 				<ImageView class="person" id="personImageEdit" top="100" left="15" width="80" height="110">
 				</ImageView>		
-				<ImageView class="person" id="hairImageEdit" top="90" left="-130"  >
+				<ImageView class="person" id="hairImageEdit" top="100" left="-80" width="80" height="110" >
 				</ImageView>
 <!-- 				<ImageView class="person" id="extraImageEdit" top="80" left="0">
 				</ImageView>	 -->							
@@ -182,7 +184,7 @@
 			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="120" left="40"/>
 			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="120" left="5" />
 			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="120" left ="5" />
-			<Button id="btn_doneEdit" backgroundImage="done.png" top="100" width="70" left="7" height="70"/>
+			<Button id="btn_doneEdit" backgroundImage="done.png" top="112" width="50" left="15" height="50"/>
 		</View>
 	</View>
 
