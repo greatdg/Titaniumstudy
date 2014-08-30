@@ -7,15 +7,6 @@ var args = arguments[0] || {};
 var contacts;
 var data = [];
 
-var singleValue = [
-  'recordId', 'firstName', 'middleName', 'lastName', 'fullName', 'prefix', 'suffix',
-  'nickname', 'firstPhonetic', 'middlePhonetic', 'lastPhonetic', 'organization',
-  'jobTitle', 'department', 'note', 'birthday', 'created', 'modified', 'kind'
-];
-var multiValue = [
-  'email', 'address', 'phone', 'instantMessage', 'relatedNames', 'date', 'url'
-];
-
 
 var performAddressBookFunction = function() {	
 	contacts = Ti.Contacts.getAllPeople();
@@ -23,14 +14,6 @@ var performAddressBookFunction = function() {
 	// Ti.API.debug(contacts.length)
     for (var i = 0; i < contacts.length; i++) {
         var contactData = contacts[i];        
-    //     for (var j=0, jlen=singleValue.length; j<jlen; j++){
-		  //   Ti.API.info(singleValue[j] + ': ' + contactData[singleValue[j]]);
-		  // }
-		  // for (var j=0, jlen=multiValue.length; j<jlen; j++){
-		  //   Ti.API.info(multiValue[j] + ': ' + JSON.stringify(contactData[multiValue[j]]));
-		  // }
-
-
         var title = contacts[i].fullName;   
         
 
@@ -147,25 +130,6 @@ var clickImportDone = function(e){
 					address1: address1,
 					address2: address2,
 					address3: address3
-					
-					
-					 
-					// gender:$.genderAdd.value,
-					// birthday:$.bdayAdd.value,
-					// address:$.addressAdd.value,
-					// job:$.nameAdd.value,	
-					// custom:	$.nameAdd.value,
-					
-					// hairStyle:$.hairStyle.value,	
-					// hairColor:$.hairColor.value,
-// 					
-					// skinColor:$.skinColor.value,	
-					// faceShape:$.faceShape.value,							
-					// eyeShape:$.eyeShape.value,		
-// 					
-					// extraGlassess:$.extraGlasses.value,	
-					// extraMustache:$.extraMustache.value,
-					// extraExtra:$.extraExtra.value,
 							
 					});
 					
@@ -223,6 +187,20 @@ buttonImportCancel.addEventListener('click', function(e){
 // 		
 // 		
 
+// $.importTable.setSearch($.importSearch);
+
+function transformfunction(item) {
+	Ti.API.debug('testdfasdfas');
+	var item = item.toJSON();
+	
+	// item.title = item.name;
+	// item.PicName = imageRootPath+item.no +".jpg";
+	// return item;
+	//$.smallFace.image = people.
+	//$.listList.text = item.name;
+	// $.smallFace.image = item.no + '.jpg';
+	
+};
 
 $.importTable.addEventListener('click',function(e){
 	var importData = $.importTable.getData();

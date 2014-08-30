@@ -5,7 +5,7 @@ var fullName = args.fullName || "";
 
 $.importTableView.checkBtn = false;
 $.importTableView.index = index;
-
+$.importTableView.text = fullName;
 
 $.importTableRow.text = fullName;
 
