@@ -225,7 +225,7 @@ $.extraImagePicker.addEventListener('change', function(e) {
 
 
 $.btn_addMore.addEventListener("click",function(e){	
-	$.container.visible="false";		
+	// $.container.visible="false";		
 	$.customAddView.visible="true";
 	$.customAddCategory.value="";
 	$.customAddContent.value="";		
@@ -233,6 +233,8 @@ $.btn_addMore.addEventListener("click",function(e){
 	
 
 $.doneCustomAdd.addEventListener("click",function(e){
+	$.customAddView.visible="false";
+	
 	if($.customAddCategory.value !==""){
 		$.customAdd.value=$.customAdd.value+ $.customAddCategory.value + "&&" + $.customAddContent.value + "##" ;
 
@@ -245,24 +247,22 @@ $.doneCustomAdd.addEventListener("click",function(e){
 		var title = $.customAddCategory.value,
 			content = $.customAddContent.value;
 		
-		
 		var field=Alloy.createController("customField",{
 			name:title,
 			field:content,	
 		}).getView();	
-			
-		$.lowerView.add(field);
+		$.scrollView.add(field);
 		// alert("custom here");
-		$.customAddView.visible="false";	
-		$.container.visible="true";
-		$.container.height = parseInt($.container.height) + 40;
+			
+		// $.container.visible="true";
+
+		// $.container.height = parseInt($.container.height) +40;
 
 
 	}
 		else{
 			// alert("Please input category title");
-			$.customAddView.visible="false";	
-			$.container.visible="true";	
+			// $.container.visible="true";	
 			$.customAddCategory.blur();
 			$.customAddContent.blur();
 			

@@ -96,10 +96,10 @@
 "#customAddView": {
 	backgroundColor:"white", 
 	layout:"vertical",
-	width:"100%",
-	top:"0",
-	left:"0",
-	height:"100%",
+	width:"94%",
+	top:"10",
+	left:"10",
+	// height:"100%",
 	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
 },
 
@@ -117,5 +117,5 @@
 ".titleAdditional": {
 	left:"0",
 	layout:"vertical",
-	width:"25%",
+	width:"100%",
 }
