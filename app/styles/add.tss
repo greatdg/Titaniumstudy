@@ -101,7 +101,7 @@
 	backgroundColor:"white", 
 	layout:"vertical",
 	width:"94%",
-	top:"10",
+	top:"0",
 	left:"10",
 	// height:"100%",
 	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED

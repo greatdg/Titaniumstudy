@@ -137,7 +137,7 @@
 
 		<!-- <Label id="customAdd" visible="false" value=""></Label>	 -->
 		
-		<Button id="doneCustomAdd" top="3" backgroundImage="done.png" width="50" height="50"/>	
+		<Button id="doneCustomAdd" top="10" backgroundImage="done.png" width="50" height="50"/>	
 		
 		
 		<View class="rowAdditional">
