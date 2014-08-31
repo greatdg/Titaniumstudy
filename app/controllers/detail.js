@@ -14,10 +14,18 @@ Titanium.App.addEventListener("doneEdit", function(e){
 //--------set text data on the detail page--------//
 var personalDetail = function(id){
 	var personalData = people.get(id).toJSON();
-	Ti.API.debug(personalData);
+	// Ti.API.debug(personalData);
+	// $.name.setText("Gildong Hong");
+	// $.birthday.setText("12/12/1975");
+	// $.gender.setText("Male");
+	// $.phoneNumber.setText("022-126-5177");
+	// $.job.setText("Designer");
+	// $.email.setText("greatdg@gmail.com");
+
 	$.name.setText(personalData.name);
 	$.birthday.setText(personalData.birthday);
 	$.gender.setText(personalData.gender);
+
 	$.phoneNumber.setText(personalData.phoneNumber);
 	$.address1.setText(personalData.address1);
 	$.address2.setText(personalData.address2);

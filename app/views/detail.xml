@@ -5,74 +5,53 @@
 		</RightNavButton>
 	
 	<ScrollView id="scrollView" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
-
 		<View class="upperView">
-											
+			<View class="profileImg">
 				<ImageView id="facePic" class="person" image="default_icon.png" />
 
-			<View class="personalView">
-				<!-- name, birthday, phone numberand gender -->
+				<View class="personalView">
+					<Label id="name" class="name"/>					
+					<Label id="gender" class="personCommon" />
+			
+					<Label id="birthday" class="personCommon" />
+				</View>							
+			</View>	
 
-				<!-- <View class="rowPersonal" layout="vertical">
-				<Label class="upper_title" text="Name"></Label>
-				</View> -->				
-				<View class="rowPersonal" layout="vertical">
-				<Label id="name" class="upper_text_name" layout="vertical" />
-				</View>
-				
-				<!-- <View class="rowPersonal">
-				<Label class="upper_title" text="Gender "></Label>
-				</View>	 -->				
-				<View class="rowPersonal" layout="vertical">
-				<Label id="gender" class="upper_text" layout="vertical"/>
-				</View>
-	
-				<!-- <View class="rowPersonal">
-				<Label id="bdayPersonal" class="upper_title" text="Birthday "></Label>
-				</View>		 -->				
-				<View class="rowPersonal" layout="vertical">
-				<Label id="birthday" class="upper_text" />
-				</View>	
-						
-			</View>			
+		</View>
+		<View class="lowerView">
+			<View class="margin">	
+				<ImageView class="lblImg" image="edit/phone.png" />
+				<Label id="phoneNumber" class="lLbl" onClick="phoneClick"/>
+			</View>
+			<View class="margin">	
+				<ImageView class="lblImg" image="edit/job.png" />
+				<Label id="job" class="lLbl" />
+			</View>
+			<View class="margin">	
+				<ImageView class="lblImg" image="edit/email.png" />
+				<Label id="email" class="lLbl" onClick="emailClick" />
+			</View>
+
+			<View class="margin">
+				<ImageView class="lblImg" image="edit/home.png" />
+				<Label id="address1" class="lLbl" />
+			</View>
+
+			<View class="margin">				
+				<Label id="address2" class="lLblAddr" />
+			</View>
+
+			<View class="margin">
+				<Label id="address3" class="lLblAddr" />
+			</View>
+
 
 		</View>
 
+		<View id="addViewField" class="addViewField"></View>
 		
-	<View id="lowerView" class="lowerView">	
-		
-				<View class="rowAdditional">
-					<!-- <Label id="phonePersonal" class="upper_title" text="Phone " /> -->	
-					<ImageView image="edit/phone.png" />
-					<Label id="phoneNumber" class="lower_text" onClick="phoneClick"/>
-				</View>
-		
-				<View class="rowAdditional">
-					<ImageView image="edit/job.png" />
-					<Label id="job" class="lower_text" />
-				</View>		
-				
-				<View class="rowAdditional">
-					<ImageView image="edit/email.png" />
-					<Label id="email" class="lower_text" onClick="emailClick" />
-				</View>
-				
-				<View class="rowAdditional_address">
-					<ImageView image="edit/home.png" />
-					<Label id="address1" class="lower_text" />
-				</View>
+		<View class="space"></View>
 
-				<View class="rowAdditional_address">				
-				<Label id="address2" class="lower_text_address"/>
-				</View>
-
-				<View class="rowAdditional_address">
-				<Label id="address3" class="lower_text_address" />
-				</View>
-	</View>	
-	
-	<View id="addViewField" class="addViewField"></View>
-	
 	</ScrollView>
 
 	</Window>

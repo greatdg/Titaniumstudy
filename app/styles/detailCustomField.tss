@@ -1,22 +1,31 @@
-".wrap": {
-	height: Ti.UI.SIZE
+"View": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+}
+".key": {
+	top: 5,
+	color: "#9EEAE7",
+}
+".value": {
+}
+"Label": {
+	left: 22,
+	color: "#666666",
+	font: {
+		fontSize: "22"
+	},
+	textAlign: "Titanium.UI.TEXT_ALIGNMENT_LEFT",
+}
+"ImageView": {
+	top: 7,
+	left:30,
 }
 
-".rowAdditional": {
-	top: "0",
-	layout:"horizontal",
-	width:"100%",
-	height: 40,
-	left: 30,
-},
+".wrap": {
+	layout: "horizontal",
+}
 
 
-".text1": {
-	color: '#9BEAE8',
-	left: 15,
-},
-
-".text2": {
-	color: 'gray',
-	left: 15,
+".subWrap": {
+	layout: "vertical"	
 }

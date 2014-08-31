@@ -1,10 +1,9 @@
 <Alloy>
-	<View layout='vertical' class="wrap">
-		<View class="rowAdditional">
-			<ImageView image='edit/more.png' />
-			<Label id="customTitle" class='text1' />
-		
-			<Label id="customLabel" class='text2' />
+	<View class="wrap">
+		<ImageView image='edit/more.png' />
+		<View class="subWrap">			
+			<Label id="customTitle" class='key' />		
+			<Label id="customLabel" class='value' />
 		</View>
 	</View>
 </Alloy>

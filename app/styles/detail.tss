@@ -1,121 +1,86 @@
 "Window": {
 	backgroundColor: "#FFF",
-},
+}
+".name": {
+	font: {
+		fontWeight: 'bold',
+	},
+	color: "#000"
+}
+
+".personCommon": {
+	top: 15,
+}
+".personalView": {
+	top: 24,
+	layout: "vertical"
+}
+".person": {
+	width: "40%",
+	top: 20,
+	left: 20
+}
+".space": {
+	height: 40
+}
+".underline": {
+	backgroundColor:"#A5A5A5",
+	height: 1,
+	width: "75%",
+	top: 4,
+	left: "64"
+}
+"View": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+}
+
+".lLbl": {
+	left: 22
+}
+
+".lLblAddr": {
+	left: 75
+}
+
+".margin": {
+	top: "12",
+	layout: "horizontal"
+}
+
+".lblImg": {
+	left:"30",
+}
+"Label": {
+	color: "#666666",
+	font: {
+		fontSize: "22"
+	},
+	textAlign: "Titanium.UI.TEXT_ALIGNMENT_LEFT",
+}
 
 "#scrollView": {
 	width:Ti.UI.SIZE,
-	layout: "vertical"
-},
-
-".addViewField": {
-	height:Ti.UI.SIZE,
-	layout: "vertical"
+	layout: "vertical",
 }
 
 ".upperView": {
-	layout: "horizontal",
-	width: Titanium.UI.FILL,
-	top: "0",
-	height: "200",
-	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
-},
-
-".person":{
-	layout: "vertical",
-	top:"20",
-	left:"10",	
-	width:"120",
-	height:"150",
-},
-
-
-".rowPersonal":{
-	top:0,
-	fontSize:12,
-	layout:"vertical",
-	height:40,
-},
-
-".personalView":{
-	// backgroundColor:"green",
-	top: 55,
-	fontSize: 9,
-	layout: "vertical",
-	width: Ti.UI.SIZE,
-	height:"200"
-},
-
-".lowerView":{
-	fontSize:10,
-	// top:3,
-	left:30,
-	layout:"vertical",
-	width:"100%",
-	height: Ti.UI.SIZE
-},
-
-"#customAddView":{
-	backgroundColor:"white", 
-	layout:"vertical",
-	width:"100%",
-	top:"0",
-	left:"0",
-	height:"100%",
-	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
-},
-
-
-".rowAdditional":{
-	left:"0",
-	// backgroundColor:"pink",
-	layout:"horizontal",
-	height:"40",
-	width:"100%",
-},
-
-
-".rowAdditional_address":{
-	left:"0",
-	// backgroundColor:"pink",
-	layout:"horizontal",
-	height:"20",
-	width:"100%",
-},
-
-
-
-".titleAdditional":{
-	left:0,
-	layout:"vertical",
-	width:"25%",
-},
-
-".upper_title": {
-	color: "#9BEAE8"
-},
-
-".upper_text": {
-	color: "gray",
-	font: {
-		fontSize: '20'
-	}
-},
-
-".upper_text_name": {
-	color: "#000",
-	font: {
-		fontWeight: 'bold',
-		fontSize: '18',
-		}
-},
-
-".lower_text": {
-	color: 'gray',
-	left: 15
-},
-
-".lower_text_address": {
-	color: 'gray',
-	left: 38
+	layout: "vertical"
 }
 
+".lowerView": {
+	height: Ti.UI.SIZE,
+	layout: "vertical",
+	top: 20,
+}
+
+".profileImg": {
+	height: "150",
+	layout: "horizontal"
+}
+
+".addViewField": {
+	layout: "vertical",
+	top: 20,
+	height: Ti.UI.SIZE,
+}
