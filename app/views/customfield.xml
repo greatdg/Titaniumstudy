@@ -1,6 +1,8 @@
 <Alloy>
-		<View class="rowAdditional">
-			<Label id="customTitle" class="titleAdditional" text="      "></Label>
-			<Label id="customLabel" />
-		</View>
+	<View class="rowAdditional">
+		<Label id="customTitle" class="titleAdditional" left="25" text="      "></Label>
+		<View backgroundColor="#9AB3CD" height="1" width="80%" left="35"></View>
+		<Label id="customLabel" left="35" />
+		<View backgroundColor="#9AB3CD" height="1" width="80%" left="35"></View>
+	</View>
 </Alloy>

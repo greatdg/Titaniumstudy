@@ -88,18 +88,22 @@
 	top: "0",
 	layout:"vertical",
 	width:"94%",
+	height: "260"
 },
 
 
-
+".addViewField": {
+	layout: "vertical",
+	height: Ti.UI.SIZE
+}
 
 "#customAddView": {
 	backgroundColor:"white", 
 	layout:"vertical",
-	width:"100%",
+	width:"94%",
 	top:"0",
-	left:"0",
-	height:"100%",
+	left:"10",
+	// height:"100%",
 	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
 },
 
@@ -117,5 +121,5 @@
 ".titleAdditional": {
 	left:"0",
 	layout:"vertical",
-	width:"25%",
+	width:"100%",
 }
