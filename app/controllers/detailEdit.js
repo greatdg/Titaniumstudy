@@ -5,72 +5,67 @@ var alloyId = args.alloyId;
 var people = Alloy.Collections.people;
 var imageFolderName = "person_image";
 var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
-
 var personalData = people.get(alloyId).toJSON();
-
-var personCustom = personalData.custom;
-
 var customField = [];
-for(var i=0;i<personCustom.length;i++) {
-	var split = personCustom.split("##");
-	var key = split[i].split("&&");
-	var keyField = Ti.UI.createTextField({
-		value: key[0]
-	});
-	var valueField = Ti.UI.createTextField({
-		value: key[1]
-	});
-	$.detail.add(keyField);
-	$.detail.add(valueField);
-	// customField.splice(i, 1);
-	customField.push({
-		key: keyField, 
-		value: valueField
-	});
-}
 
 $.detailEdit.addEventListener('focus', function(e){
 	people.fetch();
 });
+
+if(personalData.custom && personalData.custom.length > 0){
+		
+		var splitFields = personalData.custom.split('##');
+		
+		for(var i=0; i<splitFields.length-1; i++){
+			var splitField = splitFields[i].split('&&');
+			var field=Alloy.createController("detailEditCustomField",{
+				name:splitField[0],
+				field:splitField[1],	
+			}).getView();	
+				
+			$.addViewField.add(field);
+		}
+	}else{
+	$.scrollView.visible="true";}
+
+
 
 
 	$.nameEdit.value= personalData.name;
 	$.genderEdit.value= personalData.gender;	
 	$.bdayEdit.value= personalData.birthday;
 	$.phoneEdit.value = personalData.phoneNumber;
-
 	$.addressEdit.value= personalData.address1;
 	$.address2Edit.value= personalData.address2;
 	$.address3Edit.value= personalData.address3;
 	$.jobEdit.value=personalData.job;	
-	$.customEdit.value="";
-
 	$.hairStyle.value=personalData.hairStyle;	
-	$.hairColor.value=personalData.hairColor;	
-		
+	$.hairColor.value=personalData.hairColor;			
 	$.skinColor.value=personalData.skinColor;		
 	$.faceShape.value=personalData.faceShape;								
-	$.eyeShape.value=personalData.eyeShape;			
-		
+	$.eyeShape.value=personalData.eyeShape;					
 	$.extraGlasses.value=personalData.extraGalsses;		
-	$.extraMustache.value=personalData.extraMustache;	
-	//$.extraExtra.value=personalData.extraExtra;	
-	
+	$.extraMustache.value=personalData.extraMustache;		
 	$.emailEdit.value = personalData.email;
-	$.facePic.image = imageRootPath+alloyId +".jpg";
+
 		
 
 	changePic();
 		
-// });
+
 
 function editDone(){
-	for(var i =0;i<customField.length;i++) {
-		Ti.API.debug(customField[i].key.value);
-		Ti.API.debug(customField[i].value.value);
+	var customEditValue="";
+	var customChildren = $.addViewField.getChildren();
+	for(var i=0;i<customChildren.length;i++) {
+		var field = customChildren[i]
+		,	view = field.getChildren()[1]
+		,	key = view.getChildren()[0].value
+		,	value = view.getChildren()[2].value;
+		customEditValue = customEditValue + key + "&&" + value + "##" ;
+}
+	
 
-	}
-	return;
 	if($.nameEdit.value!=""){
 		var model = people.get(alloyId);
 		model.save({
@@ -79,7 +74,7 @@ function editDone(){
 			birthday:$.bdayEdit.value,
 			address:$.addressEdit.value,
 			job:$.jobEdit.value,	
-			custom:	$.customEdit.value,
+			custom:	customEditValue,
 			phoneNumber: $.phoneEdit.value,
 			email: $.emailEdit.value,
 			address1: $.addressEdit.value,
@@ -95,13 +90,13 @@ function editDone(){
 			
 			extraGlassess:$.extraGlasses.value,	
 			extraMustache:$.extraMustache.value,
-			//extraExtra:$.extraExtra.value,			
 		});
-		 //Ti.API.debug(selectModel);
-		 //Titanium.App.fireEvent('doneEdit');
+
 	$.detailEdit.close();
 	}else{
 		alert("Please input name");};
+		
+	
 };
 
 $.genderEdit.addEventListener("click",function(e){
@@ -117,11 +112,6 @@ $.genderEdit.addEventListener("click",function(e){
 $.genderPicker.addEventListener('change', function(e) {
 	$.genderEdit.value = e.selectedValue[0];
 });
-
-
-
-
-// Image editing follows
 
 $.btn_imageEdit.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="true";	
@@ -187,12 +177,11 @@ $.btn_extraEditCategory.addEventListener("click",function(e){
 $.extraImagePicker.addEventListener('change', function(e) {
 	$.extraGlasses.value = e.selectedValue[0];
 	$.extraMustache.value = e.selectedValue[1];
-	//$.extraExtra.value = e.selectedValue[2];
 	changePic();			
 });
 
 $.btn_addMore.addEventListener("click",function(e){	
-	$.container.visible="false";		
+			
 	$.customAddView.visible="true";
 	$.customAddCategory.value="";
 	$.customAddContent.value="";		
@@ -201,44 +190,26 @@ $.btn_addMore.addEventListener("click",function(e){
 
 $.doneCustomAdd.addEventListener("click",function(e){
 	if($.customAddCategory.value !==""){
-		$.customAdd.value=$.customAdd.value+ $.customAddCategory.value + "&&" + $.customAddContent.value + "##" ;
-
 		$.customAddCategory.blur();
 		$.customAddContent.blur();
-			// alert($.customAdd.value);
-
-
-
 		var title = $.customAddCategory.value,
 			content = $.customAddContent.value;
+		var field=Alloy.createController("detailEditCustomField",{
+				name:title,
+				field:content,	
+			}).getView();	
 		
-		
-		var field=Alloy.createController("customField",{
-			name:title,
-			field:content,	
-		}).getView();	
-			
-		$.lowerView.add(field);
-		// alert("custom here");
+		$.addViewField.add(field);
 		$.customAddView.visible="false";	
-		$.container.visible="true";
-		$.container.height = parseInt($.container.height) + 40;
 
-
-	}
-		else{
+	}else{
 			// alert("Please input category title");
 			$.customAddView.visible="false";	
-			$.container.visible="true";	
 			$.customAddCategory.blur();
 			$.customAddContent.blur();
 			
 		}		
 });
-
-
-
-
 
 
 function closeWindow(){

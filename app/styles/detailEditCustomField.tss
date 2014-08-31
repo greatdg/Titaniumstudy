@@ -1,0 +1,34 @@
+"View": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+}
+".underline": {
+	backgroundColor:"#9BEAE8",
+	height:"1",
+	width:"78%",
+	left: 10,
+}
+".inputBox2": {
+	left: 5,
+	top: 10
+}
+
+"Label": {
+	left: 22,
+	color: "#666666",
+
+	textAlign: "Titanium.UI.TEXT_ALIGNMENT_LEFT",
+}
+"ImageView": {
+	top: 7,
+	left: 10,
+}
+
+".wrap": {
+	layout: "horizontal",
+}
+
+
+".subWrap": {
+	layout: "vertical"	
+}

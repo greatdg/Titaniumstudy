@@ -22,5 +22,3 @@ $.importTableView.addEventListener('click',function(e){
 		$.importTableView.checkBtn = true;		
 	}
 });
-
-// $.importTableRow.add(importCheck);

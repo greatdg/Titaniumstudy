@@ -1,0 +1,13 @@
+<Alloy>
+	<View class="wrap">
+		<ImageView image='edit/more.png' />
+		<View class="subWrap">
+			<TextField id="customTitle" class='inputBox2'/>
+			<View class="underline"></View>		
+			<TextField id="customLabel" class='inputBox2' />
+			<View class="underline"></View>
+		</View>
+	</View>
+</Alloy>
+
+

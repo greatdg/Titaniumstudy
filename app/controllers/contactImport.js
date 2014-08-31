@@ -1,22 +1,12 @@
 var args = arguments[0] || {};
-
-
-
-// $.importTable.setData(importTableData);
-
 var contacts;
 var data = [];
 
-
 var performAddressBookFunction = function() {	
 	contacts = Ti.Contacts.getAllPeople();
-	// Ti.API.debug("start")
-	// Ti.API.debug(contacts.length)
     for (var i = 0; i < contacts.length; i++) {
         var contactData = contacts[i];        
         var title = contacts[i].fullName;   
-        
-
         if (!title || title.length === 0) {
             title = "(no name)";
         }
@@ -28,6 +18,7 @@ var performAddressBookFunction = function() {
     }
     $.importTable.data = data;
 };
+
 var addressBookDisallowed = function(){
 	alert('testaaaaa1222daf');
 };
@@ -44,9 +35,7 @@ if (Ti.Contacts.contactsAuthorization == Ti.Contacts.AUTHORIZATION_AUTHORIZED){
     });
 } else {
     addressBookDisallowed();
-}
-
-
+};
 
 var buttonImportCancel = Ti.UI.createButton({
 	title: 'Cancel',
@@ -55,9 +44,7 @@ var buttonImportCancel = Ti.UI.createButton({
 
 $.contactImport.leftNavButton = null;
 
-
-var clickImportDone = function(e){
-		
+var clickImportDone = function(e){		
 		var importData = $.importTable.getData();
 		for(var i=0;i<importData.length;i++) {
 			var section = importData[i];
@@ -131,19 +118,12 @@ var clickImportDone = function(e){
 					address2: address2,
 					address3: address3
 							
-					});
-					
-					
-
-// 			 		
+					});	 		
 				  detailInfo.save();
 				  people.add(detailInfo);
 				 					
 					}
-
-				}
-
-				
+				}			
 			}
 				
 		
@@ -152,7 +132,6 @@ var clickImportDone = function(e){
 		
 		for(var j=0;j<section.rowCount;j++) {	
 			var row = section.rows[j];
-			//Ti.API.debug(row.children[0]);
 			row.children[0].color='gray';
 			row.children[0].checkBtn='false';
 			
@@ -173,7 +152,6 @@ buttonImportCancel.addEventListener('click', function(e){
 		
 		for(var j=0;j<section.rowCount;j++) {	
 			var row = section.rows[j];
-			//Ti.API.debug(row.children[0]);
 			row.children[0].color='gray';
 			row.children[0].checkBtn='false';
 			
@@ -181,25 +159,10 @@ buttonImportCancel.addEventListener('click', function(e){
 	};
 	$.contactImport.leftNavButton = null;
 });
-		// <LeftNavButton>
-			// <Button title="Cancel" id="buttonImportCancel" onClick="clickImportCancel">
-		// </LeftNavButton>
-// 		
-// 		
-
-// $.importTable.setSearch($.importSearch);
 
 function transformfunction(item) {
 	Ti.API.debug('testdfasdfas');
-	var item = item.toJSON();
-	
-	// item.title = item.name;
-	// item.PicName = imageRootPath+item.no +".jpg";
-	// return item;
-	//$.smallFace.image = people.
-	//$.listList.text = item.name;
-	// $.smallFace.image = item.no + '.jpg';
-	
+	var item = item.toJSON();	
 };
 
 $.importTable.addEventListener('click',function(e){
