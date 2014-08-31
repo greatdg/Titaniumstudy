@@ -6,10 +6,13 @@ var people = Alloy.Collections.people;
 var imageFolderName = "person_image";
 var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
 
-var aa = "abc&&1##def&&2";
-var split = aa.split("##");
+var personalData = people.get(alloyId).toJSON();
+
+var personCustom = personalData.custom;
+
 var customField = [];
-for(var i=0;i<split.length;i++) {
+for(var i=0;i<personCustom.length;i++) {
+	var split = personCustom.split("##");
 	var key = split[i].split("&&");
 	var keyField = Ti.UI.createTextField({
 		value: key[0]
@@ -17,8 +20,8 @@ for(var i=0;i<split.length;i++) {
 	var valueField = Ti.UI.createTextField({
 		value: key[1]
 	});
-	// $.test.add(keyField);
-	// $.test.add(valueField);
+	$.detail.add(keyField);
+	$.detail.add(valueField);
 	// customField.splice(i, 1);
 	customField.push({
 		key: keyField, 
@@ -29,7 +32,7 @@ for(var i=0;i<split.length;i++) {
 $.detailEdit.addEventListener('focus', function(e){
 	people.fetch();
 });
-var personalData = people.get(alloyId).toJSON();
+
 
 	$.nameEdit.value= personalData.name;
 	$.genderEdit.value= personalData.gender;	

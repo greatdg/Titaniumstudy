@@ -25,6 +25,7 @@ var personalDetail = function(id){
 	$.job.setText(personalData.job);
 	$.email.setText(personalData.email);
 	$.facePic.image=imageRootPath+id +".jpg";
+
 	
 	//create view of the custom fields
 	//Ti.API.debug(personalData.custom);
@@ -43,7 +44,7 @@ var personalDetail = function(id){
 		}
 	}
 		else{
-			// alert("Please input category title");
+			
 			$.customAddView.visible="false";	
 			$.scrollView.visible="true";	
 			

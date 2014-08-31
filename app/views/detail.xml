@@ -11,31 +11,28 @@
 		
 		<View class="upperView">
 											
-				<ImageView id="facePic" class="person" image="default100.png" />
+				<ImageView id="facePic" class="person" image="default_icon.png" />
 
 			<View class="personalView">
 				<!-- name, birthday, phone numberand gender -->
 
-				<View class="rowPersonal" layout="vertical">
+				<!-- <View class="rowPersonal" layout="vertical">
 				<Label class="upper_title" text="Name"></Label>
-				</View>
-				
+				</View> -->				
 				<View class="rowPersonal" layout="vertical">
-				<Label id="name" class="upper_text" layout="vertical" />
+				<Label id="name" class="upper_text_name" layout="vertical" />
 				</View>
 				
-				<View class="rowPersonal">
+				<!-- <View class="rowPersonal">
 				<Label class="upper_title" text="Gender "></Label>
-				</View>	
-				
+				</View>	 -->				
 				<View class="rowPersonal" layout="vertical">
 				<Label id="gender" class="upper_text" layout="vertical"/>
 				</View>
 	
-				<View class="rowPersonal">
+				<!-- <View class="rowPersonal">
 				<Label id="bdayPersonal" class="upper_title" text="Birthday "></Label>
-				</View>		
-				
+				</View>		 -->				
 				<View class="rowPersonal" layout="vertical">
 				<Label id="birthday" class="upper_text" />
 				</View>	
@@ -48,40 +45,36 @@
 	<View id="lowerView" class="lowerView">	
 		
 				<View class="rowAdditional">
-					<Label id="phonePersonal" class="upper_title" text="Phone " />
-					<Label id="phoneNumber" class="upper_text" onClick="phoneClick"/>
+					<!-- <Label id="phonePersonal" class="upper_title" text="Phone " /> -->	
+					<ImageView image="edit/phone.png" />
+					<Label id="phoneNumber" class="lower_text" onClick="phoneClick"/>
 				</View>
 		
 				<View class="rowAdditional">
-					<Label id="jobAdd" class="upper_title" text="Job" />
-					<Label id="job" class="upper_text" />
+					<ImageView image="edit/job.png" />
+					<Label id="job" class="lower_text" />
 				</View>		
 				
 				<View class="rowAdditional">
-					<Label class="upper_title" text="Email" />
-					<Label id="email" class="upper_text" onClick="emailClick" />
+					<ImageView image="edit/email.png" />
+					<Label id="email" class="lower_text" onClick="emailClick" />
 				</View>
 				
-				<View class="rowAdditional">
-					<Label class="upper_title" text="Address " />
-					<Label id="address1" class="upper_text" />
+				<View class="rowAdditional_address">
+					<ImageView image="edit/home.png" />
+					<Label id="address1" class="lower_text" />
 				</View>
 
-				<View class="rowAdditional">
-				<Label class="uuper_title" text="     "></Label>
-				<Label id="address2" class="upper_text"/>
+				<View class="rowAdditional_address">				
+				<Label id="address2" class="lower_text_address"/>
 				</View>
 
-				<View class="rowAdditional">
-				<Label class="upper_title" text="      "></Label>
-				<Label id="address3" class="upper_text" />
+				<View class="rowAdditional_address">
+				<Label id="address3" class="lower_text_address" />
 				</View>
 				
 				
-				<View class="rowAdditional" visible="false">
-				<Label class="titleAdditional" text="Custom"></Label>
-				<TextField class="inputBox" id="customAdd" value=""/>			
-				</View>
+
 
 	</View>	
 	
@@ -96,7 +89,7 @@
 			</View>	
 			<View class="rowAdditional">
 				<Label class="titleAdditional" text="  Contents"></Label>	
-				<Label id="customAddContent" hintText="Contents"/>			
+				<Label id="customAddContent"/>			
 			</View>			
 		
 	</View>
