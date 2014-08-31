@@ -1,8 +1,0 @@
-".rowAdditional": {
-	left:"0",
-	top: "0",
-	// backgroundColor:"pink",
-	layout:"vertical",
-	width:"100%",
-
-}
