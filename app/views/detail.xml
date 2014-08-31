@@ -18,7 +18,7 @@
 			</View>	
 
 		</View>
-		<View class="lowerView">
+		<View id="lowerView" class="lowerView">
 			<View class="margin">	
 				<ImageView class="lblImg" image="edit/phone.png" />
 				<Label id="phoneNumber" class="lLbl" onClick="phoneClick"/>
@@ -37,11 +37,11 @@
 				<Label id="address1" class="lLbl" />
 			</View>
 
-			<View class="margin">				
+			<View id="viewAddr2" class="margin">				
 				<Label id="address2" class="lLblAddr" />
 			</View>
 
-			<View class="margin">
+			<View id="viewAddr3" class="margin">
 				<Label id="address3" class="lLblAddr" />
 			</View>
 

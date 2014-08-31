@@ -11,9 +11,7 @@
 "Label": {
 	left: 22,
 	color: "#666666",
-	font: {
-		fontSize: "22"
-	},
+
 	textAlign: "Titanium.UI.TEXT_ALIGNMENT_LEFT",
 }
 "ImageView": {

@@ -4,6 +4,16 @@ var alloyId = args.alloyId;
 var imageFolderName = "person_image";
 var imageRootPath = Ti.Filesystem.applicationDataDirectory + "/" + imageFolderName + "/";
 
+function checkAddress(obj, txt) {
+	if( txt && txt.length > 0 ) {
+		obj.visible = true;
+		obj.setText(txt);
+		return true;
+	} else {		
+		obj.visible = false;
+		return false;
+	}
+}
 // 
 // $.imageGlasses.hide();
 // 
@@ -22,14 +32,27 @@ var personalDetail = function(id){
 	// $.job.setText("Designer");
 	// $.email.setText("greatdg@gmail.com");
 
+	if( !checkAddress($.address3, personalData.address3) ) {
+		$.addViewField.top -= 20;	
+	}
+
+	if( !checkAddress($.address2, personalData.address2) ) {
+		$.addViewField.top -= 20;	
+	}
+
+	if( !checkAddress($.address1, personalData.address1) ) {
+		$.addViewField.top -= 20;		
+	}
+	
+	
+
+	
 	$.name.setText(personalData.name);
 	$.birthday.setText(personalData.birthday);
 	$.gender.setText(personalData.gender);
 
 	$.phoneNumber.setText(personalData.phoneNumber);
-	$.address1.setText(personalData.address1);
-	$.address2.setText(personalData.address2);
-	$.address3.setText(personalData.address3);
+
 	$.job.setText(personalData.job);
 	$.email.setText(personalData.email);
 	$.facePic.image=imageRootPath+id +".jpg";
