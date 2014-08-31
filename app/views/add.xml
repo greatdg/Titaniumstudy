@@ -34,7 +34,7 @@
 	
 				<View class="rowPersonal">
 				<ImageView  image="addbday.png" left="3"/>										
-				<TextField class="inputBox" id="bdayAdd" hintText="Birthday" editable="false" top="2" left="4" />
+				<TextField class="inputBox" id="bdayAdd" hintText="Birthday" top="2" left="4" />
 				</View>			
 				<View backgroundColor="#9AB3CD" height="1" width="70%" left ="40"></View>
 
@@ -165,7 +165,7 @@
 	
 	
 	<View id="viewDatePicker" visible="false">
-		<Toolbar width="100%" height="30" id="dateToolbar" barColor="#DDD"></Toolbar>
+		<Toolbar id="dateToolbar"></Toolbar>
 		<Picker id="datePicker" selectionIndicator="true" useSpinner="true"></Picker>
 	</View>
 	
@@ -173,9 +173,8 @@
 
 	<View id="viewGenderPicker" visible="false">
 		<Toolbar width="100%" height="30" id="toolbar" barColor="#DDD"></Toolbar>
-		<Picker id="genderPicker" selectionIndicator="true" useSpinner="true" >
+		<Picker class="genderPicker" id="genderPicker" selectionIndicator="true" useSpinner="true" >
 				<PickerColumn id="column1">
-					<PickerRow title=""/>
                 	<PickerRow title="Male"/>
                 	<PickerRow title="Female"/>
             </PickerColumn>				
