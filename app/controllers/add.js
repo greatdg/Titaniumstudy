@@ -11,13 +11,70 @@ if( imageDir.exists() === false){
 }
 imageDir = null;
 
-$.addWin.addEventListener('blur', function(e) {
-	var lowerView = $.lowerView.getChildren();
-	for( var i=0;i<lowerView.length;i++ ) {
-		if( i > 4 ) {
-			$.lowerView.remove(lowerView[i]);
-		}
+
+var iosKeyboardNavigation = function(controllers, buttonText) {
+    if (OS_IOS) { // this constant is only for Alloy
+        for (var i = 0; i < controllers.length; i++) {
+            var current = controllers[i], nextIndex = i + 1, prevIndex = i > 0 ? i : 0;
+ 			
+
+ 			var flexSpace = Ti.UI.createButton({
+			    systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+			});
+
+            var prev_btn = Titanium.UI.createButton({
+                title : buttonText[prevIndex-1] || 'Next',
+                style : Titanium.UI.iPhone.SystemButtonStyle.DONE,
+                controller : current,
+                prevController : i != 0 ? controllers[i-1] : controllers[i]
+            });
+
+            prev_btn.addEventListener('click', function(e) {
+                if (this.prevController) {
+                    this.prevController.focus();
+                } else {
+                    this.controller.blur();
+                }
+            });
+
+
+
+            var next_btn = Titanium.UI.createButton({
+                title : buttonText[i+1] || 'Next',
+                style : Titanium.UI.iPhone.SystemButtonStyle.DONE,
+                controller : current,
+                nextController : controllers.length > nextIndex ? controllers[nextIndex] : null
+            });
+
+            next_btn.addEventListener('click', function(e) {
+                if (this.nextController) {
+                    this.nextController.focus();
+                } else {
+                    this.controller.blur();
+                }
+            });
+ 			if( i == 0 ) {
+ 				current.keyboardToolbar = [flexSpace, next_btn];	
+ 			} else {
+ 				current.keyboardToolbar = [prev_btn, flexSpace, next_btn];
+ 			}
+            
+        };
+    };
+};
+iosKeyboardNavigation(
+	[$.nameAdd, $.bdayAdd, $.phoneAdd, $.emailAdd, $.jobAdd, $.addressAdd, $.address2Add, $.address3Add], 
+	["Name", "Birthday", "Phone", "Email", "Job", "Street", "Suburb", "City"]
+);
+
+function clearAddField() {
+	var addViewField = $.addViewField.getChildren();
+	for( var i=0;i<addViewField.length;i++ ) {
+		$.addViewField.remove(addViewField[i]);
 	}
+}
+$.addWin.addEventListener('blur', function(e) {
+	clearAddField();
 });
 
 $.addWin.addEventListener("focus",function(e){
@@ -72,7 +129,7 @@ var addItemDone = function (e){
 			Ti.API.info(obj.no);
 	
 			doCrop(obj.no);
-			
+			clearAddField();
 			closeWindow();
 		}
 		else { alert("Please input name");
@@ -83,17 +140,26 @@ var addItemDone = function (e){
 };
 
 var cancleAdd = function(e){
+	clearAddField();
 	Alloy.Globals.TabGroup.setActiveTab(0);
 };
-
+// $.genderAdd.addEventListener('focus', function(e) {
+// 	$.nameAdd.blur();
+// 	$.phoneAdd.blur();
+// 	$.genderAdd.blur();
+// 	$.addressAdd.blur();
+// 	$.address2Add.blur();
+// 	$.viewGenderPicker.visible="true";
+// 	$.lowerView.visible="false";	
+// });
 
 $.genderAdd.addEventListener("click",function(e){
+	$.genderAdd.blur();
 	$.nameAdd.blur();
-	$.phoneAdd.blur();
+	$.phoneAdd.blur();	
 	$.addressAdd.blur();
 	$.address2Add.blur();
 	$.viewGenderPicker.visible="true";
-	$.lowerView.visible="false";	
 
 });
 

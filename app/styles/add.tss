@@ -90,8 +90,17 @@
 	width:"94%",
 	height: "260"
 },
-
-
+"#toolbar": {
+	zIndex: 2,
+	bottom: "150",
+	width: "100%",
+	height: "30",
+	barColor: "#DDD"
+}
+".genderPicker": {
+	bottom: "-20",
+	zIndex: 1,
+}
 ".addViewField": {
 	layout: "vertical",
 	height: Ti.UI.SIZE
