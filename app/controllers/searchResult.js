@@ -13,8 +13,8 @@ function transformfunction(item) {
 
 $.searchResultWin.addEventListener('focus', function(e){
 	people.fetch({query: "SELECT * FROM " + table + " where "+searchCondition+" like '%"+searchInput+"%'"});
-	alert(searchCondition);
-	alert(searchCondition);
+	// alert(searchCondition);
+
 });
 
 

@@ -1,12 +1,13 @@
 <Alloy>
 	<Window title="Search" barColor="#9EE0EF">
-		<View class="container" layout="vertical" bacgroundColor="blue">
-			<View class="firstMenu" layout="horizontal" width="100%" height="65">
-				<Button id="btn_Appearance" title="by Appearance" width="160" height="65" left="0" top="0"/>
-				<Button id="btn_byText" backgroundImage="textSearch.png" width="110" left="30" top="5"/>	
-				<ImageView id="appearance_deselect" image="search_appearance.png" left="0" top="0" height="65" width="160" visible="false"/>
-				<ImageView id="rightDot" image="dot.png" left="39" top="11" height="22" width="22" visible="true" />				
+		<View class="container" layout="vertical" bacgroundColor="#9EE0EF">
+			<View class="firstMenu" layout="horizontal" width="100%" height="48" backgroundColor="#9EE0EF">
+				<Button id="btn_Appearance" title="By Appearance" width="110" color="white" left="25" top="10"/>
+				<ImageView id="appearance_deselect" image="byAppearance.png" left="-135" top="0" height="50" width="160" visible="true"/>							
+				<Button id="btn_byText" title="By text" color="white" width="110" left="30" top="5"/>				
+				<ImageView id="text_deselect" image="byText.png" left="-140" top="0" height="50" width="160" visible="false"/>					
 			</View>	
+
 			
 			<View id="byTextView" visible="false" height="170" layout="vertical">
 							
@@ -14,26 +15,35 @@
 				<TextField id="searchCondition" left="30" width="70%" backgroundColor="white" hintText="Name" editable="false"/>				
 				
 				<Label top="10" left="30" width="70%" text="Word?"/>
-				<TextField id="searchTextInput" left="30" width="70%" backgroundColor="white" hintText="red wine"/>
-				<Button id="btn_byTextSearch" backgroundImage="searchBtn.png" top="-100" left="245" width="60" height="60" />
+				<TextField id="searchTextInput" left="30" width="70%" backgroundColor="white" hintText="James"/>
+				<Button id="btn_byTextSearch" backgroundImage="searchBtn.png" top="-50" left="220" width="50" height="50" />
 
 			</View>		
 
-			<View id="viewImageEditCategory" visible="true">
-		
-					<ImageView class="person" id="personImageEdit" image="default100.png">								
-							<Label id="picName" color="white" top="50" text="picName" visible="true" ></Label>	
-							<Label id="picHairName" color="white" top="70" text="hairName" visible="true" ></Label>					
-							<Label id="picExtraName" color="white" top="90" text="extraName" visible="true"></Label>																						
-					</ImageView>			
-						
-					<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="30" left="8"/>
-					<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="30" left ="4" />
-					<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="30" left ="4" />
-					<Button id="btn_doneEdit" backgroundImage="searchBtn.png" top="16" width="60" height="60"left="26"/>
 
-			</View>
-			
+
+	<View id="viewImageEditCategory" visible="true" height="160">
+
+										
+				<ImageView class="person" id="personImageEdit" top="0" left="0" width="110" height="160" >
+				</ImageView>		
+				<ImageView class="person" id="hairImageEdit" top="0" left="-110" width="110" height="160" >
+				</ImageView>
+				
+				
+<!-- 				<ImageView class="person" id="extraImageEdit" top="80" left="0">
+				</ImageView>	 -->							
+				
+					
+
+			<Button id="btn_faceEditCategory" backgroundImage="faceBtn.png" top="60" left="40"/>
+			<Button id="btn_hairEditCategory" backgroundImage="hairBtn.png" top="60" left="5" />
+			<Button id="btn_extraEditCategory" backgroundImage="extraBtn.png" top="60" left ="5" />
+			<Button id="btn_doneEdit" backgroundImage="searchBtn.png" top="52" width="50" left="5" height="50"/>
+
+	</View>
+
+
 								
 			<View id="lowPickerView" background="black" top="-40" height="200">
 				
@@ -51,21 +61,45 @@
 					</Picker>
 				</View>				
 							
+							
+											
+											
+					<View id="hairImagePicker" top="30" visible="false">
 				
-				<View id="faceImagePicker" top="0" visible="false">
+						<Picker id="imageHairPicker" selectionIndicator="true" useSpinner="true">
+								<PickerColumn id="hairStyle">
+									<PickerRow title=""/>
+				                	<PickerRow title="gentleman"/>
+				                	<PickerRow title="boy"/>
+				                	<PickerRow title="long"/>
+				                	<PickerRow title="curly"/>
+				                    <PickerRow title="ppippi"/>            	
+				                </PickerColumn>               	
+				                	  
+								<PickerColumn id="hairColor">
+									<PickerRow title=""/>
+				                	<PickerRow title="blond"/>
+				                	<PickerRow title="black"/>
+				                	<PickerRow title="red"/>                	              	                	
+				                </PickerColumn>                             				
+						</Picker>
+					</View>
+				
+					<View id="faceImagePicker" top="30" visible="false">
+				
 						<Picker id="imageFacePicker" selectionIndicator="true" useSpinner="true">
 				                	  
 								<PickerColumn id="skinColor">
 									<PickerRow title=""/>
-				                	<PickerRow customTitle="black">
-				                		<ImageView image="black__.png" />
+				                	<PickerRow title="black">
+				                		<ImageView image="black_null_null.png" />
 				                	</PickerRow>
-				                	<PickerRow customTitle="yellow">
-				                		<ImageView image="yellow__.png"/>
+				                	<PickerRow title="yellow">
+				                		<ImageView image="yellow_null_null.png"/>
 				                	</PickerRow>	
-				                	<PickerRow customTitle="white" >
-				                		<ImageView image="yellow__.png"/>
-				                	</PickerRow>	                 	              	                	
+				                	<PickerRow title="white" >
+				               			<ImageView image="yellow_null_null.png"/>  
+				               		</PickerRow>	              	                 	              	                	
 				                </PickerColumn>  
 				                
 								<PickerColumn id="faceShape">
@@ -82,31 +116,10 @@
 				                	<PickerRow title="big"/>
 				                </PickerColumn>               	                                        				
 						</Picker>
-				</View>
-			
-					
-				<View id="hairImagePicker" top="0" visible="false">
-			
-					<Picker id="imageHairPicker" selectionIndicator="true" useSpinner="true">
-							<PickerColumn id="hairStyle">
-								<PickerRow title=""/>
-			                	<PickerRow title="gentleman"/>
-			                	<PickerRow title="boy"/>
-			                	<PickerRow title="long"/>
-			                	<PickerRow title="curly"/>
-			                    <PickerRow title="ppippi"/>            	
-			                </PickerColumn>               	
-			                	  
-							<PickerColumn id="hairColor">
-								<PickerRow title=""/>
-			                	<PickerRow title="blond"/>
-			                	<PickerRow title="black"/>
-			                	<PickerRow title="red"/>                	              	                	
-			                </PickerColumn>                             				
-					</Picker>
-				</View>
-			
-				<View id="extraImagePicker" top="0" visible="false">
+					</View>
+				
+				
+					<View id="extraImagePicker" top="30" visible="false">
 						<Picker id="imageExtraPicker" selectionIndicator="true" useSpinner="true">             	  
 								<PickerColumn id="extraGlasses">
 									<PickerRow title="none"/>
@@ -122,9 +135,17 @@
 				                	<PickerRow title="both"/>
 				                </PickerColumn>               	
 				          	                                        				
-						</Picker>             	                                        				
-				</View>
-			</View>
+						</Picker>
+					</View>							
+							
+			
+				
+					<Label id="picName" color="white" top="50" text="picName" visible="false" ></Label>	
+					<Label id="picHairName" color="white" top="70" text="hairName" visible="false" ></Label>					
+					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>	
+				
+
+			</View> // lower Picker view
 				
 		</View>
 	</Window>

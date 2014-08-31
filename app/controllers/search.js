@@ -7,9 +7,9 @@ searchCondition ="name";
 $.btn_Appearance.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="true";	
 	$.faceImagePicker.visible="true";
-	$.byTextView.visible="true";
-	$.rightDot.visible="false";
-	$.appearance_deselect.visible="false";	
+	$.byTextView.visible="false";
+	$.text_deselect.visible="false";
+	$.appearance_deselect.visible="true";	
 });
 
 $.btn_byText.addEventListener("click",function(e){
@@ -17,12 +17,11 @@ $.btn_byText.addEventListener("click",function(e){
 	closePickers();	
 	$.byTextView.visible="true";
 	$.searchTextInput.value="";
-	$.rightDot.visible="true";
-	$.appearance_deselect.zIndex="100";
-	$.appearance_deselect.visible="true";
+	$.text_deselect.visible="true";
+	// $.appearance_deselect.zIndex="100";
+	$.appearance_deselect.visible="false";
 		
 });
-
 
 
 
@@ -44,6 +43,10 @@ $.btn_byTextSearch.addEventListener("click",function(e){
 });
 
 
+
+
+
+// image search !!!
 $.btn_doneEdit.addEventListener("click",function(e){
 	
 	searchInput = $.searchTextInput.value; 
@@ -55,6 +58,12 @@ $.btn_doneEdit.addEventListener("click",function(e){
 	
 	closePickers();
 });
+
+
+
+
+
+
 
 
 
@@ -85,15 +94,45 @@ $.searchTextInput.addEventListener("focus",function(e){
 
 
 
+function changePic(type, e){
+	if( e ) {
+		if( type == "face" ) {
 
-function changePic(){
-	$.picName.text=$.skinColor.value+"_"+$.faceShape.value +"_"+$.eyeShape.value+".png";
-	alert($.skinColor.value);
-	alert($.picName.text);
-	$.picHairName.text=$.hairStyle.value+"_"+$.hairColor.value;	
-	$.picExtraName.text=$.extraGlasses.value+"_"+$.extraMustache.value;		
-	$.personImageEdit.image=$.picName.text;	
-};
+			var face = "null", hair = "null", mustache = "null";
+
+			if( e.selectedValue[0].length > 0 ) {
+				face  = e.selectedValue[0];
+			}
+
+			if( e.selectedValue[1].length > 0 ) {
+				hair  = e.selectedValue[1];
+			}
+
+			if( e.selectedValue[2].length > 0 ) {
+				mustache  = e.selectedValue[2];
+			}
+
+
+			$.picName.text=face+"_"+hair +"_"+mustache+".png";
+			$.personImageEdit.image=$.picName.text;	
+
+		} else if( type == "hair" ) {
+			var shape = "null", color = "null";
+			if( e.selectedValue[0].length > 0 ) {
+				shape  = e.selectedValue[0];
+			}
+
+			if( e.selectedValue[1].length > 0 ) {
+				color  = e.selectedValue[1];
+			}
+			$.picHairName.text=shape+"_"+color+".png";	
+			$.hairImageEdit.image = $.picHairName.text;
+		}
+		
+			
+	}
+}
+
 
 
 
@@ -103,13 +142,10 @@ $.btn_faceEditCategory.addEventListener("click",function(e){
 	$.faceImagePicker.visible="true";	
 });
 
-$.faceImagePicker.addEventListener('change', function(e) {
-	$.skinColor.value = e.selectedValue[0].customTitle;
-	$.faceShape.value = e.selectedValue[1];
-	$.eyeShape.value = e.selectedValue[2];	
-	changePic();			
-});
 
+$.faceImagePicker.addEventListener('change', function(e) {
+	changePic("face", e);			
+});
 
 
 // Hair Choice
@@ -119,11 +155,12 @@ $.btn_hairEditCategory.addEventListener("click",function(e){
 	$.hairImagePicker.visible="true";	
 });
 
+
 $.hairImagePicker.addEventListener('change', function(e) {
-	$.hairStyle.value = e.selectedValue[0];
-	$.hairColor.value = e.selectedValue[1];	
-	changePic();
+		changePic("hair", e);
 });
+
+
 
 
 // Extra Choice

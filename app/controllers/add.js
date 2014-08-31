@@ -128,7 +128,7 @@ var addItemDone = function (e){
 			var obj = detailInfo.toJSON();
 			Ti.API.info(obj.no);
 	
-			doCrop(obj.no);
+			doSave(obj.no);
 			clearAddField();
 			closeWindow();
 		}
@@ -143,15 +143,6 @@ var cancleAdd = function(e){
 	clearAddField();
 	Alloy.Globals.TabGroup.setActiveTab(0);
 };
-// $.genderAdd.addEventListener('focus', function(e) {
-// 	$.nameAdd.blur();
-// 	$.phoneAdd.blur();
-// 	$.genderAdd.blur();
-// 	$.addressAdd.blur();
-// 	$.address2Add.blur();
-// 	$.viewGenderPicker.visible="true";
-// 	$.lowerView.visible="false";	
-// });
 
 $.genderAdd.addEventListener("click",function(e){
 	$.genderAdd.blur();
@@ -189,53 +180,65 @@ $.datepicker.type = Ti.UI.PICKER_TYPE_DATE_AND_TIME;
 
 // Image editing follows
 
-$.btn_imageEdit.addEventListener("click",function(e){
+
+$.person.addEventListener("click", function(e){
 	$.viewImageEditCategory.visible="true";	
 	$.faceImagePicker.visible="true";
 });
 
 $.btn_doneEdit.addEventListener("click",function(e){
-	$.viewImageEditCategory.visible="false";	
-	closePickers();
-	$.person.image=$.picName.text;
-	$.btn_imageEdit.visible="true";
-	$.btn_addMore.visible="true";
-
+	doCrop(function() {
+		$.viewImageEditCategory.visible="false";	
+		closePickers();	
+		$.person.image=newScreenshot;
+		// $.btn_imageEdit.visible="true";
+		$.btn_addMore.visible="true";
+	});	
 });
 
 function changePic(type, e){
 	if( e ) {
 		if( type == "face" ) {
 
-			var face = "null", hair = "null", mustache = "null";
+			var faceColor = "null", shape = "null", eye = "null";
 
 			if( e.selectedValue[0].length > 0 ) {
-				face  = e.selectedValue[0];
+				faceColor  = e.selectedValue[0];
 			}
 
 			if( e.selectedValue[1].length > 0 ) {
-				hair  = e.selectedValue[1];
+				shape  = e.selectedValue[1];
 			}
 
 			if( e.selectedValue[2].length > 0 ) {
-				mustache  = e.selectedValue[2];
+				eye  = e.selectedValue[2];
 			}
-
-
-			$.picName.text=face+"_"+hair +"_"+mustache+".png";
+			$.picName.text=faceColor+"_"+shape +"_"+eye+".png";
 			$.personImageEdit.image=$.picName.text;	
 
 		} else if( type == "hair" ) {
-			var shape = "null", color = "null";
+			var hairShape = "null", color = "null";
 			if( e.selectedValue[0].length > 0 ) {
-				shape  = e.selectedValue[0];
+				hairShape  = e.selectedValue[0];
 			}
 
 			if( e.selectedValue[1].length > 0 ) {
 				color  = e.selectedValue[1];
 			}
-			$.picHairName.text=shape+"_"+color+".png";	
+			$.picHairName.text=hairShape+"_"+color+".png";	
 			$.hairImageEdit.image = $.picHairName.text;
+			
+		} else if( type == "extra" ) {
+			var glasses = "null", mustach = "null";
+			if( e.selectedValue[0].length > 0 ) {
+				glasses  = e.selectedValue[0];
+			}
+
+			if( e.selectedValue[1].length > 0 ) {
+				mustach  = e.selectedValue[1];
+			}
+			$.picExtraName.text=glasses+"_"+mustach+".png";	
+			$.extraImageEdit.image = $.picExtraName.text;
 		}
 		
 			
@@ -269,9 +272,7 @@ $.btn_hairEditCategory.addEventListener("click",function(e){
 	$.hairImagePicker.visible="true";	
 });
 
-$.hairImagePicker.addEventListener('change', function(e) {
-	// $.hairStyle.value = e.selectedValue[0];
-	// $.hairColor.value = e.selectedValue[1];	
+$.hairImagePicker.addEventListener('change', function(e) {	
 	changePic("hair", e);
 });
 
@@ -283,15 +284,13 @@ $.btn_extraEditCategory.addEventListener("click",function(e){
 	$.extraImagePicker.visible="true";	
 });
 
-$.extraImagePicker.addEventListener('change', function(e) {
-	$.extraGlasses.value = e.selectedValue[0];
-	$.extraMustache.value = e.selectedValue[1];
-	changePic();			
+$.extraImagePicker.addEventListener('change', function(e) {	
+	changePic("extra", e);
 });
 
 
-$.btn_addMore.addEventListener("click",function(e){	
-	// $.container.visible="false";		
+
+$.btn_addMore.addEventListener("click",function(e){		
 	$.customAddView.visible="true";
 	$.customAddCategory.value="";
 	$.customAddContent.value="";		
@@ -318,17 +317,11 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			field:content,	
 		}).getView();	
 		$.addViewField.add(field);
-		// alert("custom here");
-			
-		// $.container.visible="true";
-
-		// $.container.height = parseInt($.container.height) +40;
 
 
 	}
 		else{
-			// alert("Please input category title");
-			// $.container.visible="true";	
+	
 			$.customAddCategory.blur();
 			$.customAddContent.blur();
 			
@@ -337,21 +330,28 @@ $.doneCustomAdd.addEventListener("click",function(e){
 
 
 
+var newScreenshot = null;
 
-function doCrop(name) {
-	$.btn_imageEdit.visible = false;
+function doCrop(callback) {
 	Titanium.Media.takeScreenshot(function(e){
 		var image = e.media;
-		var newBlob = Imagefactory.imageAsCropped(image, { width:250, height:290, x:380, y:140 });
-		newBlob = Imagefactory.imageWithRoundedCorner(newBlob, { borderSize:4, cornerRadius:100});
-		var imageFile = Ti.Filesystem.getFile(imageRootPath, name + ".jpg");
-		imageFile.createFile();
-		$.btn_imageEdit.visible = true;
-				
-		if ( imageFile.write(newBlob) === false){
-			alert("oversize");
-		} ;		
+		newScreenshot = Imagefactory.imageAsCropped(image, { width:150, height:190, x:40, y:170 });
+		newScreenshot = Imagefactory.imageWithRoundedCorner(newScreenshot, { borderSize:4, cornerRadius:100});
+		callback();
 	});
+}
+
+
+
+function doSave(name) {
+
+	var imageFile = Ti.Filesystem.getFile(imageRootPath, name + ".jpg");
+	imageFile.createFile();
+			
+	if ( imageFile.write(newScreenshot) === false){
+		alert("oversize");
+	} ;		
+
 }
 
 

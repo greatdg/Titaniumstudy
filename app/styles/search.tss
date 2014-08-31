@@ -1,11 +1,11 @@
 "Window": {
 	backgroundColor: "#FFF",
-}
+},
 
 
 "#viewImageEditCategory":{
 	layout:"horizontal",
-	backgroundColor:"white",	
+	// backgroundColor:"white",	
 	height:"200",
 	width:"100%",
 	top:"-170",
@@ -22,18 +22,17 @@
 
 ".firstMenu":{
 	layout:"horizontal",	
-	backgroundColor:"#FFF",
-	height:"45",
+	backgroundColor:"#9EE0EF",
+	height:"15",
 	left:"0",
 	top:"0"
-},
-
-
-".person":{
-	backgroundColor:"white",
-	top:"10",
-	left:"10",	
-
-	// zIndex:"1"
 }
+
+
+// ".person":{
+	// top:"10",
+	// left:"10",	
+	// width:"110",
+	// height:"160",
+// }
 

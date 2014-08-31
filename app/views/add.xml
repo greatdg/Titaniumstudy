@@ -46,19 +46,17 @@
 				<!-- emoticon area -->
 
 											
-				<ImageView class="person" id="person" >
+				<ImageView class="person" id="person" />
 									
 					<Label id="picName" color="white" top="50" text="picName" visible="false" ></Label>	
 					<Label id="picHairName" color="white" top="70" text="hairName" visible="false" ></Label>					
 					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>																
-				<Button id="btn_imageEdit" backgroundImage="editIcon.png" top="100" left="0" width="30" height="30" />
-				</ImageView>			
-							
+											
 				<ImageView class="person" id="hairImageEdit" top="0" left="-80" width="80" height="110" >
 				</ImageView>	
 				
 			
-	
+
 													
 			<!-- </View> -->
 
@@ -189,8 +187,8 @@
 				</ImageView>		
 				<ImageView class="person" id="hairImageEdit" top="100" left="-80" width="80" height="110" >
 				</ImageView>
-<!-- 				<ImageView class="person" id="extraImageEdit" top="80" left="0">
-				</ImageView>	 -->							
+				<ImageView class="person" id="extraImageEdit" top="100" width="80" height="110" left="-80">
+				</ImageView>							
 				
 					
 
