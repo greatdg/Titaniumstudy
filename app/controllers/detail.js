@@ -33,19 +33,19 @@ var personalDetail = function(id){
 		
 		var splitFields = personalData.custom.split('##');
 		
-		for(var i=0; i<splitFields.length; i++){
+		for(var i=0; i<splitFields.length-1; i++){
+			Ti.API.debug(i);
 			var splitField = splitFields[i].split('&&');
-			var field=Alloy.createController("customfield",{
+			var field=Alloy.createController("detailCustomField",{
 			name:splitField[0],
 			field:splitField[1],	
 		}).getView();	
 			
-			$.lowerView.add(field);
+			$.addViewField.add(field);
 		}
 	}
 		else{
 			
-			$.customAddView.visible="false";	
 			$.scrollView.visible="true";	
 			
 		}

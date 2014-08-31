@@ -4,11 +4,8 @@
 			<Button title="Edit" onClick="clickEdit"/>
 		</RightNavButton>
 	
-	<View id="detailView" top="2">
-	<ScrollView id="scrollView" width="100%" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
-	<View  class="container" >
+	<ScrollView id="scrollView" showVerticalScrollIdicator="true" showHorizontalScrollIndicator="false">	
 
-		
 		<View class="upperView">
 											
 				<ImageView id="facePic" class="person" image="default_icon.png" />
@@ -40,7 +37,7 @@
 			</View>			
 
 		</View>
-	</View>
+
 		
 	<View id="lowerView" class="lowerView">	
 		
@@ -72,31 +69,11 @@
 				<View class="rowAdditional_address">
 				<Label id="address3" class="lower_text_address" />
 				</View>
-				
-				
-
-
 	</View>	
 	
-	<View id="customAddView" visible="false">
-
-		<!-- <Label id="customAdd" visible="false" value=""></Label>	 -->
-		<View class="rowAdditional" />	
-		
-			<View class="rowAdditional">
-				<Label class="titleAdditional" text="  Category"></Label>	
-				<Label id="customAddCategory" />			
-			</View>	
-			<View class="rowAdditional">
-				<Label class="titleAdditional" text="  Contents"></Label>	
-				<Label id="customAddContent"/>			
-			</View>			
-		
-	</View>
-
+	<View id="addViewField" class="addViewField"></View>
+	
 	</ScrollView>
-	
-	</View>	
 
 	</Window>
 </Alloy>

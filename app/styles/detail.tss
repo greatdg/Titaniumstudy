@@ -2,22 +2,21 @@
 	backgroundColor: "#FFF",
 },
 
-".container": {
-	layout:"vertical",
-	fontSize:5
+"#scrollView": {
+	width:Ti.UI.SIZE,
+	layout: "vertical"
 },
 
-".scrollView": {
-	width:"100%",
-},
-
+".addViewField": {
+	height:Ti.UI.SIZE,
+	layout: "vertical"
+}
 
 ".upperView": {
 	layout: "horizontal",
-	width: "100%",
+	width: Titanium.UI.FILL,
 	top: "0",
-	height: "500",
-	//backgroundColor: '#9BEAE8',
+	height: "200",
 	// borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
 },
 
@@ -42,18 +41,17 @@
 	top: 55,
 	fontSize: 9,
 	layout: "vertical",
-	width: "55%",
+	width: Ti.UI.SIZE,
 	height:"200"
 },
 
 ".lowerView":{
-	top:"45%",
 	fontSize:10,
-	// backgroundColor:"#EEE",
 	// top:3,
 	left:30,
 	layout:"vertical",
 	width:"100%",
+	height: Ti.UI.SIZE
 },
 
 "#customAddView":{

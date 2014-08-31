@@ -1,0 +1,22 @@
+".wrap": {
+	height: Ti.UI.SIZE
+}
+
+".rowAdditional": {
+	top: "0",
+	layout:"horizontal",
+	width:"100%",
+	height: 40,
+	left: 30,
+},
+
+
+".text1": {
+	color: '#9BEAE8',
+	left: 15,
+},
+
+".text2": {
+	color: 'gray',
+	left: 15,
+}
