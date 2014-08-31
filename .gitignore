@@ -1,3 +1,4 @@
 build/
 Resources/
-plugins/
+plugins/*
+tiapp.xml

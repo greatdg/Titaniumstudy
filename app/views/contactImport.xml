@@ -6,7 +6,7 @@
 		</RightNavButton>
 		
 		<View class="container">
-			<TableView id='importTable'>
+			<TableView id='importTable' filterAttribute="text">
 				<SearchBar borderColor="#9997C0" hintText="Search" id="importSearch" showCancel="false" height="43" top="0" barColor='#FFF'/>
 				
 			</TableView>
