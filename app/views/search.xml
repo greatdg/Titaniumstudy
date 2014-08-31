@@ -85,7 +85,7 @@
 						</Picker>
 					</View>
 				
-					<View id="faceImagePicker" top="30" visible="false">
+					<View id="faceImagePicker" top="30" visible="true">
 				
 						<Picker id="imageFacePicker" selectionIndicator="true" useSpinner="true">
 				                	  

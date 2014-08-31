@@ -225,8 +225,8 @@ function changePic(type, e){
 			if( e.selectedValue[1].length > 0 ) {
 				color  = e.selectedValue[1];
 			}
-			$.picHairName.text=hairShape+"_"+color+".png";	
-			$.hairImageEdit.image = $.picHairName.text;
+			$.hairStyle.text=hairShape+"_"+color+".png";	
+			$.hairImageEdit.image = $.hairStyle.text;
 			
 		} else if( type == "extra" ) {
 			var glasses = "null", mustach = "null";
@@ -237,8 +237,8 @@ function changePic(type, e){
 			if( e.selectedValue[1].length > 0 ) {
 				mustach  = e.selectedValue[1];
 			}
-			$.picExtraName.text=glasses+"_"+mustach+".png";	
-			$.extraImageEdit.image = $.picExtraName.text;
+			$.extraGlasses.text=glasses+"_"+mustach+".png";	
+			$.extraImageEdit.image = $.extraGlasses.text;
 		}
 		
 			

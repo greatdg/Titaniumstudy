@@ -4,12 +4,14 @@ var people = Alloy.Collections.people;
 // var resultListWin=Alloy.CreateController();
 searchCondition ="name";
 
+
 $.btn_Appearance.addEventListener("click",function(e){
 	$.viewImageEditCategory.visible="true";	
 	$.faceImagePicker.visible="true";
 	$.byTextView.visible="false";
 	$.text_deselect.visible="false";
 	$.appearance_deselect.visible="true";	
+	$.personImageEdit.image="default_default_default.png";
 });
 
 $.btn_byText.addEventListener("click",function(e){
@@ -28,6 +30,7 @@ $.btn_byText.addEventListener("click",function(e){
 $.btn_byTextSearch.addEventListener("click",function(e){
 	$.searchTextInput.blur();	
 	// search Actions!!!!
+	searchCategory = $.searchCondition.value;
 	searchInput = $.searchTextInput.value;
 
 	// people.fetch({query: "SELECT * FROM " + table + " where name like '%"+$.searchTextInput.value+"%'"});
@@ -36,7 +39,11 @@ $.btn_byTextSearch.addEventListener("click",function(e){
 	// Ti.API.debug(people);
 
 
-	var result = Alloy.createController('searchResult').getView();
+	var result = Alloy.createController('searchResult', {
+		searchType: "Text",
+		category: searchCategory,
+		name: searchInput
+	}).getView();
 
 	Alloy.Globals.activeTab.open(result);
 
@@ -52,7 +59,12 @@ $.btn_doneEdit.addEventListener("click",function(e){
 	searchInput = $.searchTextInput.value; 
 	// name of pic
 
-	var result = Alloy.createController('searchResult').getView();
+	var result = Alloy.createController('searchResult', {
+		searchType: "Image",
+		face: $.picName.text,
+		hair: $.picHairName.text
+		
+	}).getView();
 
 	Alloy.Globals.activeTab.open(result);
 	
