@@ -140,9 +140,9 @@
 							
 			
 				
-					<Label id="picName" color="white" top="50" text="picName" visible="false" ></Label>	
-					<Label id="picHairName" color="white" top="70" text="hairName" visible="false" ></Label>					
-					<Label id="picExtraName" color="white" top="90" text="extraName" visible="false"></Label>	
+					<Label id="picName" color="white" top="50" text="" visible="false" ></Label>	
+					<Label id="picHairName" color="white" top="70" text="" visible="false" ></Label>					
+					<Label id="picExtraName" color="white" top="90" text="" visible="false"></Label>	
 				
 
 			</View> // lower Picker view

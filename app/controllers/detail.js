@@ -24,27 +24,22 @@ Titanium.App.addEventListener("doneEdit", function(e){
 //--------set text data on the detail page--------//
 var personalDetail = function(id){
 	var personalData = people.get(id).toJSON();
-	// Ti.API.debug(personalData);
-	// $.name.setText("Gildong Hong");
-	// $.birthday.setText("12/12/1975");
-	// $.gender.setText("Male");
-	// $.phoneNumber.setText("022-126-5177");
-	// $.job.setText("Designer");
-	// $.email.setText("greatdg@gmail.com");
 
-	if( !checkAddress($.address3, personalData.address3) ) {
-		$.addViewField.top -= 20;	
+	if( checkAddress($.address3, personalData.address3) ) {
+		$.viewAddr3.height = Ti.UI.SIZE;
+	} else {
+		$.viewAddr3.height = 0;
 	}
 
-	if( !checkAddress($.address2, personalData.address2) ) {
-		$.addViewField.top -= 20;	
+	if( checkAddress($.address2, personalData.address2) ) {
+		$.viewAddr2.height = Ti.UI.SIZE;	
+	} else {
+		$.viewAddr2.height = 0;
 	}
 
-	if( !checkAddress($.address1, personalData.address1) ) {
-		$.addViewField.top -= 20;		
+	if( checkAddress($.address1, personalData.address1) ) {
+
 	}
-	
-	
 
 	
 	$.name.setText(personalData.name);
@@ -65,7 +60,6 @@ var personalDetail = function(id){
 		var splitFields = personalData.custom.split('##');
 		
 		for(var i=0; i<splitFields.length-1; i++){
-			Ti.API.debug(i);
 			var splitField = splitFields[i].split('&&');
 			var field=Alloy.createController("detailCustomField",{
 			name:splitField[0],
@@ -82,6 +76,13 @@ var personalDetail = function(id){
 		}
 
 };
+
+$.detail.addEventListener('blur', function(e) {
+	var c = $.addViewField.getChildren();
+	for(var i=0;i<c.length;i++) {
+		$.addViewField.remove(c[i]);
+	}
+});
 
 $.detail.addEventListener('focus', function(e){
 	personalDetail(alloyId);

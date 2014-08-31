@@ -37,11 +37,11 @@
 				<Label id="address1" class="lLbl" />
 			</View>
 
-			<View id="viewAddr2" class="margin">				
+			<View id="viewAddr2" class="margin" height="0">				
 				<Label id="address2" class="lLblAddr" />
 			</View>
 
-			<View id="viewAddr3" class="margin">
+			<View id="viewAddr3" class="margin" height="0">
 				<Label id="address3" class="lLblAddr" />
 			</View>
 
