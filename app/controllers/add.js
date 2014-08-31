@@ -251,7 +251,7 @@ $.doneCustomAdd.addEventListener("click",function(e){
 			name:title,
 			field:content,	
 		}).getView();	
-		$.scrollView.add(field);
+		$.addViewField.add(field);
 		// alert("custom here");
 			
 		// $.container.visible="true";

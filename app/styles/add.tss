@@ -88,10 +88,14 @@
 	top: "0",
 	layout:"vertical",
 	width:"94%",
+	height: "260"
 },
 
 
-
+".addViewField": {
+	layout: "vertical",
+	height: Ti.UI.SIZE
+}
 
 "#customAddView": {
 	backgroundColor:"white", 
